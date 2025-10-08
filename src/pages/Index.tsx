@@ -78,15 +78,12 @@ const Index = () => {
               <Link to="/calculators" className="text-foreground/80 hover:text-primary transition-colors">
                 All Calculators
               </Link>
-              <Link to="/converters" className="text-foreground/80 hover:text-primary transition-colors">
-                Converters
+              <Link to="/financial" className="text-foreground/80 hover:text-primary transition-colors">
+                Financial
               </Link>
-              <Link to="/blog" className="text-foreground/80 hover:text-primary transition-colors">
-                Blog
+              <Link to="/health" className="text-foreground/80 hover:text-primary transition-colors">
+                Health
               </Link>
-              <Button size="sm" className="gradient-primary">
-                Get Started
-              </Button>
             </div>
           </div>
         </div>
