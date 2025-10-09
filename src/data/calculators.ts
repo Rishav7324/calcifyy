@@ -18,14 +18,14 @@ export const financialCalculators: Calculator[] = [
   { id: "house-affordability", name: "House Affordability Calculator", description: "Calculate affordable house price", category: "financial", path: "/calculator/house-affordability", implemented: false },
   { id: "rent", name: "Rent Calculator", description: "Calculate rental costs", category: "financial", path: "/calculator/rent", implemented: false },
   { id: "discount", name: "Discount Calculator", description: "Calculate discounts and savings", category: "financial", path: "/calculator/discount", implemented: true },
-  { id: "retirement", name: "Retirement Calculator", description: "Plan for retirement", category: "financial", path: "/calculator/retirement", implemented: false },
-  { id: "investment", name: "Investment Calculator", description: "Calculate investment returns", category: "financial", path: "/calculator/investment", implemented: false },
-  { id: "inflation", name: "Inflation Calculator", description: "Calculate inflation impact", category: "financial", path: "/calculator/inflation", implemented: false },
-  { id: "401k", name: "401K Calculator", description: "Calculate 401K growth", category: "financial", path: "/calculator/401k", implemented: false },
-  { id: "sales-tax", name: "Sales Tax Calculator", description: "Calculate sales tax", category: "financial", path: "/calculator/sales-tax", implemented: false },
-  { id: "savings", name: "Savings Calculator", description: "Calculate savings growth", category: "financial", path: "/calculator/savings", implemented: false },
-  { id: "budget", name: "Budget Calculator", description: "Plan your budget", category: "financial", path: "/calculator/budget", implemented: false },
-  { id: "apr", name: "APR Calculator", description: "Calculate annual percentage rate", category: "financial", path: "/calculator/apr", implemented: false },
+  { id: "retirement", name: "Retirement Calculator", description: "Plan for retirement", category: "financial", path: "/calculator/retirement", implemented: true },
+  { id: "investment", name: "Investment Calculator", description: "Calculate investment returns", category: "financial", path: "/calculator/investment", implemented: true },
+  { id: "inflation", name: "Inflation Calculator", description: "Calculate inflation impact", category: "financial", path: "/calculator/inflation", implemented: true },
+  { id: "401k", name: "401K Calculator", description: "Calculate 401K growth", category: "financial", path: "/calculator/401k", implemented: true },
+  { id: "sales-tax", name: "Sales Tax Calculator", description: "Calculate sales tax", category: "financial", path: "/calculator/sales-tax", implemented: true },
+  { id: "savings", name: "Savings Calculator", description: "Calculate savings growth", category: "financial", path: "/calculator/savings", implemented: true },
+  { id: "budget", name: "Budget Calculator", description: "Plan your budget", category: "financial", path: "/calculator/budget", implemented: true },
+  { id: "apr", name: "APR Calculator", description: "Calculate annual percentage rate", category: "financial", path: "/calculator/apr", implemented: true },
 ];
 
 export const healthCalculators: Calculator[] = [
