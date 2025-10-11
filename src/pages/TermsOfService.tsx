@@ -1,0 +1,98 @@
+import { Card } from "@/components/ui/card";
+import { Link } from "react-router-dom";
+
+const TermsOfService = () => {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-background via-secondary/20 to-background">
+      <div className="container mx-auto px-4 py-12 max-w-4xl">
+        <Link to="/" className="text-primary hover:underline mb-6 inline-block">
+          ← Back to Home
+        </Link>
+        
+        <Card className="p-8 bg-card/80 backdrop-blur">
+          <h1 className="text-4xl font-bold mb-6 text-foreground">Terms of Service</h1>
+          <p className="text-muted-foreground mb-4">Last updated: {new Date().toLocaleDateString()}</p>
+          
+          <div className="space-y-6 text-foreground">
+            <section>
+              <h2 className="text-2xl font-semibold mb-3">1. Acceptance of Terms</h2>
+              <p className="text-muted-foreground">
+                By accessing and using our calculators and tools, you accept and agree to be bound by 
+                the terms and provision of this agreement.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-semibold mb-3">2. Use License</h2>
+              <p className="text-muted-foreground">
+                Permission is granted to temporarily use our calculators and tools for personal, 
+                non-commercial transitory viewing only. This is the grant of a license, not a transfer of title.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-semibold mb-3">3. Disclaimer</h2>
+              <p className="text-muted-foreground">
+                The calculators and tools are provided "as is". We make no warranties, expressed or implied, 
+                and hereby disclaim all warranties including, without limitation, implied warranties or conditions 
+                of merchantability, fitness for a particular purpose, or non-infringement of intellectual property.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-semibold mb-3">4. Accuracy of Calculations</h2>
+              <p className="text-muted-foreground">
+                While we strive to provide accurate calculations, we do not guarantee the accuracy, 
+                completeness, or reliability of any calculation results. Users should verify important 
+                calculations with professional advisors.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-semibold mb-3">5. Limitations</h2>
+              <p className="text-muted-foreground">
+                In no event shall our company or its suppliers be liable for any damages (including, 
+                without limitation, damages for loss of data or profit, or due to business interruption) 
+                arising out of the use or inability to use our services.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-semibold mb-3">6. User Conduct</h2>
+              <p className="text-muted-foreground">
+                You agree not to use our services for any unlawful purpose or in any way that could 
+                damage, disable, or impair our services.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-semibold mb-3">7. Modifications</h2>
+              <p className="text-muted-foreground">
+                We may revise these terms of service at any time without notice. By using our services, 
+                you agree to be bound by the current version of these terms.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-semibold mb-3">8. Governing Law</h2>
+              <p className="text-muted-foreground">
+                These terms shall be governed by and construed in accordance with applicable laws, 
+                without regard to its conflict of law provisions.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-semibold mb-3">9. Contact Information</h2>
+              <p className="text-muted-foreground">
+                Questions about the Terms of Service should be sent to us via our 
+                <Link to="/contact" className="text-primary hover:underline ml-1">contact page</Link>.
+              </p>
+            </section>
+          </div>
+        </Card>
+      </div>
+    </div>
+  );
+};
+
+export default TermsOfService;

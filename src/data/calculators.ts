@@ -9,15 +9,15 @@ export const financialCalculators: Calculator[] = [
   { id: "roi", name: "ROI Calculator", description: "Calculate return on investment", category: "financial", path: "/calculator/roi", implemented: true },
   { id: "sip", name: "SIP Calculator", description: "Systematic Investment Plan calculator", category: "financial", path: "/calculator/sip", implemented: true },
   { id: "swp", name: "SWP Calculator", description: "Systematic Withdrawal Plan calculator", category: "financial", path: "/calculator/swp", implemented: true },
-  { id: "payment", name: "Payment Calculator", description: "Calculate payment schedules", category: "financial", path: "/calculator/payment", implemented: false },
-  { id: "amortization", name: "Amortization Calculator", description: "Calculate loan amortization", category: "financial", path: "/calculator/amortization", implemented: false },
-  { id: "finance", name: "Finance Calculator", description: "General finance calculations", category: "financial", path: "/calculator/finance", implemented: false },
-  { id: "income-tax", name: "Income Tax Calculator", description: "Calculate income tax", category: "financial", path: "/calculator/income-tax", implemented: false },
+  { id: "payment", name: "Payment Calculator", description: "Calculate payment schedules", category: "financial", path: "/calculator/payment", implemented: true },
+  { id: "amortization", name: "Amortization Calculator", description: "Calculate loan amortization", category: "financial", path: "/calculator/amortization", implemented: true },
+  { id: "finance", name: "Finance Calculator", description: "General finance calculations", category: "financial", path: "/calculator/finance", implemented: true },
+  { id: "income-tax", name: "Income Tax Calculator", description: "Calculate income tax", category: "financial", path: "/calculator/income-tax", implemented: true },
   { id: "salary", name: "Salary Calculator", description: "Calculate salary components", category: "financial", path: "/calculator/salary", implemented: true },
   { id: "interest", name: "Interest Calculator", description: "Calculate simple/compound interest", category: "financial", path: "/calculator/interest", implemented: true },
   { id: "simple-interest", name: "Simple Interest Calculator", description: "Calculate simple interest", category: "financial", path: "/calculator/simple-interest", implemented: true },
-  { id: "house-affordability", name: "House Affordability Calculator", description: "Calculate affordable house price", category: "financial", path: "/calculator/house-affordability", implemented: false },
-  { id: "rent", name: "Rent Calculator", description: "Calculate rental costs", category: "financial", path: "/calculator/rent", implemented: false },
+  { id: "house-affordability", name: "House Affordability Calculator", description: "Calculate affordable house price", category: "financial", path: "/calculator/house-affordability", implemented: true },
+  { id: "rent", name: "Rent Calculator", description: "Calculate rental costs", category: "financial", path: "/calculator/rent", implemented: true },
   { id: "discount", name: "Discount Calculator", description: "Calculate discounts and savings", category: "financial", path: "/calculator/discount", implemented: true },
   { id: "retirement", name: "Retirement Calculator", description: "Plan for retirement", category: "financial", path: "/calculator/retirement", implemented: true },
   { id: "investment", name: "Investment Calculator", description: "Calculate investment returns", category: "financial", path: "/calculator/investment", implemented: true },
@@ -40,8 +40,8 @@ export const healthCalculators: Calculator[] = [
   { id: "ideal-weight", name: "Ideal Weight Calculator", description: "Calculate ideal body weight", category: "health", path: "/calculator/ideal-weight", implemented: true },
   { id: "pregnancy", name: "Pregnancy Calculator", description: "Track pregnancy timeline", category: "health", path: "/calculator/pregnancy", implemented: true },
   { id: "pace", name: "Pace Calculator", description: "Calculate running pace", category: "health", path: "/calculator/pace", implemented: true },
-  { id: "carbohydrate", name: "Carbohydrate Calculator", description: "Calculate carb intake", category: "health", path: "/calculator/carbohydrate", implemented: false },
-  { id: "healthy-weight", name: "Healthy Weight Calculator", description: "Find healthy weight range", category: "health", path: "/calculator/healthy-weight", implemented: false },
+  { id: "carbohydrate", name: "Carbohydrate Calculator", description: "Calculate carb intake", category: "health", path: "/calculator/carbohydrate", implemented: true },
+  { id: "healthy-weight", name: "Healthy Weight Calculator", description: "Find healthy weight range", category: "health", path: "/calculator/healthy-weight", implemented: true },
 ];
 
 export const mathCalculators: Calculator[] = [
@@ -61,8 +61,8 @@ export const mathCalculators: Calculator[] = [
   { id: "quadratic", name: "Quadratic Calculator", description: "Solve quadratic equations", category: "math", path: "/calculator/quadratic", implemented: true },
   { id: "standard-deviation", name: "Standard Deviation Calculator", description: "Calculate standard deviation", category: "math", path: "/calculator/standard-deviation", implemented: true },
   { id: "distance", name: "Distance Calculator", description: "Calculate distance between points", category: "math", path: "/calculator/distance", implemented: true },
-  { id: "percent-error", name: "Percent Error Calculator", description: "Calculate percent error", category: "math", path: "/calculator/percent-error", implemented: false },
-  { id: "binary", name: "Binary Calculator", description: "Binary calculations", category: "math", path: "/calculator/binary", implemented: false },
+  { id: "percent-error", name: "Percent Error Calculator", description: "Calculate percent error", category: "math", path: "/calculator/percent-error", implemented: true },
+  { id: "binary", name: "Binary Calculator", description: "Binary calculations", category: "math", path: "/calculator/binary", implemented: true },
 ];
 
 export const otherCalculators: Calculator[] = [
@@ -78,8 +78,8 @@ export const otherCalculators: Calculator[] = [
   { id: "conversion", name: "Conversion Calculator", description: "Unit conversions", category: "other", path: "/calculator/conversion", implemented: true },
   { id: "speed", name: "Speed Calculator", description: "Calculate speed", category: "other", path: "/calculator/speed", implemented: true },
   { id: "dice", name: "Dice Roller", description: "Roll virtual dice", category: "other", path: "/calculator/dice", implemented: true },
-  { id: "mileage", name: "Mileage Calculator", description: "Calculate mileage", category: "other", path: "/calculator/mileage", implemented: false },
-  { id: "fuel-cost", name: "Fuel Cost Calculator", description: "Calculate fuel costs", category: "other", path: "/calculator/fuel-cost", implemented: false },
+  { id: "mileage", name: "Mileage Calculator", description: "Calculate mileage", category: "other", path: "/calculator/mileage", implemented: true },
+  { id: "fuel-cost", name: "Fuel Cost Calculator", description: "Calculate fuel costs", category: "other", path: "/calculator/fuel-cost", implemented: true },
 ];
 
 export const imageTools: Calculator[] = [

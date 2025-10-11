@@ -5,6 +5,10 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
+import Contact from "./pages/Contact";
+import About from "./pages/About";
 import BMICalculator from "./pages/calculators/BMICalculator";
 import LoanCalculator from "./pages/calculators/LoanCalculator";
 import DiscountCalculator from "./pages/calculators/DiscountCalculator";
@@ -39,6 +43,42 @@ import QuadraticCalculator from "./pages/calculators/QuadraticCalculator";
 import StandardDeviationCalculator from "./pages/calculators/StandardDeviationCalculator";
 import DistanceCalculator from "./pages/calculators/DistanceCalculator";
 import SpeedCalculator from "./pages/calculators/SpeedCalculator";
+import PercentageCalculator from "./pages/calculators/PercentageCalculator";
+import ScientificCalculator from "./pages/calculators/ScientificCalculator";
+import AgeCalculator from "./pages/calculators/AgeCalculator";
+import TimeCalculator from "./pages/calculators/TimeCalculator";
+import GPACalculator from "./pages/calculators/GPACalculator";
+import GradeCalculator from "./pages/calculators/GradeCalculator";
+import TipCalculator from "./pages/calculators/TipCalculator";
+import DateCalculator from "./pages/calculators/DateCalculator";
+import PasswordGenerator from "./pages/calculators/PasswordGenerator";
+import TimeZoneCalculator from "./pages/calculators/TimeZoneCalculator";
+import RetirementCalculator from "./pages/calculators/RetirementCalculator";
+import InvestmentCalculator from "./pages/calculators/InvestmentCalculator";
+import InflationCalculator from "./pages/calculators/InflationCalculator";
+import SalesTaxCalculator from "./pages/calculators/SalesTaxCalculator";
+import SavingsCalculator from "./pages/calculators/SavingsCalculator";
+import APRCalculator from "./pages/calculators/APRCalculator";
+import BudgetCalculator from "./pages/calculators/BudgetCalculator";
+import The401KCalculator from "./pages/calculators/the401KCalculator";
+import AreaCalculator from "./pages/calculators/AreaCalculator";
+import VolumeCalculator from "./pages/calculators/VolumeCalculator";
+import SlopeCalculator from "./pages/calculators/SlopeCalculator";
+import FractionCalculator from "./pages/calculators/FractionCalculator";
+import BasicCalculator from "./pages/calculators/BasicCalculator";
+import AverageCalculator from "./pages/calculators/AverageCalculator";
+import PaymentCalculator from "./pages/calculators/PaymentCalculator";
+import AmortizationCalculator from "./pages/calculators/AmortizationCalculator";
+import FinanceCalculator from "./pages/calculators/FinanceCalculator";
+import IncomeTaxCalculator from "./pages/calculators/IncomeTaxCalculator";
+import HouseAffordabilityCalculator from "./pages/calculators/HouseAffordabilityCalculator";
+import RentCalculator from "./pages/calculators/RentCalculator";
+import CarbohydrateCalculator from "./pages/calculators/CarbohydrateCalculator";
+import HealthyWeightCalculator from "./pages/calculators/HealthyWeightCalculator";
+import PercentErrorCalculator from "./pages/calculators/PercentErrorCalculator";
+import BinaryCalculator from "./pages/calculators/BinaryCalculator";
+import MileageCalculator from "./pages/calculators/MileageCalculator";
+import FuelCostCalculator from "./pages/calculators/FuelCostCalculator";
 import FinancialCalculators from "./pages/FinancialCalculators";
 import HealthCalculators from "./pages/HealthCalculators";
 import MathCalculators from "./pages/MathCalculators";
@@ -55,11 +95,15 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/financial" element={<FinancialCalculators />} />
-          <Route path="/health" element={<HealthCalculators />} />
-          <Route path="/math" element={<MathCalculators />} />
-          <Route path="/utilities" element={<OtherCalculators />} />
-          <Route path="/calculators" element={<AllCalculators />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/financial-calculators" element={<FinancialCalculators />} />
+          <Route path="/health-calculators" element={<HealthCalculators />} />
+          <Route path="/math-calculators" element={<MathCalculators />} />
+          <Route path="/other-calculators" element={<OtherCalculators />} />
+          <Route path="/all-calculators" element={<AllCalculators />} />
           <Route path="/calculator/bmi" element={<BMICalculator />} />
           <Route path="/calculator/loan" element={<LoanCalculator />} />
           <Route path="/calculator/discount" element={<DiscountCalculator />} />
@@ -94,6 +138,42 @@ const App = () => (
           <Route path="/calculator/standard-deviation" element={<StandardDeviationCalculator />} />
           <Route path="/calculator/distance" element={<DistanceCalculator />} />
           <Route path="/calculator/speed" element={<SpeedCalculator />} />
+          <Route path="/calculator/percentage" element={<PercentageCalculator />} />
+          <Route path="/calculator/scientific" element={<ScientificCalculator />} />
+          <Route path="/calculator/age" element={<AgeCalculator />} />
+          <Route path="/calculator/time" element={<TimeCalculator />} />
+          <Route path="/calculator/gpa" element={<GPACalculator />} />
+          <Route path="/calculator/grade" element={<GradeCalculator />} />
+          <Route path="/calculator/tip" element={<TipCalculator />} />
+          <Route path="/calculator/date" element={<DateCalculator />} />
+          <Route path="/calculator/password" element={<PasswordGenerator />} />
+          <Route path="/calculator/time-zone" element={<TimeZoneCalculator />} />
+          <Route path="/calculator/retirement" element={<RetirementCalculator />} />
+          <Route path="/calculator/investment" element={<InvestmentCalculator />} />
+          <Route path="/calculator/inflation" element={<InflationCalculator />} />
+          <Route path="/calculator/sales-tax" element={<SalesTaxCalculator />} />
+          <Route path="/calculator/savings" element={<SavingsCalculator />} />
+          <Route path="/calculator/apr" element={<APRCalculator />} />
+          <Route path="/calculator/budget" element={<BudgetCalculator />} />
+          <Route path="/calculator/401k" element={<The401KCalculator />} />
+          <Route path="/calculator/area" element={<AreaCalculator />} />
+          <Route path="/calculator/volume" element={<VolumeCalculator />} />
+          <Route path="/calculator/slope" element={<SlopeCalculator />} />
+          <Route path="/calculator/fraction" element={<FractionCalculator />} />
+          <Route path="/calculator/basic" element={<BasicCalculator />} />
+          <Route path="/calculator/average" element={<AverageCalculator />} />
+          <Route path="/calculator/payment" element={<PaymentCalculator />} />
+          <Route path="/calculator/amortization" element={<AmortizationCalculator />} />
+          <Route path="/calculator/finance" element={<FinanceCalculator />} />
+          <Route path="/calculator/income-tax" element={<IncomeTaxCalculator />} />
+          <Route path="/calculator/house-affordability" element={<HouseAffordabilityCalculator />} />
+          <Route path="/calculator/rent" element={<RentCalculator />} />
+          <Route path="/calculator/carbohydrate" element={<CarbohydrateCalculator />} />
+          <Route path="/calculator/healthy-weight" element={<HealthyWeightCalculator />} />
+          <Route path="/calculator/percent-error" element={<PercentErrorCalculator />} />
+          <Route path="/calculator/binary" element={<BinaryCalculator />} />
+          <Route path="/calculator/mileage" element={<MileageCalculator />} />
+          <Route path="/calculator/fuel-cost" element={<FuelCostCalculator />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
