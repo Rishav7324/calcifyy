@@ -17,8 +17,24 @@ const ScientificCalculator = () => {
 
   const calculate = () => {
     try {
-      const result = eval(display.replace("×", "*").replace("÷", "/"));
-      setDisplay(result.toString());
+      // Safe calculation without eval() - parse and evaluate mathematical expressions
+      const expression = display.replace(/×/g, "*").replace(/÷/g, "/");
+      
+      // Basic validation - only allow numbers, operators, parentheses, spaces, and decimal points
+      if (!/^[\d+\-*/().\s]+$/.test(expression)) {
+        setDisplay("Error");
+        return;
+      }
+      
+      // Use Function constructor with strict validation as a safer alternative to eval
+      // This still evaluates expressions but in a more controlled way
+      const result = Function('"use strict"; return (' + expression + ')')();
+      
+      if (typeof result === 'number' && isFinite(result)) {
+        setDisplay(result.toString());
+      } else {
+        setDisplay("Error");
+      }
     } catch (error) {
       setDisplay("Error");
     }

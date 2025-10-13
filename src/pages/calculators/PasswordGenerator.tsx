@@ -27,9 +27,13 @@ const PasswordGenerator = () => {
       return;
     }
     
+    // Use cryptographically secure random number generation
+    const array = new Uint32Array(length);
+    window.crypto.getRandomValues(array);
+    
     let result = "";
     for (let i = 0; i < length; i++) {
-      result += chars.charAt(Math.floor(Math.random() * chars.length));
+      result += chars.charAt(array[i] % chars.length);
     }
     setPassword(result);
   };
