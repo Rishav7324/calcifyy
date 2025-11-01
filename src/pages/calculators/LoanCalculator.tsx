@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
+import CalculatorContentSection from "@/components/CalculatorContentSection";
 
 const LoanCalculator = () => {
   const [principal, setPrincipal] = useState("");
@@ -168,6 +169,84 @@ const LoanCalculator = () => {
           )}
         </Card>
       </div>
+
+      <CalculatorContentSection
+        aboutContent="An EMI (Equated Monthly Installment) calculator is an essential financial planning tool that helps you understand the exact monthly payment required to repay a loan. Whether you're considering a personal loan, car loan, or home loan, this calculator provides instant insights into your financial commitment. By entering the loan amount, interest rate, and repayment period, you can make informed decisions about loan affordability and compare different loan offers. Understanding your EMI helps with budgeting, prevents overextension of finances, and allows you to plan for future financial goals while managing debt responsibly."
+        useCases={[
+          {
+            title: "Home Loan Planning",
+            description: "Calculate affordable mortgage payments before house hunting. Compare different loan amounts and terms to find the sweet spot between monthly budget and dream home."
+          },
+          {
+            title: "Auto Loan Comparison",
+            description: "Evaluate different car financing options by comparing EMIs across various loan terms and interest rates to find the most cost-effective auto loan."
+          },
+          {
+            title: "Personal Loan Assessment",
+            description: "Determine if a personal loan fits your budget for major expenses like medical bills, weddings, or home renovations by calculating the monthly financial impact."
+          },
+          {
+            title: "Business Expansion Financing",
+            description: "Plan business loans for equipment purchases or expansion by understanding the monthly cash flow impact before committing to business financing."
+          },
+          {
+            title: "Debt Consolidation Strategy",
+            description: "Compare your current multiple EMIs with a potential consolidated loan to see if debt consolidation could reduce your monthly financial burden."
+          },
+          {
+            title: "Educational Loan Planning",
+            description: "Calculate future EMI obligations for student loans to understand post-graduation financial responsibilities and plan career choices accordingly."
+          }
+        ]}
+        tips={[
+          {
+            title: "Choose the Right Tenure",
+            description: "Shorter loan tenures mean higher EMIs but significantly lower total interest. Longer tenures offer lower monthly payments but accumulate more interest over time. Balance affordability with cost-effectiveness."
+          },
+          {
+            title: "Follow the 40% Rule",
+            description: "Financial advisors recommend keeping total EMI payments below 40% of your monthly income. This ensures you have sufficient funds for other expenses, emergencies, and savings."
+          },
+          {
+            title: "Compare Multiple Offers",
+            description: "Even a 0.5% difference in interest rates can result in thousands of dollars in savings over the loan term. Always compare offers from multiple lenders before committing."
+          },
+          {
+            title: "Consider Pre-payment Options",
+            description: "Many loans allow partial prepayments without penalties. Making occasional lump sum payments can significantly reduce your overall interest burden and shorten the loan tenure."
+          },
+          {
+            title: "Factor in Hidden Costs",
+            description: "Remember to account for processing fees, insurance premiums, and other charges when calculating the true cost of your loan beyond just the EMI amount."
+          }
+        ]}
+        faqs={[
+          {
+            question: "What is EMI and how is it calculated?",
+            answer: "EMI (Equated Monthly Installment) is a fixed monthly payment you make to repay a loan. It's calculated using the formula: EMI = [P × R × (1+R)^N] / [(1+R)^N-1], where P is the principal amount, R is the monthly interest rate, and N is the number of monthly installments. Each EMI includes both principal repayment and interest charges."
+          },
+          {
+            question: "Does EMI amount remain fixed throughout the loan tenure?",
+            answer: "Yes, in most cases, EMI remains constant throughout the loan period. However, the composition changes over time - initially, a larger portion goes toward interest and a smaller portion toward principal. As the loan matures, more of your EMI goes toward principal repayment. This is called an amortization schedule."
+          },
+          {
+            question: "How does interest rate affect my EMI?",
+            answer: "Interest rate directly impacts your EMI amount. Even a small change in interest rate can significantly affect your monthly payment and total interest paid. For example, on a $100,000 loan over 15 years, a 1% increase in interest rate can add over $50 to your monthly EMI and thousands to your total repayment."
+          },
+          {
+            question: "Is it better to choose longer or shorter loan tenure?",
+            answer: "It depends on your financial situation. Shorter tenure means higher EMI but much lower total interest paid, saving you money long-term. Longer tenure offers lower monthly payments but costs more in total interest. Choose based on your monthly cash flow capacity and long-term financial goals."
+          },
+          {
+            question: "Can I reduce my EMI after taking a loan?",
+            answer: "While you can't directly reduce EMI once it's fixed, you can make prepayments to reduce the outstanding principal, which allows you to either reduce the tenure or request an EMI reduction. Some lenders also allow EMI reduction through loan restructuring, though this may extend your tenure and increase total interest."
+          },
+          {
+            question: "What happens if I miss an EMI payment?",
+            answer: "Missing EMI payments can have serious consequences including late payment fees, damage to your credit score, penalty interest charges, and potential legal action by the lender. If you're facing difficulty, contact your lender immediately to discuss options like EMI restructuring or temporary payment holidays."
+          }
+        ]}
+      />
     </CalculatorLayout>
   );
 };

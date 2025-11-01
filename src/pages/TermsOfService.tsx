@@ -41,19 +41,31 @@ const TermsOfService = () => {
 
             <section>
               <h2 className="text-2xl font-semibold mb-3">4. Accuracy of Calculations</h2>
-              <p className="text-muted-foreground">
+              <p className="text-muted-foreground mb-3">
                 While we strive to provide accurate calculations, we do not guarantee the accuracy, 
                 completeness, or reliability of any calculation results. Users should verify important 
                 calculations with professional advisors.
+              </p>
+              <p className="text-muted-foreground">
+                Our calculators are designed to provide estimates and general information for educational 
+                purposes. For critical financial, medical, or legal decisions, always consult with qualified 
+                professionals such as financial advisors, doctors, lawyers, or certified accountants who can 
+                provide personalized advice based on your specific circumstances.
               </p>
             </section>
 
             <section>
               <h2 className="text-2xl font-semibold mb-3">5. Limitations</h2>
-              <p className="text-muted-foreground">
+              <p className="text-muted-foreground mb-3">
                 In no event shall our company or its suppliers be liable for any damages (including, 
                 without limitation, damages for loss of data or profit, or due to business interruption) 
                 arising out of the use or inability to use our services.
+              </p>
+              <p className="text-muted-foreground">
+                This includes but is not limited to direct, indirect, incidental, punitive, and consequential 
+                damages. Some jurisdictions do not allow the exclusion of certain warranties or limitations 
+                on liability, so some of the above limitations may not apply to you. In such cases, our 
+                liability will be limited to the maximum extent permitted by law.
               </p>
             </section>
 

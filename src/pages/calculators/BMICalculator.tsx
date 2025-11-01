@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
+import CalculatorContentSection from "@/components/CalculatorContentSection";
 
 const BMICalculator = () => {
   const [weight, setWeight] = useState("");
@@ -152,6 +153,68 @@ const BMICalculator = () => {
           )}
         </Card>
       </div>
+
+      <CalculatorContentSection
+        aboutContent="Body Mass Index (BMI) is a widely-used screening tool that helps assess whether a person has a healthy body weight relative to their height. While BMI doesn't directly measure body fat, it provides a quick and easy way to identify potential weight-related health risks. Healthcare professionals use BMI as one of several factors when evaluating overall health status. It's important to note that BMI is most accurate for adults aged 20 and older, and may not be appropriate for athletes, pregnant women, or individuals with certain medical conditions."
+        useCases={[
+          {
+            title: "Health Screening",
+            description: "Healthcare providers use BMI as an initial screening tool to identify patients who may benefit from further health assessments and lifestyle counseling."
+          },
+          {
+            title: "Weight Management Goals",
+            description: "Track your progress when working toward weight loss or gain goals by monitoring BMI changes over time alongside other health metrics."
+          },
+          {
+            title: "Insurance Assessments",
+            description: "Many insurance companies use BMI as one factor in determining health insurance premiums and coverage eligibility."
+          },
+          {
+            title: "Fitness Planning",
+            description: "Establish baseline measurements before starting a new fitness or nutrition program to track effectiveness over time."
+          }
+        ]}
+        tips={[
+          {
+            title: "Measure Accurately",
+            description: "For the most accurate BMI calculation, measure your weight first thing in the morning after using the bathroom, and measure height without shoes against a flat wall."
+          },
+          {
+            title: "Consider Body Composition",
+            description: "BMI doesn't distinguish between muscle and fat mass. Athletes with high muscle mass may have elevated BMI despite low body fat percentage."
+          },
+          {
+            title: "Track Trends Over Time",
+            description: "Rather than focusing on a single BMI measurement, track changes over several months to identify meaningful patterns and trends."
+          },
+          {
+            title: "Consult Healthcare Professionals",
+            description: "Always discuss BMI results with your doctor, especially if you have concerns about your weight or overall health. BMI is just one tool among many."
+          }
+        ]}
+        faqs={[
+          {
+            question: "Is BMI accurate for everyone?",
+            answer: "BMI is a useful screening tool for most adults, but it has limitations. It may not be accurate for athletes, bodybuilders, pregnant women, elderly individuals, or those with certain medical conditions. BMI doesn't account for muscle mass, bone density, or fat distribution, so it should be used alongside other health assessments."
+          },
+          {
+            question: "What BMI is considered healthy?",
+            answer: "For adults, a BMI between 18.5 and 24.9 is generally considered healthy. BMI under 18.5 is underweight, 25-29.9 is overweight, and 30 or above is obese. However, these ranges may vary slightly based on age, ethnicity, and individual health factors."
+          },
+          {
+            question: "How often should I calculate my BMI?",
+            answer: "For general health monitoring, calculating BMI once every few months is sufficient. If you're actively working on weight management goals, monthly calculations can help track progress. Avoid daily measurements as normal weight fluctuations can be misleading."
+          },
+          {
+            question: "Can BMI predict health problems?",
+            answer: "BMI can indicate increased risk for certain health conditions like heart disease, diabetes, and high blood pressure, but it's not a diagnostic tool. Many factors contribute to health risks, including diet, exercise, genetics, and lifestyle habits."
+          },
+          {
+            question: "Why is my BMI different from what I expected?",
+            answer: "BMI is based solely on height and weight ratios and doesn't consider individual variations in body composition, frame size, or muscle mass. If your BMI seems inconsistent with your fitness level or appearance, consult a healthcare provider for a comprehensive health assessment."
+          }
+        ]}
+      />
     </CalculatorLayout>
   );
 };
