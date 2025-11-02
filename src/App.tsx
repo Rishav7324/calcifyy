@@ -84,6 +84,12 @@ import HealthCalculators from "./pages/HealthCalculators";
 import MathCalculators from "./pages/MathCalculators";
 import OtherCalculators from "./pages/OtherCalculators";
 import AllCalculators from "./pages/AllCalculators";
+import ImageTools from "./pages/ImageTools";
+import CropImage from "./pages/tools/CropImage";
+import ResizeImage from "./pages/tools/ResizeImage";
+import CompressImage from "./pages/tools/CompressImage";
+import ConvertImage from "./pages/tools/ConvertImage";
+import ColorPicker from "./pages/tools/ColorPicker";
 
 const queryClient = new QueryClient();
 
@@ -174,6 +180,12 @@ const App = () => (
           <Route path="/calculator/binary" element={<BinaryCalculator />} />
           <Route path="/calculator/mileage" element={<MileageCalculator />} />
           <Route path="/calculator/fuel-cost" element={<FuelCostCalculator />} />
+          <Route path="/image-tools" element={<ImageTools />} />
+          <Route path="/tool/crop-image" element={<CropImage />} />
+          <Route path="/tool/resize-image" element={<ResizeImage />} />
+          <Route path="/tool/compress-image" element={<CompressImage />} />
+          <Route path="/tool/convert-image" element={<ConvertImage />} />
+          <Route path="/tool/color-picker" element={<ColorPicker />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

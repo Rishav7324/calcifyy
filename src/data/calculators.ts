@@ -83,11 +83,11 @@ export const otherCalculators: Calculator[] = [
 ];
 
 export const imageTools: Calculator[] = [
-  { id: "crop-image", name: "Crop Image", description: "Crop images online", category: "tools", path: "/tool/crop-image", implemented: false },
-  { id: "resize-image", name: "Image Resizer", description: "Resize images", category: "tools", path: "/tool/resize-image", implemented: false },
-  { id: "compress-image", name: "Image Compressor", description: "Compress images", category: "tools", path: "/tool/compress-image", implemented: false },
-  { id: "convert-image", name: "Image Converter", description: "Convert image formats", category: "tools", path: "/tool/convert-image", implemented: false },
-  { id: "color-picker", name: "Color Picker", description: "Pick colors from images", category: "tools", path: "/tool/color-picker", implemented: false },
+  { id: "crop-image", name: "Crop Image", description: "Crop images online", category: "tools", path: "/tool/crop-image", implemented: true },
+  { id: "resize-image", name: "Image Resizer", description: "Resize images", category: "tools", path: "/tool/resize-image", implemented: true },
+  { id: "compress-image", name: "Image Compressor", description: "Compress images", category: "tools", path: "/tool/compress-image", implemented: true },
+  { id: "convert-image", name: "Image Converter", description: "Convert image formats", category: "tools", path: "/tool/convert-image", implemented: true },
+  { id: "color-picker", name: "Color Picker", description: "Pick colors from images", category: "tools", path: "/tool/color-picker", implemented: true },
 ];
 
 export const allCalculators = [

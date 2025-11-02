@@ -5,10 +5,12 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { CurrencySelector, getCurrencySymbol } from "@/components/CurrencySelector";
 
 const SalaryCalculator = () => {
   const [amount, setAmount] = useState("");
   const [period, setPeriod] = useState("annual");
+  const [currency, setCurrency] = useState("USD");
   const [result, setResult] = useState<any>(null);
 
   const calculate = () => {
@@ -42,8 +44,10 @@ const SalaryCalculator = () => {
         <Card className="glass-card p-8 animate-slide-in">
           <h2 className="text-2xl font-bold mb-6">Salary Input</h2>
           <div className="space-y-6">
+            <CurrencySelector value={currency} onChange={setCurrency} />
+            
             <div>
-              <Label>Salary Amount ($)</Label>
+              <Label>Salary Amount ({getCurrencySymbol(currency)})</Label>
               <Input type="number" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="60000" className="mt-2 h-12 glass-card border-primary/30" />
             </div>
             <div>
@@ -69,27 +73,27 @@ const SalaryCalculator = () => {
             <div className="space-y-4">
               <div className="p-4 rounded-lg glass-card border border-primary/20">
                 <div className="text-sm text-muted-foreground">Annual</div>
-                <div className="text-2xl font-bold">${result.annual}</div>
+                <div className="text-2xl font-bold">{getCurrencySymbol(currency)}{result.annual}</div>
               </div>
               <div className="p-4 rounded-lg glass-card border border-primary/20">
                 <div className="text-sm text-muted-foreground">Monthly</div>
-                <div className="text-2xl font-bold">${result.monthly}</div>
+                <div className="text-2xl font-bold">{getCurrencySymbol(currency)}{result.monthly}</div>
               </div>
               <div className="p-4 rounded-lg glass-card border border-primary/20">
                 <div className="text-sm text-muted-foreground">Bi-weekly</div>
-                <div className="text-2xl font-bold">${result.biweekly}</div>
+                <div className="text-2xl font-bold">{getCurrencySymbol(currency)}{result.biweekly}</div>
               </div>
               <div className="p-4 rounded-lg glass-card border border-primary/20">
                 <div className="text-sm text-muted-foreground">Weekly</div>
-                <div className="text-2xl font-bold">${result.weekly}</div>
+                <div className="text-2xl font-bold">{getCurrencySymbol(currency)}{result.weekly}</div>
               </div>
               <div className="p-4 rounded-lg glass-card border border-primary/20">
                 <div className="text-sm text-muted-foreground">Daily</div>
-                <div className="text-2xl font-bold">${result.daily}</div>
+                <div className="text-2xl font-bold">{getCurrencySymbol(currency)}{result.daily}</div>
               </div>
               <div className="p-4 rounded-lg glass-card border border-primary/20">
                 <div className="text-sm text-muted-foreground">Hourly</div>
-                <div className="text-2xl font-bold">${result.hourly}</div>
+                <div className="text-2xl font-bold">{getCurrencySymbol(currency)}{result.hourly}</div>
               </div>
             </div>
           ) : (

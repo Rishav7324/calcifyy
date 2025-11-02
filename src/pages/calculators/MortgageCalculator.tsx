@@ -5,12 +5,14 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
 import CalculatorContentSection from "@/components/CalculatorContentSection";
+import { CurrencySelector, getCurrencySymbol } from "@/components/CurrencySelector";
 
 const MortgageCalculator = () => {
   const [loanAmount, setLoanAmount] = useState("");
   const [interestRate, setInterestRate] = useState("");
   const [loanTerm, setLoanTerm] = useState("");
   const [downPayment, setDownPayment] = useState("");
+  const [currency, setCurrency] = useState("USD");
   const [result, setResult] = useState<any>(null);
 
   const calculate = () => {
@@ -42,12 +44,14 @@ const MortgageCalculator = () => {
         <Card className="glass-card p-8 animate-slide-in">
           <h2 className="text-2xl font-bold mb-6">Loan Details</h2>
           <div className="space-y-6">
+            <CurrencySelector value={currency} onChange={setCurrency} />
+            
             <div>
-              <Label>Home Price ($)</Label>
+              <Label>Home Price ({getCurrencySymbol(currency)})</Label>
               <Input type="number" value={loanAmount} onChange={(e) => setLoanAmount(e.target.value)} className="mt-2 h-12 glass-card border-primary/30" />
             </div>
             <div>
-              <Label>Down Payment ($)</Label>
+              <Label>Down Payment ({getCurrencySymbol(currency)})</Label>
               <Input type="number" value={downPayment} onChange={(e) => setDownPayment(e.target.value)} className="mt-2 h-12 glass-card border-primary/30" />
             </div>
             <div>
@@ -70,16 +74,16 @@ const MortgageCalculator = () => {
             <div className="space-y-6">
               <div className="text-center py-8">
                 <div className="text-sm text-muted-foreground mb-2">Monthly Payment</div>
-                <div className="text-5xl font-bold gradient-primary bg-clip-text text-transparent">${result.monthlyPayment}</div>
+                <div className="text-5xl font-bold gradient-primary bg-clip-text text-transparent">{getCurrencySymbol(currency)}{result.monthlyPayment}</div>
               </div>
               <div className="space-y-4">
                 <div className="p-4 rounded-lg glass-card border border-primary/20">
                   <div className="text-sm text-muted-foreground">Total Payment</div>
-                  <div className="text-2xl font-bold text-primary">${result.totalPayment}</div>
+                  <div className="text-2xl font-bold text-primary">{getCurrencySymbol(currency)}{result.totalPayment}</div>
                 </div>
                 <div className="p-4 rounded-lg glass-card border border-secondary/20">
                   <div className="text-sm text-muted-foreground">Total Interest</div>
-                  <div className="text-2xl font-bold text-secondary">${result.totalInterest}</div>
+                  <div className="text-2xl font-bold text-secondary">{getCurrencySymbol(currency)}{result.totalInterest}</div>
                 </div>
               </div>
             </div>

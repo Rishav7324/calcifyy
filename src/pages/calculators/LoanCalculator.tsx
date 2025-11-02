@@ -5,11 +5,13 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
 import CalculatorContentSection from "@/components/CalculatorContentSection";
+import { CurrencySelector, getCurrencySymbol } from "@/components/CurrencySelector";
 
 const LoanCalculator = () => {
   const [principal, setPrincipal] = useState("");
   const [rate, setRate] = useState("");
   const [tenure, setTenure] = useState("");
+  const [currency, setCurrency] = useState("USD");
   const [result, setResult] = useState<{
     emi: number;
     totalPayment: number;
@@ -67,8 +69,10 @@ const LoanCalculator = () => {
         <Card className="glass-card p-8 animate-slide-in">
           <h2 className="text-2xl font-bold mb-6">Loan Details</h2>
           <div className="space-y-6">
+            <CurrencySelector value={currency} onChange={setCurrency} />
+            
             <div>
-              <Label htmlFor="principal" className="text-lg">Loan Amount ($)</Label>
+              <Label htmlFor="principal" className="text-lg">Loan Amount ({getCurrencySymbol(currency)})</Label>
               <Input
                 id="principal"
                 type="number"
@@ -122,7 +126,7 @@ const LoanCalculator = () => {
               <div className="text-center py-8">
                 <div className="text-sm text-muted-foreground mb-2">Monthly EMI</div>
                 <div className="text-5xl font-bold mb-2 gradient-primary bg-clip-text text-transparent">
-                  ${result.emi.toLocaleString()}
+                  {getCurrencySymbol(currency)}{result.emi.toLocaleString()}
                 </div>
                 <div className="text-sm text-muted-foreground">per month</div>
               </div>
@@ -131,14 +135,14 @@ const LoanCalculator = () => {
                 <div className="p-4 rounded-lg glass-card border border-primary/20">
                   <div className="text-sm text-muted-foreground mb-1">Total Payment</div>
                   <div className="text-2xl font-bold text-primary">
-                    ${result.totalPayment.toLocaleString()}
+                    {getCurrencySymbol(currency)}{result.totalPayment.toLocaleString()}
                   </div>
                 </div>
 
                 <div className="p-4 rounded-lg glass-card border border-secondary/20">
                   <div className="text-sm text-muted-foreground mb-1">Total Interest</div>
                   <div className="text-2xl font-bold text-secondary">
-                    ${result.totalInterest.toLocaleString()}
+                    {getCurrencySymbol(currency)}{result.totalInterest.toLocaleString()}
                   </div>
                 </div>
 
