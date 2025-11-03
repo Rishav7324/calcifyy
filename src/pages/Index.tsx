@@ -11,7 +11,7 @@ const Index = () => {
       description: "Loans, EMI, Investment, Tax & More",
       gradient: "from-blue-500 to-purple-600",
       calculators: ["Loan Calculator", "EMI Calculator", "Currency Converter", "ROI Calculator"],
-      path: "/financial"
+      path: "/financial-calculators"
     },
     {
       title: "Health & Fitness",
@@ -19,39 +19,39 @@ const Index = () => {
       description: "BMI, BMR, Calories & Body Metrics",
       gradient: "from-pink-500 to-rose-600",
       calculators: ["BMI Calculator", "BMR Calculator", "Calorie Calculator", "Body Fat %"],
-      path: "/health"
+      path: "/health-calculators"
     },
     {
-      title: "Education Tools",
+      title: "Math Calculators",
       icon: GraduationCap,
-      description: "GPA, CGPA, Grades & Study Tools",
+      description: "Algebra, Geometry, Statistics & More",
       gradient: "from-emerald-500 to-teal-600",
-      calculators: ["GPA Calculator", "Grade Calculator", "Age Calculator", "Study Planner"],
-      path: "/education"
+      calculators: ["Scientific Calculator", "Percentage", "Fraction", "Pythagorean"],
+      path: "/math-calculators"
     },
     {
-      title: "Unit Converters",
+      title: "Other Calculators",
       icon: Repeat,
-      description: "Length, Weight, Temperature & More",
+      description: "Converters, Utilities & Daily Tools",
       gradient: "from-orange-500 to-amber-600",
-      calculators: ["Length", "Weight", "Temperature", "Area"],
-      path: "/converters"
+      calculators: ["Date Calculator", "Age Calculator", "Time Zone", "Dice Roller"],
+      path: "/other-calculators"
     },
     {
-      title: "Daily Utilities",
+      title: "Image Tools",
       icon: Clock,
-      description: "Date, Time, Discount & Practical Tools",
+      description: "Crop, Resize, Compress & Convert Images",
       gradient: "from-cyan-500 to-blue-600",
-      calculators: ["Discount Calculator", "Date Difference", "Tip Calculator", "Fuel Cost"],
-      path: "/utilities"
+      calculators: ["Crop Image", "Resize Image", "Compress Image", "Convert Image"],
+      path: "/image-tools"
     },
     {
-      title: "Business & Analytics",
+      title: "All Calculators",
       icon: TrendingUp,
-      description: "Profit, Margin, Growth & Metrics",
+      description: "Browse Complete Collection",
       gradient: "from-violet-500 to-purple-600",
-      calculators: ["Profit Margin", "Break Even", "Growth Rate", "Conversion Rate"],
-      path: "/business"
+      calculators: ["100+ Calculators", "Financial", "Health", "Math & More"],
+      path: "/all-calculators"
     }
   ];
 
@@ -75,13 +75,13 @@ const Index = () => {
               </span>
             </Link>
             <div className="hidden md:flex items-center gap-6">
-              <Link to="/calculators" className="text-foreground/80 hover:text-primary transition-colors">
+              <Link to="/all-calculators" className="text-foreground/80 hover:text-primary transition-colors">
                 All Calculators
               </Link>
-              <Link to="/financial" className="text-foreground/80 hover:text-primary transition-colors">
+              <Link to="/financial-calculators" className="text-foreground/80 hover:text-primary transition-colors">
                 Financial
               </Link>
-              <Link to="/health" className="text-foreground/80 hover:text-primary transition-colors">
+              <Link to="/health-calculators" className="text-foreground/80 hover:text-primary transition-colors">
                 Health
               </Link>
             </div>
@@ -246,12 +246,16 @@ const Index = () => {
               Join millions of users who trust CalcHub for their daily calculations
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="gradient-primary text-lg px-8">
-                Browse All Calculators
-              </Button>
-              <Button size="lg" variant="outline" className="glass-card border-primary/30 text-lg px-8">
-                View Converters
-              </Button>
+              <Link to="/all-calculators">
+                <Button size="lg" className="gradient-primary text-lg px-8">
+                  Browse All Calculators
+                </Button>
+              </Link>
+              <Link to="/image-tools">
+                <Button size="lg" variant="outline" className="glass-card border-primary/30 text-lg px-8">
+                  View Image Tools
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -270,19 +274,19 @@ const Index = () => {
             <div>
               <h4 className="font-bold text-lg mb-4">Calculators</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><Link to="/financial" className="hover:text-primary transition-colors">Financial</Link></li>
-                <li><Link to="/health" className="hover:text-primary transition-colors">Health</Link></li>
-                <li><Link to="/education" className="hover:text-primary transition-colors">Education</Link></li>
-                <li><Link to="/converters" className="hover:text-primary transition-colors">Converters</Link></li>
+                <li><Link to="/financial-calculators" className="hover:text-primary transition-colors">Financial</Link></li>
+                <li><Link to="/health-calculators" className="hover:text-primary transition-colors">Health</Link></li>
+                <li><Link to="/math-calculators" className="hover:text-primary transition-colors">Math</Link></li>
+                <li><Link to="/other-calculators" className="hover:text-primary transition-colors">Other</Link></li>
               </ul>
             </div>
             <div>
-              <h4 className="font-bold text-lg mb-4">Resources</h4>
+              <h4 className="font-bold text-lg mb-4">Tools</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><Link to="/blog" className="hover:text-primary transition-colors">Blog</Link></li>
-                <li><Link to="/guides" className="hover:text-primary transition-colors">Guides</Link></li>
-                <li><Link to="/api" className="hover:text-primary transition-colors">API</Link></li>
-                <li><Link to="/help" className="hover:text-primary transition-colors">Help Center</Link></li>
+                <li><Link to="/image-tools" className="hover:text-primary transition-colors">Image Tools</Link></li>
+                <li><Link to="/all-calculators" className="hover:text-primary transition-colors">All Calculators</Link></li>
+                <li><Link to="/calculator/currency" className="hover:text-primary transition-colors">Currency Converter</Link></li>
+                <li><Link to="/calculator/bmi" className="hover:text-primary transition-colors">BMI Calculator</Link></li>
               </ul>
             </div>
             <div>
@@ -290,8 +294,8 @@ const Index = () => {
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li><Link to="/about" className="hover:text-primary transition-colors">About Us</Link></li>
                 <li><Link to="/contact" className="hover:text-primary transition-colors">Contact</Link></li>
-                <li><Link to="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link></li>
-                <li><Link to="/terms" className="hover:text-primary transition-colors">Terms of Service</Link></li>
+                <li><Link to="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</Link></li>
+                <li><Link to="/terms-of-service" className="hover:text-primary transition-colors">Terms of Service</Link></li>
               </ul>
             </div>
           </div>
