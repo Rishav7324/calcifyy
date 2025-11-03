@@ -9,6 +9,8 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
+import CookiePolicy from "./pages/CookiePolicy";
+import Disclaimer from "./pages/Disclaimer";
 import BMICalculator from "./pages/calculators/BMICalculator";
 import LoanCalculator from "./pages/calculators/LoanCalculator";
 import DiscountCalculator from "./pages/calculators/DiscountCalculator";
@@ -103,6 +105,8 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
+          <Route path="/cookie-policy" element={<CookiePolicy />} />
+          <Route path="/disclaimer" element={<Disclaimer />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
           <Route path="/financial-calculators" element={<FinancialCalculators />} />

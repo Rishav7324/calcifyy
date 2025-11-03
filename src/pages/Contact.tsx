@@ -116,14 +116,20 @@ const Contact = () => {
             <Card className="p-6 bg-card/80 backdrop-blur">
               <h3 className="font-semibold text-lg mb-3">Quick Links</h3>
               <div className="space-y-2">
+                <Link to="/about" className="block text-primary hover:underline">
+                  About Us
+                </Link>
                 <Link to="/privacy-policy" className="block text-primary hover:underline">
                   Privacy Policy
                 </Link>
                 <Link to="/terms-of-service" className="block text-primary hover:underline">
                   Terms of Service
                 </Link>
-                <Link to="/about" className="block text-primary hover:underline">
-                  About Us
+                <Link to="/cookie-policy" className="block text-primary hover:underline">
+                  Cookie Policy
+                </Link>
+                <Link to="/disclaimer" className="block text-primary hover:underline">
+                  Disclaimer
                 </Link>
               </div>
             </Card>
