@@ -2,10 +2,19 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Calculator, Heart, TrendingUp, Users } from "lucide-react";
+import { SEO } from "@/components/SEO";
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-secondary/20 to-background">
+    <>
+      <SEO 
+        title="About Us - CalcHub"
+        description="Learn about CalcHub, your trusted source for free online calculators. We provide accurate calculation tools for finance, health, math, and everyday needs."
+        keywords="about calchub, calculator website, free online tools, calculation platform"
+        canonicalUrl="https://calcifyy.lovable.app/about"
+      />
+      
+      <div className="min-h-screen bg-gradient-to-br from-background via-secondary/20 to-background">
       <div className="container mx-auto px-4 py-12 max-w-4xl">
         <Link to="/" className="text-primary hover:underline mb-6 inline-block">
           ← Back to Home
@@ -174,7 +183,8 @@ const About = () => {
           </Link>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 };
 

@@ -15,18 +15,18 @@ const CalculatorLayout = ({ title, description, children, formula, explanation }
   return (
     <div className="min-h-screen">
       {/* Navbar */}
-      <nav className="sticky top-0 z-50 glass-card border-b border-primary/20">
+      <nav className="sticky top-0 z-50 glass-card border-b border-primary/20" role="navigation" aria-label="Calculator navigation">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <Link to="/" className="flex items-center gap-2 group">
-              <Calculator className="w-8 h-8 text-primary group-hover:rotate-12 transition-transform" />
+            <Link to="/" className="flex items-center gap-2 group" aria-label="CalcHub home">
+              <Calculator className="w-8 h-8 text-primary group-hover:rotate-12 transition-transform" aria-hidden="true" />
               <span className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                 CalcHub
               </span>
             </Link>
             <Link to="/">
               <Button variant="outline" size="sm" className="glass-card border-primary/30">
-                <ArrowLeft className="w-4 h-4 mr-2" />
+                <ArrowLeft className="w-4 h-4 mr-2" aria-hidden="true" />
                 Back to Home
               </Button>
             </Link>
@@ -34,27 +34,27 @@ const CalculatorLayout = ({ title, description, children, formula, explanation }
         </div>
       </nav>
 
-      <div className="container mx-auto px-4 py-12">
+      <main className="container mx-auto px-4 py-12">
         {/* Header */}
-        <div className="max-w-5xl mx-auto mb-8 text-center animate-fade-in">
+        <header className="max-w-5xl mx-auto mb-8 text-center animate-fade-in">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
             {title}
           </h1>
           <p className="text-lg text-muted-foreground">{description}</p>
-        </div>
+        </header>
 
         {/* Calculator Content */}
-        <div className="max-w-5xl mx-auto">
+        <section className="max-w-5xl mx-auto" aria-label="Calculator interface">
           {children}
-        </div>
+        </section>
 
         {/* Formula & Explanation */}
         {(formula || explanation) && (
-          <div className="max-w-5xl mx-auto mt-12 space-y-6">
+          <section className="max-w-5xl mx-auto mt-12 space-y-6" aria-label="Additional information">
             {formula && (
               <div className="glass-card p-6 rounded-xl animate-scale-in">
                 <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-                  <span className="text-primary">📐</span>
+                  <span className="text-primary" aria-hidden="true">📐</span>
                   Formula Used
                 </h3>
                 <div className="bg-background/50 p-4 rounded-lg font-mono text-primary">
@@ -66,7 +66,7 @@ const CalculatorLayout = ({ title, description, children, formula, explanation }
             {explanation && (
               <div className="glass-card p-6 rounded-xl animate-scale-in" style={{ animationDelay: "100ms" }}>
                 <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-                  <span className="text-primary">💡</span>
+                  <span className="text-primary" aria-hidden="true">💡</span>
                   How It Works
                 </h3>
                 <div className="prose prose-invert max-w-none text-muted-foreground">
@@ -74,12 +74,12 @@ const CalculatorLayout = ({ title, description, children, formula, explanation }
                 </div>
               </div>
             )}
-          </div>
+          </section>
         )}
-      </div>
+      </main>
 
       {/* Footer */}
-      <footer className="border-t border-primary/20 py-8 mt-20">
+      <footer className="border-t border-primary/20 py-8 mt-20" role="contentinfo">
         <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
           <p>© 2025 CalcHub. All rights reserved.</p>
         </div>

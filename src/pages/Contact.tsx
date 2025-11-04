@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, MessageSquare, Send } from "lucide-react";
+import { SEO } from "@/components/SEO";
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -26,7 +27,15 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-secondary/20 to-background">
+    <>
+      <SEO 
+        title="Contact Us - CalcHub"
+        description="Get in touch with CalcHub. Have questions or feedback? We'd love to hear from you. Contact us for support, suggestions, or inquiries."
+        keywords="contact calchub, calculator support, feedback, customer service"
+        canonicalUrl="https://calcifyy.lovable.app/contact"
+      />
+      
+      <div className="min-h-screen bg-gradient-to-br from-background via-secondary/20 to-background">
       <div className="container mx-auto px-4 py-12 max-w-4xl">
         <Link to="/" className="text-primary hover:underline mb-6 inline-block">
           ← Back to Home
@@ -136,7 +145,8 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 };
 

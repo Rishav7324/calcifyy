@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 import { allCalculators } from "@/data/calculators";
+import { SEO } from "@/components/SEO";
 
 const AllCalculators = () => {
   const [search, setSearch] = useState("");
@@ -26,7 +27,15 @@ const AllCalculators = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <>
+      <SEO 
+        title="All Calculators - Complete Collection"
+        description="Browse our complete collection of 100+ free online calculators. Find financial, health, math, and conversion calculators all in one place."
+        keywords="all calculators, online calculator list, calculator collection, free tools"
+        canonicalUrl="https://calcifyy.lovable.app/all-calculators"
+      />
+      
+      <div className="min-h-screen">
       <nav className="sticky top-0 z-50 glass-card border-b border-primary/20">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
@@ -119,7 +128,8 @@ const AllCalculators = () => {
           )}
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 };
 

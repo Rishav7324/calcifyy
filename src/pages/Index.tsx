@@ -1,7 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Search, Calculator, DollarSign, Heart, GraduationCap, Repeat, Clock, TrendingUp } from "lucide-react";
+import { Search, Calculator, DollarSign, Heart, GraduationCap, Repeat, Clock, TrendingUp, Menu } from "lucide-react";
 import { Link } from "react-router-dom";
+import { SEO } from "@/components/SEO";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 const Index = () => {
   const categories = [
@@ -63,34 +65,83 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen">
-      {/* Navbar */}
-      <nav className="sticky top-0 z-50 glass-card border-b border-primary/20">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <Link to="/" className="flex items-center gap-2 group">
-              <Calculator className="w-8 h-8 text-primary group-hover:rotate-12 transition-transform" />
-              <span className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                CalcHub
-              </span>
-            </Link>
-            <div className="hidden md:flex items-center gap-6">
-              <Link to="/all-calculators" className="text-foreground/80 hover:text-primary transition-colors">
-                All Calculators
+    <>
+      <SEO 
+        title="CalcHub - Free Online Calculators & Tools"
+        description="Access 100+ free online calculators for financial planning, health & fitness, math problems, and everyday calculations. Fast, accurate, and easy to use."
+        keywords="calculator, online calculator, free calculator, BMI calculator, loan calculator, mortgage calculator, math calculator, percentage calculator"
+        canonicalUrl="https://calcifyy.lovable.app"
+      />
+      
+      <div className="min-h-screen">
+        {/* Navbar */}
+        <nav className="sticky top-0 z-50 glass-card border-b border-primary/20" role="navigation" aria-label="Main navigation">
+          <div className="container mx-auto px-4 py-4">
+            <div className="flex items-center justify-between">
+              <Link to="/" className="flex items-center gap-2 group" aria-label="CalcHub home">
+                <Calculator className="w-8 h-8 text-primary group-hover:rotate-12 transition-transform" aria-hidden="true" />
+                <span className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                  CalcHub
+                </span>
               </Link>
-              <Link to="/financial-calculators" className="text-foreground/80 hover:text-primary transition-colors">
-                Financial
-              </Link>
-              <Link to="/health-calculators" className="text-foreground/80 hover:text-primary transition-colors">
-                Health
-              </Link>
+              <div className="hidden md:flex items-center gap-6">
+                <Link to="/all-calculators" className="text-foreground/80 hover:text-primary transition-colors">
+                  All Calculators
+                </Link>
+                <Link to="/financial-calculators" className="text-foreground/80 hover:text-primary transition-colors">
+                  Financial
+                </Link>
+                <Link to="/health-calculators" className="text-foreground/80 hover:text-primary transition-colors">
+                  Health
+                </Link>
+                <Link to="/about" className="text-foreground/80 hover:text-primary transition-colors">
+                  About
+                </Link>
+                <Link to="/contact">
+                  <Button size="sm" className="gradient-primary">Contact Us</Button>
+                </Link>
+              </div>
+              <Sheet>
+                <SheetTrigger asChild>
+                  <Button variant="ghost" size="icon" className="md:hidden" aria-label="Open menu">
+                    <Menu className="w-6 h-6" />
+                  </Button>
+                </SheetTrigger>
+                <SheetContent>
+                  <nav className="flex flex-col gap-4 mt-8" aria-label="Mobile navigation">
+                    <Link to="/all-calculators" className="text-lg hover:text-primary transition-colors">
+                      All Calculators
+                    </Link>
+                    <Link to="/financial-calculators" className="text-lg hover:text-primary transition-colors">
+                      Financial Calculators
+                    </Link>
+                    <Link to="/health-calculators" className="text-lg hover:text-primary transition-colors">
+                      Health & Fitness
+                    </Link>
+                    <Link to="/math-calculators" className="text-lg hover:text-primary transition-colors">
+                      Math Calculators
+                    </Link>
+                    <Link to="/other-calculators" className="text-lg hover:text-primary transition-colors">
+                      Other Calculators
+                    </Link>
+                    <Link to="/image-tools" className="text-lg hover:text-primary transition-colors">
+                      Image Tools
+                    </Link>
+                    <Link to="/about" className="text-lg hover:text-primary transition-colors">
+                      About
+                    </Link>
+                    <Link to="/contact" className="text-lg hover:text-primary transition-colors">
+                      Contact
+                    </Link>
+                  </nav>
+                </SheetContent>
+              </Sheet>
             </div>
           </div>
-        </div>
-      </nav>
+        </nav>
 
-      {/* Hero Section */}
-      <section className="relative overflow-hidden py-20 md:py-32">
+        {/* Hero Section */}
+        <header className="relative overflow-hidden py-20 md:py-32">
         <div className="absolute inset-0 gradient-hero opacity-50 animate-gradient"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,hsl(217_91%_60%/0.1),transparent)]"></div>
         
@@ -133,10 +184,12 @@ const Index = () => {
             </div>
           </div>
         </div>
-      </section>
+      </header>
 
-      {/* Categories Grid */}
-      <section className="py-20 relative">
+      <main>
+
+        {/* Categories Grid */}
+        <section className="py-20 relative">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Explore by Category</h2>
@@ -177,10 +230,10 @@ const Index = () => {
             })}
           </div>
         </div>
-      </section>
+        </section>
 
-      {/* Features Section */}
-      <section className="py-20 relative overflow-hidden">
+        {/* Features Section */}
+        <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-12">
@@ -233,10 +286,10 @@ const Index = () => {
             ))}
           </div>
         </div>
-      </section>
+        </section>
 
-      {/* CTA Section */}
-      <section className="py-20">
+        {/* CTA Section */}
+        <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="glass-card rounded-3xl p-12 text-center max-w-4xl mx-auto shadow-card">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -259,10 +312,11 @@ const Index = () => {
             </div>
           </div>
         </div>
-      </section>
+        </section>
+      </main>
 
       {/* Footer */}
-      <footer className="border-t border-primary/20 py-12 mt-20">
+      <footer className="border-t border-primary/20 py-12 mt-20" role="contentinfo">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
@@ -304,7 +358,8 @@ const Index = () => {
           </div>
         </div>
       </footer>
-    </div>
+      </div>
+    </>
   );
 };
 
