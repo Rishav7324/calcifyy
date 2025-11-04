@@ -2,10 +2,10 @@ import CalculatorLayout from "@/components/CalculatorLayout";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
 import { useState, useRef, useEffect } from "react";
-import { Upload, Copy, Pipette } from "lucide-react";
+import { Upload, Copy, Pipette, Trash2 } from "lucide-react";
 import { toast } from "sonner";
+import { SEO } from "@/components/SEO";
 
 const ColorPicker = () => {
   const [image, setImage] = useState<string | null>(null);
@@ -19,13 +19,32 @@ const ColorPicker = () => {
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
+      if (!file.type.startsWith('image/')) {
+        toast.error("Please upload a valid image file");
+        return;
+      }
+      
       const reader = new FileReader();
       reader.onload = (event) => {
         setImage(event.target?.result as string);
         toast.success("Image uploaded successfully!");
       };
+      reader.onerror = () => {
+        toast.error("Failed to read image file");
+      };
       reader.readAsDataURL(file);
     }
+  };
+
+  const handleClearImage = () => {
+    setImage(null);
+    setSelectedColor("#000000");
+    setRgbColor({ r: 0, g: 0, b: 0 });
+    setHslColor({ h: 0, s: 0, l: 0 });
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
+    }
+    toast.success("Image cleared");
   };
 
   useEffect(() => {
@@ -34,11 +53,35 @@ const ColorPicker = () => {
       const ctx = canvas.getContext("2d");
       const img = imageRef.current;
 
-      img.onload = () => {
-        canvas.width = img.width;
-        canvas.height = img.height;
-        ctx?.drawImage(img, 0, 0);
+      const loadImage = () => {
+        // Set max dimensions to prevent performance issues
+        const maxWidth = 1200;
+        const maxHeight = 800;
+        
+        let width = img.naturalWidth;
+        let height = img.naturalHeight;
+        
+        // Scale down if necessary
+        if (width > maxWidth || height > maxHeight) {
+          const ratio = Math.min(maxWidth / width, maxHeight / height);
+          width = width * ratio;
+          height = height * ratio;
+        }
+        
+        canvas.width = width;
+        canvas.height = height;
+        
+        if (ctx) {
+          ctx.clearRect(0, 0, width, height);
+          ctx.drawImage(img, 0, 0, width, height);
+        }
       };
+
+      if (img.complete) {
+        loadImage();
+      } else {
+        img.onload = loadImage;
+      }
     }
   }, [image]);
 
@@ -77,18 +120,40 @@ const ColorPicker = () => {
     if (!ctx) return;
 
     const rect = canvas.getBoundingClientRect();
-    const x = (e.clientX - rect.left) * (canvas.width / rect.width);
-    const y = (e.clientY - rect.top) * (canvas.height / rect.height);
+    
+    // Calculate exact pixel coordinates accounting for scaling
+    const scaleX = canvas.width / rect.width;
+    const scaleY = canvas.height / rect.height;
+    
+    const x = Math.floor((e.clientX - rect.left) * scaleX);
+    const y = Math.floor((e.clientY - rect.top) * scaleY);
 
-    const pixel = ctx.getImageData(x, y, 1, 1).data;
-    const r = pixel[0];
-    const g = pixel[1];
-    const b = pixel[2];
+    // Make sure coordinates are within bounds
+    if (x < 0 || x >= canvas.width || y < 0 || y >= canvas.height) {
+      return;
+    }
 
-    setRgbColor({ r, g, b });
-    setSelectedColor(`#${((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)}`);
-    setHslColor(rgbToHsl(r, g, b));
-    toast.success("Color picked!");
+    try {
+      const pixel = ctx.getImageData(x, y, 1, 1).data;
+      const r = pixel[0];
+      const g = pixel[1];
+      const b = pixel[2];
+
+      setRgbColor({ r, g, b });
+      
+      // Format hex color properly (ensure 6 digits)
+      const hex = '#' + [r, g, b].map(val => {
+        const hexVal = val.toString(16);
+        return hexVal.length === 1 ? '0' + hexVal : hexVal;
+      }).join('');
+      
+      setSelectedColor(hex);
+      setHslColor(rgbToHsl(r, g, b));
+      toast.success("Color picked!");
+    } catch (error) {
+      console.error("Error picking color:", error);
+      toast.error("Failed to pick color");
+    }
   };
 
   const copyToClipboard = (text: string, label: string) => {
@@ -97,103 +162,135 @@ const ColorPicker = () => {
   };
 
   return (
-    <CalculatorLayout
-      title="Color Picker"
-      description="Pick colors from images and get HEX, RGB, and HSL values"
-    >
-      <div className="max-w-4xl mx-auto">
-        <Card className="p-6 space-y-6">
-          <div className="space-y-4">
-            <Label>Upload Image</Label>
-            <div className="flex gap-2">
-              <Input
-                ref={fileInputRef}
-                type="file"
-                accept="image/*"
-                onChange={handleImageUpload}
-                className="flex-1"
-              />
-              <Button onClick={() => fileInputRef.current?.click()}>
-                <Upload className="w-4 h-4 mr-2" />
-                Upload
-              </Button>
-            </div>
-          </div>
+    <>
+      <SEO 
+        title="Color Picker Tool - Pick Colors from Images"
+        description="Free online color picker tool. Upload an image and pick any color to get HEX, RGB, and HSL color codes instantly."
+        keywords="color picker, image color picker, hex color picker, rgb color picker, color code generator"
+        canonicalUrl="https://calcifyy.lovable.app/tool/color-picker"
+      />
+      
+      <CalculatorLayout
+        title="Color Picker"
+        description="Pick colors from images and get HEX, RGB, and HSL values"
+      >
+        <div className="max-w-4xl mx-auto">
+          <Card className="p-6 space-y-6">
+            {!image ? (
+              <div className="space-y-4">
+                <Label htmlFor="image-upload">Upload Image</Label>
+                <div 
+                  className="border-2 border-dashed border-primary/30 rounded-lg p-12 text-center hover:border-primary/50 transition-colors cursor-pointer bg-muted/20"
+                  onClick={() => fileInputRef.current?.click()}
+                >
+                  <Upload className="w-12 h-12 mx-auto mb-4 text-primary" />
+                  <p className="text-lg font-medium mb-2">Click to upload an image</p>
+                  <p className="text-sm text-muted-foreground">or drag and drop</p>
+                  <p className="text-xs text-muted-foreground mt-2">Supports: JPG, PNG, GIF, WebP</p>
+                </div>
+                <input
+                  id="image-upload"
+                  ref={fileInputRef}
+                  type="file"
+                  accept="image/*"
+                  onChange={handleImageUpload}
+                  className="hidden"
+                />
+              </div>
+            ) : (
+              <div className="flex gap-2 justify-end">
+                <Button variant="outline" size="sm" onClick={handleClearImage}>
+                  <Trash2 className="w-4 h-4 mr-2" />
+                  Clear Image
+                </Button>
+              </div>
+            )}
 
           {image && (
             <>
               <div className="space-y-4">
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <Pipette className="w-4 h-4" />
-                  <span>Click anywhere on the image to pick a color</span>
+                <div className="flex items-center gap-2 p-3 bg-primary/10 border border-primary/20 rounded-lg">
+                  <Pipette className="w-4 h-4 text-primary flex-shrink-0" />
+                  <span className="text-sm font-medium">Click anywhere on the image to pick a color</span>
                 </div>
                 
-                <div className="border rounded-lg overflow-hidden bg-muted/20">
-                  <canvas
-                    ref={canvasRef}
-                    onClick={handleCanvasClick}
-                    className="max-w-full h-auto cursor-crosshair"
-                  />
-                  <img
-                    ref={imageRef}
-                    src={image}
-                    alt="Color picker"
-                    className="hidden"
-                  />
+                <div className="border-2 border-border rounded-lg overflow-hidden bg-muted/30 shadow-lg">
+                  <div className="relative">
+                    <canvas
+                      ref={canvasRef}
+                      onClick={handleCanvasClick}
+                      className="max-w-full h-auto cursor-crosshair hover:opacity-95 transition-opacity"
+                      style={{ display: 'block' }}
+                    />
+                    <img
+                      ref={imageRef}
+                      src={image}
+                      alt="Color picker source"
+                      className="hidden"
+                      crossOrigin="anonymous"
+                    />
+                  </div>
                 </div>
               </div>
 
-              <div className="grid gap-4">
-                <div className="flex items-center gap-4 p-4 bg-muted/20 rounded-lg">
-                  <div
-                    className="w-24 h-24 rounded-lg border-2 border-border shadow-lg"
-                    style={{ backgroundColor: selectedColor }}
-                  />
-                  <div className="flex-1 space-y-3">
-                    <div className="flex items-center justify-between gap-2">
-                      <div>
-                        <div className="text-sm text-muted-foreground">HEX</div>
-                        <div className="font-mono font-bold text-lg">{selectedColor.toUpperCase()}</div>
-                      </div>
-                      <Button
-                        size="sm"
-                        variant="outline"
-                        onClick={() => copyToClipboard(selectedColor.toUpperCase(), "HEX")}
-                      >
-                        <Copy className="w-4 h-4" />
-                      </Button>
-                    </div>
-                    
-                    <div className="flex items-center justify-between gap-2">
-                      <div>
-                        <div className="text-sm text-muted-foreground">RGB</div>
-                        <div className="font-mono font-bold">
-                          rgb({rgbColor.r}, {rgbColor.g}, {rgbColor.b})
+              <div className="space-y-4">
+                <h3 className="text-lg font-semibold">Picked Color</h3>
+                <div className="glass-card p-6 rounded-lg space-y-4">
+                  <div className="flex items-center gap-6">
+                    <div
+                      className="w-32 h-32 rounded-lg border-4 border-border shadow-glow flex-shrink-0"
+                      style={{ backgroundColor: selectedColor }}
+                      aria-label={`Color preview: ${selectedColor}`}
+                    />
+                    <div className="flex-1 grid gap-3">
+                      <div className="flex items-center justify-between gap-2 p-3 bg-background/50 rounded-lg">
+                        <div className="flex-1">
+                          <div className="text-xs text-muted-foreground mb-1">HEX</div>
+                          <div className="font-mono font-bold text-lg">{selectedColor.toUpperCase()}</div>
                         </div>
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          onClick={() => copyToClipboard(selectedColor.toUpperCase(), "HEX")}
+                          aria-label="Copy HEX color"
+                        >
+                          <Copy className="w-4 h-4" />
+                        </Button>
                       </div>
-                      <Button
-                        size="sm"
-                        variant="outline"
-                        onClick={() => copyToClipboard(`rgb(${rgbColor.r}, ${rgbColor.g}, ${rgbColor.b})`, "RGB")}
-                      >
-                        <Copy className="w-4 h-4" />
-                      </Button>
-                    </div>
-                    
-                    <div className="flex items-center justify-between gap-2">
-                      <div>
-                        <div className="text-sm text-muted-foreground">HSL</div>
-                        <div className="font-mono font-bold">
-                          hsl({hslColor.h}, {hslColor.s}%, {hslColor.l}%)
+                      
+                      <div className="flex items-center justify-between gap-2 p-3 bg-background/50 rounded-lg">
+                        <div className="flex-1">
+                          <div className="text-xs text-muted-foreground mb-1">RGB</div>
+                          <div className="font-mono font-bold">
+                            rgb({rgbColor.r}, {rgbColor.g}, {rgbColor.b})
+                          </div>
                         </div>
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          onClick={() => copyToClipboard(`rgb(${rgbColor.r}, ${rgbColor.g}, ${rgbColor.b})`, "RGB")}
+                          aria-label="Copy RGB color"
+                        >
+                          <Copy className="w-4 h-4" />
+                        </Button>
                       </div>
-                      <Button
-                        size="sm"
-                        variant="outline"
-                        onClick={() => copyToClipboard(`hsl(${hslColor.h}, ${hslColor.s}%, ${hslColor.l}%)`, "HSL")}
-                      >
-                        <Copy className="w-4 h-4" />
-                      </Button>
+                      
+                      <div className="flex items-center justify-between gap-2 p-3 bg-background/50 rounded-lg">
+                        <div className="flex-1">
+                          <div className="text-xs text-muted-foreground mb-1">HSL</div>
+                          <div className="font-mono font-bold">
+                            hsl({hslColor.h}, {hslColor.s}%, {hslColor.l}%)
+                          </div>
+                        </div>
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          onClick={() => copyToClipboard(`hsl(${hslColor.h}, ${hslColor.s}%, ${hslColor.l}%)`, "HSL")}
+                          aria-label="Copy HSL color"
+                        >
+                          <Copy className="w-4 h-4" />
+                        </Button>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -203,6 +300,7 @@ const ColorPicker = () => {
         </Card>
       </div>
     </CalculatorLayout>
+    </>
   );
 };
 
