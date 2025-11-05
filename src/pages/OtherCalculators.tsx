@@ -3,10 +3,17 @@ import { Calculator as CalcIcon, ArrowLeft, Wrench } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { otherCalculators } from "@/data/calculators";
+import { SEO } from "@/components/SEO";
 
 const OtherCalculators = () => {
   return (
-    <div className="min-h-screen">
+    <>
+      <SEO
+        title="Daily Utility Calculators - Age, Time, GPA & More Tools"
+        description="Practical tools for everyday calculations. Free online calculators for age, date, time, GPA, password generation, and more daily utilities."
+        keywords="utility calculator, age calculator, date calculator, time calculator, GPA calculator, password generator, everyday tools"
+      />
+      <div className="min-h-screen">
       <nav className="sticky top-0 z-50 glass-card border-b border-primary/20">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
@@ -76,6 +83,7 @@ const OtherCalculators = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

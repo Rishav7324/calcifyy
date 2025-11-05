@@ -7,6 +7,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { useState, useRef } from "react";
 import { Upload, Download, Maximize2 } from "lucide-react";
 import { toast } from "sonner";
+import { SEO } from "@/components/SEO";
 
 const ResizeImage = () => {
   const [image, setImage] = useState<string | null>(null);
@@ -72,10 +73,16 @@ const ResizeImage = () => {
   };
 
   return (
-    <CalculatorLayout
-      title="Resize Image"
-      description="Resize images to custom dimensions or popular social media sizes"
-    >
+    <>
+      <SEO
+        title="Resize Image Online Free - Image Resizer Tool"
+        description="Free online image resizer. Resize images to custom dimensions or popular social media sizes. Perfect for Instagram, Facebook, Twitter, and YouTube."
+        keywords="resize image, image resizer, scale image, resize photo, social media image sizes, instagram image size"
+      />
+      <CalculatorLayout
+        title="Resize Image"
+        description="Resize images to custom dimensions or popular social media sizes"
+      >
       <div className="max-w-4xl mx-auto">
 
         <Card className="p-6 space-y-6">
@@ -155,6 +162,7 @@ const ResizeImage = () => {
         </Card>
       </div>
     </CalculatorLayout>
+    </>
   );
 };
 

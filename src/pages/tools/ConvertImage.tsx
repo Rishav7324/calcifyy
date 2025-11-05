@@ -7,6 +7,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { useState, useRef } from "react";
 import { Upload, Download, RefreshCw } from "lucide-react";
 import { toast } from "sonner";
+import { SEO } from "@/components/SEO";
 
 const ConvertImage = () => {
   const [image, setImage] = useState<string | null>(null);
@@ -74,10 +75,16 @@ const ConvertImage = () => {
   };
 
   return (
-    <CalculatorLayout
-      title="Convert Image"
-      description="Convert images between different formats (PNG, JPEG, WebP)"
-    >
+    <>
+      <SEO
+        title="Convert Image Online Free - PNG, JPEG, WebP Converter"
+        description="Free online image converter. Convert images between PNG, JPEG, WebP formats instantly. Fast and secure image format conversion."
+        keywords="convert image, image converter, png to jpg, jpg to png, webp converter, image format converter"
+      />
+      <CalculatorLayout
+        title="Convert Image"
+        description="Convert images between different formats (PNG, JPEG, WebP)"
+      >
       <div className="max-w-4xl mx-auto">
         <Card className="p-6 space-y-6">
           <div className="space-y-4">
@@ -144,6 +151,7 @@ const ConvertImage = () => {
         </Card>
       </div>
     </CalculatorLayout>
+    </>
   );
 };
 

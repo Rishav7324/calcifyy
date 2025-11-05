@@ -3,10 +3,17 @@ import { Calculator, ArrowLeft, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { healthCalculators } from "@/data/calculators";
+import { SEO } from "@/components/SEO";
 
 const HealthCalculators = () => {
   return (
-    <div className="min-h-screen">
+    <>
+      <SEO
+        title="Health & Fitness Calculators - BMI, Calorie, TDEE & More"
+        description="Track your health metrics and fitness goals. Free online calculators for BMI, calorie needs, body fat, ideal weight, and more health metrics."
+        keywords="health calculator, fitness calculator, BMI calculator, calorie calculator, TDEE calculator, body fat calculator, ideal weight"
+      />
+      <div className="min-h-screen">
       <nav className="sticky top-0 z-50 glass-card border-b border-primary/20">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
@@ -76,6 +83,7 @@ const HealthCalculators = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

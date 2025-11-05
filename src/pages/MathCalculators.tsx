@@ -3,10 +3,17 @@ import { Calculator as CalcIcon, ArrowLeft, Binary } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { mathCalculators } from "@/data/calculators";
+import { SEO } from "@/components/SEO";
 
 const MathCalculators = () => {
   return (
-    <div className="min-h-screen">
+    <>
+      <SEO
+        title="Math Calculators - Scientific, Algebra, Geometry & More"
+        description="Advanced mathematical tools and calculators. Free online calculators for percentage, scientific calculations, geometry, fractions, and more."
+        keywords="math calculator, scientific calculator, percentage calculator, fraction calculator, geometry calculator, algebra calculator"
+      />
+      <div className="min-h-screen">
       <nav className="sticky top-0 z-50 glass-card border-b border-primary/20">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
@@ -76,6 +83,7 @@ const MathCalculators = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

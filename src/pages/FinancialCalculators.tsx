@@ -3,10 +3,17 @@ import { Calculator, ArrowLeft, DollarSign } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { financialCalculators } from "@/data/calculators";
+import { SEO } from "@/components/SEO";
 
 const FinancialCalculators = () => {
   return (
-    <div className="min-h-screen">
+    <>
+      <SEO
+        title="Financial Calculators - Free Online Finance & Investment Tools"
+        description="Comprehensive suite of financial planning and calculation tools. Calculate mortgages, loans, investments, retirement, and more with our free financial calculators."
+        keywords="financial calculator, mortgage calculator, loan calculator, investment calculator, retirement calculator, budget calculator"
+      />
+      <div className="min-h-screen">
       {/* Navbar */}
       <nav className="sticky top-0 z-50 glass-card border-b border-primary/20">
         <div className="container mx-auto px-4 py-4">
@@ -79,6 +86,7 @@ const FinancialCalculators = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

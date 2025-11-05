@@ -3,13 +3,20 @@ import { Card } from "@/components/ui/card";
 import { imageTools } from "@/data/calculators";
 import { Link } from "react-router-dom";
 import { Image, ArrowRight } from "lucide-react";
+import { SEO } from "@/components/SEO";
 
 const ImageTools = () => {
   return (
-    <CalculatorLayout
-      title="Image Tools"
-      description="Professional image editing tools - crop, resize, compress, and convert images online"
-    >
+    <>
+      <SEO
+        title="Free Online Image Tools - Edit, Resize, Compress & Convert"
+        description="Professional image editing tools - crop, resize, compress, and convert images online. Free image manipulation tools for all your needs."
+        keywords="image tools, edit images online, resize image, compress image, convert image, crop image, image editor"
+      />
+      <CalculatorLayout
+        title="Image Tools"
+        description="Professional image editing tools - crop, resize, compress, and convert images online"
+      >
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {imageTools.map((tool) => (
           <Link
@@ -35,6 +42,7 @@ const ImageTools = () => {
         ))}
       </div>
     </CalculatorLayout>
+    </>
   );
 };
 
