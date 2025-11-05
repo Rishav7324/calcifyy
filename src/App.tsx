@@ -94,6 +94,15 @@ import ResizeImage from "./pages/tools/ResizeImage";
 import CompressImage from "./pages/tools/CompressImage";
 import ConvertImage from "./pages/tools/ConvertImage";
 import ColorPicker from "./pages/tools/ColorPicker";
+import TextTools from "./pages/TextTools";
+import WordCounter from "./pages/tools/WordCounter";
+import CaseConverter from "./pages/tools/CaseConverter";
+import LoremIpsum from "./pages/tools/LoremIpsum";
+import URLEncoder from "./pages/tools/URLEncoder";
+import Base64Tool from "./pages/tools/Base64Tool";
+import JSONFormatter from "./pages/tools/JSONFormatter";
+import QRCodeGenerator from "./pages/tools/QRCodeGenerator";
+import HashGenerator from "./pages/tools/HashGenerator";
 
 const queryClient = new QueryClient();
 
@@ -194,6 +203,15 @@ const App = () => (
           <Route path="/tool/compress-image" element={<CompressImage />} />
           <Route path="/tool/convert-image" element={<ConvertImage />} />
           <Route path="/tool/color-picker" element={<ColorPicker />} />
+          <Route path="/text-tools" element={<TextTools />} />
+          <Route path="/tool/word-counter" element={<WordCounter />} />
+          <Route path="/tool/case-converter" element={<CaseConverter />} />
+          <Route path="/tool/lorem-ipsum" element={<LoremIpsum />} />
+          <Route path="/tool/url-encoder" element={<URLEncoder />} />
+          <Route path="/tool/base64" element={<Base64Tool />} />
+          <Route path="/tool/json-formatter" element={<JSONFormatter />} />
+          <Route path="/tool/qr-code" element={<QRCodeGenerator />} />
+          <Route path="/tool/hash-generator" element={<HashGenerator />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

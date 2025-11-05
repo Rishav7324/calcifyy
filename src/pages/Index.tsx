@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Search, Calculator, DollarSign, Heart, GraduationCap, Repeat, Clock, TrendingUp, Menu } from "lucide-react";
+import { Search, Calculator, DollarSign, Heart, GraduationCap, Repeat, Clock, TrendingUp, Menu, FileText, Image as ImageIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 import { SEO } from "@/components/SEO";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -41,11 +41,19 @@ const Index = () => {
     },
     {
       title: "Image Tools",
-      icon: Clock,
+      icon: ImageIcon,
       description: "Crop, Resize, Compress & Convert Images",
       gradient: "from-cyan-500 to-blue-600",
       calculators: ["Crop Image", "Resize Image", "Compress Image", "Convert Image"],
       path: "/image-tools"
+    },
+    {
+      title: "Text & Developer Tools",
+      icon: FileText,
+      description: "Text Formatting, Encoding & Generation",
+      gradient: "from-indigo-500 to-blue-600",
+      calculators: ["Word Counter", "Case Converter", "JSON Formatter", "QR Code"],
+      path: "/text-tools"
     },
     {
       title: "All Calculators",

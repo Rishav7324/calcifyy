@@ -90,10 +90,22 @@ export const imageTools: Calculator[] = [
   { id: "color-picker", name: "Color Picker", description: "Pick colors from images", category: "tools", path: "/tool/color-picker", implemented: true },
 ];
 
+export const textTools: Calculator[] = [
+  { id: "word-counter", name: "Word Counter", description: "Count words, characters, and sentences", category: "tools", path: "/tool/word-counter", implemented: true },
+  { id: "case-converter", name: "Case Converter", description: "Convert text case (upper, lower, title)", category: "tools", path: "/tool/case-converter", implemented: true },
+  { id: "lorem-ipsum", name: "Lorem Ipsum Generator", description: "Generate placeholder text", category: "tools", path: "/tool/lorem-ipsum", implemented: true },
+  { id: "url-encoder", name: "URL Encoder/Decoder", description: "Encode and decode URLs", category: "tools", path: "/tool/url-encoder", implemented: true },
+  { id: "base64", name: "Base64 Encoder/Decoder", description: "Encode and decode Base64", category: "tools", path: "/tool/base64", implemented: true },
+  { id: "json-formatter", name: "JSON Formatter", description: "Format and validate JSON", category: "tools", path: "/tool/json-formatter", implemented: true },
+  { id: "qr-code", name: "QR Code Generator", description: "Generate QR codes", category: "tools", path: "/tool/qr-code", implemented: true },
+  { id: "hash-generator", name: "Hash Generator", description: "Generate MD5, SHA-1, SHA-256 hashes", category: "tools", path: "/tool/hash-generator", implemented: true },
+];
+
 export const allCalculators = [
   ...financialCalculators,
   ...healthCalculators,
   ...mathCalculators,
   ...otherCalculators,
   ...imageTools,
+  ...textTools,
 ];
