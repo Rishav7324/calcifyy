@@ -3,20 +3,15 @@ import { Card } from "@/components/ui/card";
 import { textTools } from "@/data/calculators";
 import { Link } from "react-router-dom";
 import { FileText, ArrowRight } from "lucide-react";
-import { SEO } from "@/components/SEO";
 
 const TextTools = () => {
   return (
-    <>
-      <SEO
-        title="Free Online Text Tools - Word Counter, Case Converter & More"
-        description="Professional text editing tools - word counter, case converter, Lorem Ipsum generator, URL encoder, Base64 encoder, JSON formatter, and more."
-        keywords="text tools, word counter, case converter, lorem ipsum, url encoder, base64, json formatter, qr code, hash generator"
-      />
-      <CalculatorLayout
-        title="Text & Developer Tools"
-        description="Professional text and developer utilities - formatting, encoding, and generation tools"
-      >
+    <CalculatorLayout
+      title="Text & Developer Tools"
+      description="Professional text and developer utilities - formatting, encoding, and generation tools"
+      keywords="text tools, word counter, case converter, lorem ipsum, url encoder, base64, json formatter, qr code, hash generator"
+      canonicalUrl="https://calcifyy.lovable.app/text-tools"
+    >
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {textTools.map((tool) => (
             <Link
@@ -42,7 +37,6 @@ const TextTools = () => {
           ))}
         </div>
       </CalculatorLayout>
-    </>
   );
 };
 

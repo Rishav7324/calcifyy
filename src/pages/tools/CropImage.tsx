@@ -6,7 +6,6 @@ import { Input } from "@/components/ui/input";
 import { useState, useRef } from "react";
 import { Upload, Download, RotateCw } from "lucide-react";
 import { toast } from "sonner";
-import { SEO } from "@/components/SEO";
 
 const CropImage = () => {
   const [image, setImage] = useState<string | null>(null);
@@ -63,16 +62,12 @@ const CropImage = () => {
   };
 
   return (
-    <>
-      <SEO
-        title="Crop Image Online Free - Image Cropping Tool"
-        description="Free online image cropping tool. Upload and crop your images to the perfect size. Precise image cropping with custom dimensions."
-        keywords="crop image, image cropper, crop photo, cut image, trim image, image crop tool"
-      />
-      <CalculatorLayout
-        title="Crop Image"
-        description="Upload and crop your images to the perfect size"
-      >
+    <CalculatorLayout
+      title="Crop Image"
+      description="Upload and crop your images to the perfect size"
+      keywords="crop image, image cropper, crop photo, cut image, trim image, image crop tool"
+      canonicalUrl="https://calcifyy.lovable.app/tool/crop-image"
+    >
       <div className="max-w-4xl mx-auto">
 
         <Card className="p-6 space-y-6">
@@ -152,7 +147,6 @@ const CropImage = () => {
         </Card>
       </div>
     </CalculatorLayout>
-    </>
   );
 };
 

@@ -2,6 +2,8 @@ import { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Calculator } from "lucide-react";
 import { Button } from "./ui/button";
+import { SEO } from "./SEO";
+import { Helmet } from "react-helmet-async";
 
 interface CalculatorLayoutProps {
   title: string;
@@ -9,11 +11,47 @@ interface CalculatorLayoutProps {
   children: ReactNode;
   formula?: string;
   explanation?: ReactNode;
+  keywords?: string;
+  canonicalUrl?: string;
 }
 
-const CalculatorLayout = ({ title, description, children, formula, explanation }: CalculatorLayoutProps) => {
+const CalculatorLayout = ({ title, description, children, formula, explanation, keywords, canonicalUrl }: CalculatorLayoutProps) => {
+  const currentUrl = canonicalUrl || `https://calcifyy.lovable.app${window.location.pathname}`;
+  
+  // Structured data for better SEO
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": title,
+    "description": description,
+    "url": currentUrl,
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "creator": {
+      "@type": "Organization",
+      "name": "CalcHub"
+    }
+  };
+
   return (
-    <div className="min-h-screen">
+    <>
+      <SEO 
+        title={title}
+        description={description}
+        keywords={keywords || `${title.toLowerCase()}, online calculator, free calculator tool, calculation tool`}
+        canonicalUrl={currentUrl}
+      />
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(structuredData)}
+        </script>
+      </Helmet>
+      <div className="min-h-screen">
       {/* Navbar */}
       <nav className="sticky top-0 z-50 glass-card border-b border-primary/20" role="navigation" aria-label="Calculator navigation">
         <div className="container mx-auto px-4 py-4">
@@ -85,6 +123,7 @@ const CalculatorLayout = ({ title, description, children, formula, explanation }
         </div>
       </footer>
     </div>
+    </>
   );
 };
 

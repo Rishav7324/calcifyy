@@ -4,7 +4,6 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useState, useEffect } from "react";
 import { FileText } from "lucide-react";
-import { SEO } from "@/components/SEO";
 
 const WordCounter = () => {
   const [text, setText] = useState("");
@@ -36,16 +35,12 @@ const WordCounter = () => {
   }, [text]);
 
   return (
-    <>
-      <SEO
-        title="Word Counter - Count Words, Characters & Sentences Online"
-        description="Free online word counter tool. Count words, characters, sentences, paragraphs, and estimate reading time instantly."
-        keywords="word counter, character counter, text counter, word count, sentence counter, reading time calculator"
-      />
-      <CalculatorLayout
-        title="Word Counter"
-        description="Count words, characters, sentences, and estimate reading time"
-      >
+    <CalculatorLayout
+      title="Word Counter"
+      description="Count words, characters, sentences, and estimate reading time"
+      keywords="word counter, character counter, text counter, word count, sentence counter, reading time calculator"
+      canonicalUrl="https://calcifyy.lovable.app/tool/word-counter"
+    >
         <div className="max-w-4xl mx-auto space-y-6">
           <Card className="p-6">
             <Label htmlFor="text">Enter or paste your text</Label>
@@ -109,7 +104,6 @@ const WordCounter = () => {
           </div>
         </div>
       </CalculatorLayout>
-    </>
   );
 };
 

@@ -7,7 +7,6 @@ import { Slider } from "@/components/ui/slider";
 import { useState, useRef } from "react";
 import { Upload, Download, Minimize2 } from "lucide-react";
 import { toast } from "sonner";
-import { SEO } from "@/components/SEO";
 
 const CompressImage = () => {
   const [image, setImage] = useState<string | null>(null);
@@ -87,16 +86,12 @@ const CompressImage = () => {
     : 0;
 
   return (
-    <>
-      <SEO
-        title="Compress Image Online Free - Reduce Image File Size"
-        description="Free online image compression tool. Reduce image file size while maintaining quality. Compress JPG, PNG, and other image formats instantly."
-        keywords="compress image, reduce image size, image compression, optimize images, compress jpg, compress png"
-      />
-      <CalculatorLayout
-        title="Compress Image"
-        description="Reduce image file size while maintaining quality"
-      >
+    <CalculatorLayout
+      title="Compress Image"
+      description="Reduce image file size while maintaining quality"
+      keywords="compress image, reduce image size, image compression, optimize images, compress jpg, compress png"
+      canonicalUrl="https://calcifyy.lovable.app/tool/compress-image"
+    >
       <div className="max-w-4xl mx-auto">
 
         <Card className="p-6 space-y-6">
@@ -175,7 +170,6 @@ const CompressImage = () => {
         </Card>
       </div>
     </CalculatorLayout>
-    </>
   );
 };
 

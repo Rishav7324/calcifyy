@@ -5,7 +5,6 @@ import { Label } from "@/components/ui/label";
 import { useState, useRef, useEffect } from "react";
 import { Upload, Copy, Pipette, Trash2 } from "lucide-react";
 import { toast } from "sonner";
-import { SEO } from "@/components/SEO";
 
 const ColorPicker = () => {
   const [image, setImage] = useState<string | null>(null);
@@ -162,18 +161,12 @@ const ColorPicker = () => {
   };
 
   return (
-    <>
-      <SEO 
-        title="Color Picker Tool - Pick Colors from Images"
-        description="Free online color picker tool. Upload an image and pick any color to get HEX, RGB, and HSL color codes instantly."
-        keywords="color picker, image color picker, hex color picker, rgb color picker, color code generator"
-        canonicalUrl="https://calcifyy.lovable.app/tool/color-picker"
-      />
-      
-      <CalculatorLayout
-        title="Color Picker"
-        description="Pick colors from images and get HEX, RGB, and HSL values"
-      >
+    <CalculatorLayout
+      title="Color Picker"
+      description="Pick colors from images and get HEX, RGB, and HSL values"
+      keywords="color picker, image color picker, hex color picker, rgb color picker, color code generator"
+      canonicalUrl="https://calcifyy.lovable.app/tool/color-picker"
+    >
         <div className="max-w-4xl mx-auto">
           <Card className="p-6 space-y-6">
             {!image ? (
@@ -300,7 +293,6 @@ const ColorPicker = () => {
         </Card>
       </div>
     </CalculatorLayout>
-    </>
   );
 };
 
