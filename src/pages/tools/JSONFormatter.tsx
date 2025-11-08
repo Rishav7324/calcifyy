@@ -6,7 +6,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
 import { Braces, Copy, CheckCircle, XCircle } from "lucide-react";
 import { toast } from "sonner";
-import { SEO } from "@/components/SEO";
 
 const JSONFormatter = () => {
   const [input, setInput] = useState("");
@@ -45,15 +44,11 @@ const JSONFormatter = () => {
   };
 
   return (
-    <>
-      <SEO
-        title="JSON Formatter & Validator - Format & Minify JSON Online"
-        description="Free online JSON formatter and validator. Format, validate, and minify JSON data instantly. Check JSON syntax errors."
-        keywords="json formatter, json validator, format json, minify json, json beautifier, json parser"
-      />
       <CalculatorLayout
         title="JSON Formatter & Validator"
         description="Format, validate, and minify JSON data"
+        keywords="json formatter, json validator, format json, minify json, json beautifier, json parser"
+        canonicalUrl="https://calcifyy.lovable.app/tool/json-formatter"
       >
         <div className="max-w-4xl mx-auto space-y-6">
           <Card className="p-6 space-y-4">
@@ -107,7 +102,6 @@ const JSONFormatter = () => {
           )}
         </div>
       </CalculatorLayout>
-    </>
   );
 };
 

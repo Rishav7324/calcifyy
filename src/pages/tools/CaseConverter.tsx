@@ -6,7 +6,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
 import { Type, Copy } from "lucide-react";
 import { toast } from "sonner";
-import { SEO } from "@/components/SEO";
 
 const CaseConverter = () => {
   const [text, setText] = useState("");
@@ -45,15 +44,11 @@ const CaseConverter = () => {
   };
 
   return (
-    <>
-      <SEO
-        title="Case Converter - Upper, Lower, Title Case Converter Online"
-        description="Free online case converter. Convert text to uppercase, lowercase, title case, sentence case, camelCase, and snake_case instantly."
-        keywords="case converter, text converter, uppercase, lowercase, title case, sentence case, camel case, snake case"
-      />
       <CalculatorLayout
         title="Case Converter"
         description="Convert text between different cases - upper, lower, title, sentence, camel, and snake case"
+        keywords="case converter, text converter, uppercase, lowercase, title case, sentence case, camel case, snake case"
+        canonicalUrl="https://calcifyy.lovable.app/tool/case-converter"
       >
         <div className="max-w-4xl mx-auto space-y-6">
           <Card className="p-6">
@@ -118,7 +113,6 @@ const CaseConverter = () => {
           </div>
         </div>
       </CalculatorLayout>
-    </>
   );
 };
 

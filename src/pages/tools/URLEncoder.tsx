@@ -6,7 +6,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
 import { Link, Copy } from "lucide-react";
 import { toast } from "sonner";
-import { SEO } from "@/components/SEO";
 
 const URLEncoder = () => {
   const [input, setInput] = useState("");
@@ -38,15 +37,11 @@ const URLEncoder = () => {
   };
 
   return (
-    <>
-      <SEO
-        title="URL Encoder/Decoder - Encode & Decode URLs Online Free"
-        description="Free online URL encoder and decoder. Encode and decode URLs and URI components instantly and securely."
-        keywords="url encoder, url decoder, encode url, decode url, uri encoder, percent encoding"
-      />
       <CalculatorLayout
         title="URL Encoder/Decoder"
         description="Encode and decode URLs and URI components"
+        keywords="url encoder, url decoder, encode url, decode url, uri encoder, percent encoding"
+        canonicalUrl="https://calcifyy.lovable.app/tool/url-encoder"
       >
         <div className="max-w-4xl mx-auto space-y-6">
           <Card className="p-6 space-y-4">
@@ -89,7 +84,6 @@ const URLEncoder = () => {
           )}
         </div>
       </CalculatorLayout>
-    </>
   );
 };
 

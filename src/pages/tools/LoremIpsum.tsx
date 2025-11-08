@@ -8,7 +8,6 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { useState } from "react";
 import { FileText, Copy } from "lucide-react";
 import { toast } from "sonner";
-import { SEO } from "@/components/SEO";
 
 const LoremIpsum = () => {
   const [count, setCount] = useState("5");
@@ -56,15 +55,11 @@ const LoremIpsum = () => {
   };
 
   return (
-    <>
-      <SEO
-        title="Lorem Ipsum Generator - Free Placeholder Text Generator"
-        description="Free online Lorem Ipsum generator. Generate placeholder text in paragraphs, sentences, or words for your design projects."
-        keywords="lorem ipsum, placeholder text, dummy text, lorem ipsum generator, filler text, sample text"
-      />
       <CalculatorLayout
         title="Lorem Ipsum Generator"
         description="Generate placeholder text for your design and development projects"
+        keywords="lorem ipsum, placeholder text, dummy text, lorem ipsum generator, filler text, sample text"
+        canonicalUrl="https://calcifyy.lovable.app/tool/lorem-ipsum"
       >
         <div className="max-w-4xl mx-auto space-y-6">
           <Card className="p-6 space-y-4">
@@ -118,7 +113,6 @@ const LoremIpsum = () => {
           )}
         </div>
       </CalculatorLayout>
-    </>
   );
 };
 

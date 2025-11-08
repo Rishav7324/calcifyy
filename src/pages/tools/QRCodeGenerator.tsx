@@ -8,7 +8,6 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { useState, useRef, useEffect } from "react";
 import { QrCode, Download } from "lucide-react";
 import { toast } from "sonner";
-import { SEO } from "@/components/SEO";
 
 const QRCodeGenerator = () => {
   const [text, setText] = useState("");
@@ -39,15 +38,11 @@ const QRCodeGenerator = () => {
   };
 
   return (
-    <>
-      <SEO
-        title="QR Code Generator - Create Free QR Codes Online"
-        description="Free online QR code generator. Create QR codes for URLs, text, contact info, and more. Download high-resolution QR codes instantly."
-        keywords="qr code generator, create qr code, qr code maker, generate qr code, free qr code, qr code creator"
-      />
       <CalculatorLayout
         title="QR Code Generator"
         description="Generate QR codes for URLs, text, and more"
+        keywords="qr code generator, create qr code, qr code maker, generate qr code, free qr code, qr code creator"
+        canonicalUrl="https://calcifyy.lovable.app/tool/qr-code"
       >
         <div className="max-w-4xl mx-auto space-y-6">
           <Card className="p-6 space-y-4">
@@ -97,7 +92,6 @@ const QRCodeGenerator = () => {
           )}
         </div>
       </CalculatorLayout>
-    </>
   );
 };
 

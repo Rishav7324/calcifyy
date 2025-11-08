@@ -6,7 +6,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
 import { FileCode, Copy } from "lucide-react";
 import { toast } from "sonner";
-import { SEO } from "@/components/SEO";
 
 const Base64Tool = () => {
   const [input, setInput] = useState("");
@@ -38,15 +37,11 @@ const Base64Tool = () => {
   };
 
   return (
-    <>
-      <SEO
-        title="Base64 Encoder/Decoder - Encode & Decode Base64 Online"
-        description="Free online Base64 encoder and decoder. Encode text to Base64 or decode Base64 strings instantly and securely."
-        keywords="base64 encoder, base64 decoder, encode base64, decode base64, base64 converter, base64 tool"
-      />
       <CalculatorLayout
         title="Base64 Encoder/Decoder"
         description="Encode text to Base64 or decode Base64 strings"
+        keywords="base64 encoder, base64 decoder, encode base64, decode base64, base64 converter, base64 tool"
+        canonicalUrl="https://calcifyy.lovable.app/tool/base64"
       >
         <div className="max-w-4xl mx-auto space-y-6">
           <Card className="p-6 space-y-4">
@@ -89,7 +84,6 @@ const Base64Tool = () => {
           )}
         </div>
       </CalculatorLayout>
-    </>
   );
 };
 

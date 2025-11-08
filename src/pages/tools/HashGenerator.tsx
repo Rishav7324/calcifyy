@@ -6,7 +6,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
 import { Hash, Copy } from "lucide-react";
 import { toast } from "sonner";
-import { SEO } from "@/components/SEO";
 
 const HashGenerator = () => {
   const [input, setInput] = useState("");
@@ -58,15 +57,11 @@ const HashGenerator = () => {
   };
 
   return (
-    <>
-      <SEO
-        title="Hash Generator - MD5, SHA-1, SHA-256 Hash Generator Online"
-        description="Free online hash generator. Generate MD5, SHA-1, and SHA-256 hashes for any text or data instantly and securely."
-        keywords="hash generator, md5 generator, sha1 generator, sha256 generator, checksum generator, hash calculator"
-      />
       <CalculatorLayout
         title="Hash Generator"
         description="Generate MD5, SHA-1, and SHA-256 hashes"
+        keywords="hash generator, md5 generator, sha1 generator, sha256 generator, checksum generator, hash calculator"
+        canonicalUrl="https://calcifyy.lovable.app/tool/hash-generator"
       >
         <div className="max-w-4xl mx-auto space-y-6">
           <Card className="p-6 space-y-4">
@@ -129,7 +124,6 @@ const HashGenerator = () => {
           )}
         </div>
       </CalculatorLayout>
-    </>
   );
 };
 
