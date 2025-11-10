@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import CalculatorLayout from "@/components/CalculatorLayout";
+import CalculatorContentSection from "@/components/CalculatorContentSection";
 
 const DistanceCalculator = () => {
   const [x1, setX1] = useState("");
@@ -78,6 +79,28 @@ const DistanceCalculator = () => {
           )}
         </div>
       </Card>
+
+      <CalculatorContentSection
+        aboutContent="The distance calculator uses the Pythagorean theorem to find the straight-line distance between two points in a 2D coordinate system. This fundamental mathematical tool is essential in geometry, physics, navigation, and computer graphics. By inputting the x and y coordinates of two points, you instantly get the precise distance between them. This calculation is the foundation for countless real-world applications, from mapping and GPS navigation to game development and data analysis."
+        useCases={[
+          { title: "Mathematics & Education", description: "Learn coordinate geometry, practice distance formula problems, verify homework solutions, or visualize spatial relationships between points." },
+          { title: "Navigation & Mapping", description: "Calculate straight-line distances on maps, estimate travel distances, or plan optimal routes between locations on a coordinate grid." },
+          { title: "Computer Graphics & Gaming", description: "Calculate distances between objects in games, detect collisions, implement AI pathfinding, or measure screen coordinate separations." },
+          { title: "Data Analysis & Statistics", description: "Compute distances between data points in 2D space, identify clusters, perform proximity analysis, or calculate Euclidean distances in datasets." }
+        ]}
+        tips={[
+          { title: "Understanding Coordinates", description: "Coordinates are written as (x, y). The x-coordinate shows horizontal position, and y-coordinate shows vertical position. Negative values are allowed and indicate direction." },
+          { title: "The Pythagorean Connection", description: "The distance formula is derived from the Pythagorean theorem (a² + b² = c²). The horizontal and vertical distances form the legs, and the diagonal distance is the hypotenuse." },
+          { title: "Units Don't Matter", description: "As long as both points use the same units (pixels, meters, miles, etc.), the calculation works. The result will be in the same units as your input." },
+          { title: "Zero Distance", description: "If the calculated distance is zero, it means both points are at the exact same location - they have identical coordinates." }
+        ]}
+        faqs={[
+          { question: "What if my coordinates are negative numbers?", answer: "Negative coordinates are perfectly fine! The distance formula works with any real numbers. Negative values simply indicate position relative to the origin (0,0) on the coordinate plane." },
+          { question: "Is this the actual travel distance between two points?", answer: "No, this calculates the straight-line distance 'as the crow flies.' Actual travel distance would be longer if you must follow roads or paths. This gives you the shortest possible distance." },
+          { question: "Can I use this calculator for 3D coordinates?", answer: "This calculator is designed for 2D (x, y) coordinates only. For 3D distance calculations involving x, y, and z coordinates, you'd need a 3D distance calculator that extends the formula to three dimensions." },
+          { question: "Why do I get a decimal result?", answer: "Distance calculations often result in irrational numbers, especially when the points don't align horizontally or vertically. The calculator provides precise decimal results for accuracy." }
+        ]}
+      />
     </CalculatorLayout>
   );
 };

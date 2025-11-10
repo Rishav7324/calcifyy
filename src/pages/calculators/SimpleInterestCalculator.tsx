@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
+import CalculatorContentSection from "@/components/CalculatorContentSection";
 
 const SimpleInterestCalculator = () => {
   const [principal, setPrincipal] = useState("");
@@ -70,6 +71,28 @@ const SimpleInterestCalculator = () => {
           )}
         </Card>
       </div>
+
+      <CalculatorContentSection
+        aboutContent="The simple interest calculator helps you determine the interest earned or paid on a principal amount over time using a fixed interest rate. Unlike compound interest, simple interest is calculated only on the original principal, making it straightforward and easy to understand. This calculator is essential for loans, investments, bonds, and financial planning where simple interest applies. By entering the principal amount, interest rate, and time period, you can instantly see how much interest will accrue and what the total amount will be."
+        useCases={[
+          { title: "Personal Loans & Borrowing", description: "Calculate total interest owed on simple interest loans, understand borrowing costs, or compare loan offers to find the most affordable option." },
+          { title: "Savings & Investments", description: "Estimate returns on savings accounts, certificates of deposit (CDs), or treasury bonds that use simple interest calculations." },
+          { title: "Financial Planning", description: "Project future value of investments, plan for financial goals, or understand how different rates and time periods affect returns." },
+          { title: "Education & Learning", description: "Learn fundamental finance concepts, practice interest calculations, or understand the difference between simple and compound interest." }
+        ]}
+        tips={[
+          { title: "Simple vs Compound Interest", description: "Simple interest is calculated only on the principal amount, while compound interest includes interest on previously earned interest. Simple interest results in lower returns/costs over time." },
+          { title: "Annual Percentage Rate", description: "Interest rates are typically quoted as annual rates. If you're calculating for months, convert the time to years (months ÷ 12) for accurate results." },
+          { title: "When Simple Interest Applies", description: "Simple interest is common in short-term loans, some personal loans, car loans, and certain bonds. Most savings accounts use compound interest instead." },
+          { title: "Break-Even Analysis", description: "Use this calculator to determine how long it takes to earn a specific amount of interest, helping with investment timing decisions." }
+        ]}
+        faqs={[
+          { question: "What is the difference between simple and compound interest?", answer: "Simple interest is calculated only on the original principal amount throughout the entire investment or loan period. Compound interest is calculated on both the principal and accumulated interest, resulting in interest earning interest. Compound interest grows faster over time." },
+          { question: "How do I convert monthly interest rate to annual?", answer: "Multiply the monthly rate by 12 to get the annual rate. Conversely, divide an annual rate by 12 to get the monthly rate. Make sure the rate and time period match in your calculations." },
+          { question: "Can I use this calculator for monthly or daily interest?", answer: "Yes, but adjust your time period accordingly. If using a monthly rate, enter time in months. If using a daily rate, enter time in days. Most commonly, annual rates and years are used." },
+          { question: "Is simple interest better than compound interest?", answer: "It depends on your perspective. For borrowers, simple interest results in lower total interest paid. For investors, compound interest generates higher returns. Simple interest is simpler to calculate but less common in modern finance." }
+        ]}
+      />
     </CalculatorLayout>
   );
 };

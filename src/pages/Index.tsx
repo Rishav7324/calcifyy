@@ -75,10 +75,10 @@ const Index = () => {
   return (
     <>
       <SEO 
-        title="CalcHub - Free Online Calculators & Tools"
+        title="PrimeMetric - Free Online Calculators & Tools"
         description="Access 100+ free online calculators for financial planning, health & fitness, math problems, and everyday calculations. Fast, accurate, and easy to use."
         keywords="calculator, online calculator, free calculator, BMI calculator, loan calculator, mortgage calculator, math calculator, percentage calculator"
-        canonicalUrl="https://calcifyy.lovable.app"
+        canonicalUrl="https://primemetric.lovable.app"
       />
       
       <div className="min-h-screen">
@@ -86,10 +86,10 @@ const Index = () => {
         <nav className="sticky top-0 z-50 glass-card border-b border-primary/20" role="navigation" aria-label="Main navigation">
           <div className="container mx-auto px-4 py-4">
             <div className="flex items-center justify-between">
-              <Link to="/" className="flex items-center gap-2 group" aria-label="CalcHub home">
+              <Link to="/" className="flex items-center gap-2 group" aria-label="PrimeMetric home">
                 <Calculator className="w-8 h-8 text-primary group-hover:rotate-12 transition-transform" aria-hidden="true" />
                 <span className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                  CalcHub
+                  PrimeMetric
                 </span>
               </Link>
               <div className="hidden md:flex items-center gap-6">
@@ -245,7 +245,7 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Why Choose CalcHub?</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Why Choose PrimeMetric?</h2>
             <p className="text-xl text-muted-foreground">Powerful features for accurate calculations</p>
           </div>
 
@@ -304,7 +304,7 @@ const Index = () => {
               Ready to Calculate?
             </h2>
             <p className="text-xl text-muted-foreground mb-8">
-              Join millions of users who trust CalcHub for their daily calculations
+              Join millions of users who trust PrimeMetric for their daily calculations
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/all-calculators">
@@ -328,7 +328,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
-              <h4 className="font-bold text-lg mb-4">CalcHub</h4>
+              <h4 className="font-bold text-lg mb-4">PrimeMetric</h4>
               <p className="text-muted-foreground text-sm">
                 Your complete calculator and converter platform for all daily needs.
               </p>
@@ -362,7 +362,7 @@ const Index = () => {
             </div>
           </div>
           <div className="border-t border-primary/20 pt-8 text-center text-sm text-muted-foreground">
-            <p>© 2025 CalcHub. All rights reserved. Built with precision and care.</p>
+            <p>© 2025 PrimeMetric. All rights reserved. Built with precision and care.</p>
           </div>
         </div>
       </footer>

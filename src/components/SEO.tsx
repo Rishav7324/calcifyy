@@ -17,7 +17,7 @@ export const SEO = ({
 }: SEOProps) => {
   const siteName = "CalcHub - Free Online Calculators";
   const fullTitle = title.includes("CalcHub") ? title : `${title} | CalcHub`;
-  const baseUrl = "https://calcifyy.lovable.app";
+  const baseUrl = "https://primemetric.lovable.app";
   const canonical = canonicalUrl || baseUrl;
 
   return (

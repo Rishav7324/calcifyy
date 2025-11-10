@@ -16,7 +16,7 @@ interface CalculatorLayoutProps {
 }
 
 const CalculatorLayout = ({ title, description, children, formula, explanation, keywords, canonicalUrl }: CalculatorLayoutProps) => {
-  const currentUrl = canonicalUrl || `https://calcifyy.lovable.app${window.location.pathname}`;
+  const currentUrl = canonicalUrl || `https://primemetric.lovable.app${window.location.pathname}`;
   
   // Structured data for better SEO
   const structuredData = {

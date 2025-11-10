@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import CalculatorLayout from "@/components/CalculatorLayout";
+import CalculatorContentSection from "@/components/CalculatorContentSection";
 
 const DateCalculator = () => {
   const [startDate, setStartDate] = useState("");
@@ -71,6 +72,28 @@ const DateCalculator = () => {
           )}
         </div>
       </Card>
+
+      <CalculatorContentSection
+        aboutContent="The date calculator computes the time difference between two dates and displays the result in multiple units including days, weeks, months, and years. This versatile tool helps with project planning, age calculations, contract durations, event countdowns, and historical analysis. Whether you're calculating how many days until a deadline, how long since a milestone, or the duration of a project, this calculator provides instant, accurate results accounting for all calendar complexities including varying month lengths and leap years."
+        useCases={[
+          { title: "Project Management", description: "Calculate project durations, track milestone deadlines, estimate completion dates, and manage timeline planning for complex projects." },
+          { title: "Personal Events", description: "Count days until weddings, vacations, birthdays, anniversaries, or other important life events. Perfect for event planning and countdowns." },
+          { title: "Legal & Contracts", description: "Determine contract durations, lease periods, warranty expiration, statute of limitations, and other legally significant time periods." },
+          { title: "Historical Analysis", description: "Calculate time elapsed between historical events, analyze trends over specific periods, or understand the time span of significant occurrences." }
+        ]}
+        tips={[
+          { title: "Inclusive vs Exclusive Dates", description: "This calculator measures the time between dates. If you need to include both start and end dates in your count, add 1 to the days result." },
+          { title: "Business Days vs Calendar Days", description: "This calculator shows calendar days. For business days (excluding weekends and holidays), you'll need to subtract non-working days manually." },
+          { title: "Different Date Formats", description: "Dates can be entered in various formats depending on your browser and locale settings. The calculator automatically interprets the dates correctly." },
+          { title: "Planning with Results", description: "Use the multiple unit display to choose the most meaningful representation - weeks for short periods, months for medium terms, years for long durations." }
+        ]}
+        faqs={[
+          { question: "How does the calculator handle leap years?", answer: "The calculator automatically accounts for leap years when computing date differences. Leap years occur every 4 years (except century years not divisible by 400) and add an extra day to February." },
+          { question: "Why are months and years approximate?", answer: "Months vary from 28-31 days, so month calculations use an average of 30.44 days per month. Years use 365.25 days to account for leap years. For precise results, use the days or weeks display." },
+          { question: "Can I calculate dates in the future?", answer: "Yes, the calculator works for any date combination - past to present, present to future, or any historical date range. It always shows the absolute difference between the two dates." },
+          { question: "What if I enter the dates in reverse order?", answer: "The calculator automatically computes the absolute difference, so it doesn't matter which date you enter first. The result will be the same either way." }
+        ]}
+      />
     </CalculatorLayout>
   );
 };

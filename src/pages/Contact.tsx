@@ -29,10 +29,10 @@ const Contact = () => {
   return (
     <>
       <SEO 
-        title="Contact Us - CalcHub"
-        description="Get in touch with CalcHub. Have questions or feedback? We'd love to hear from you. Contact us for support, suggestions, or inquiries."
-        keywords="contact calchub, calculator support, feedback, customer service"
-        canonicalUrl="https://calcifyy.lovable.app/contact"
+        title="Contact Us - PrimeMetric"
+        description="Get in touch with PrimeMetric. Have questions or feedback? We'd love to hear from you. Contact us for support, suggestions, or inquiries."
+        keywords="contact primemetric, calculator support, feedback, customer service"
+        canonicalUrl="https://primemetric.lovable.app/contact"
       />
       
       <div className="min-h-screen bg-gradient-to-br from-background via-secondary/20 to-background">
@@ -102,8 +102,8 @@ const Contact = () => {
                   <p className="text-muted-foreground">
                     For general inquiries and support:
                   </p>
-                  <a href="mailto:support@calculators.com" className="text-primary hover:underline">
-                    support@calculators.com
+                  <a href="mailto:info@primemetric.online" className="text-primary hover:underline">
+                    info@primemetric.online
                   </a>
                 </div>
               </div>
