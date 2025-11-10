@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import CalculatorLayout from "@/components/CalculatorLayout";
+import CalculatorContentSection from "@/components/CalculatorContentSection";
 
 const FuelCostCalculator = () => {
   const [distance, setDistance] = useState("");
@@ -87,6 +88,28 @@ const FuelCostCalculator = () => {
           )}
         </div>
       </Card>
+
+      <CalculatorContentSection
+        aboutContent="The fuel cost calculator helps you estimate the total cost of fuel for a trip based on distance, your vehicle's fuel efficiency (MPG), and current fuel prices. This essential planning tool allows you to budget accurately for road trips, compare vehicle operating costs, or evaluate whether a long drive is cost-effective compared to other transportation options. By calculating cost per mile, you can also assess the true operating cost of your vehicle and make informed decisions about commuting, travel, or vehicle purchases."
+        useCases={[
+          { title: "Road Trip Planning", description: "Budget accurately for vacations and long-distance travel. Estimate total fuel costs before departure to plan expenses and compare routes." },
+          { title: "Commute Cost Analysis", description: "Calculate monthly or annual commuting costs to understand transportation expenses, evaluate job offers in different locations, or assess remote work savings." },
+          { title: "Vehicle Comparison", description: "Compare operating costs between different vehicles when purchasing. Calculate long-term fuel savings of more efficient vehicles versus higher purchase prices." },
+          { title: "Business Expense Tracking", description: "Estimate mileage reimbursement, track business travel costs, or calculate delivery expenses for accurate invoicing and tax deductions." }
+        ]}
+        tips={[
+          { title: "Check Current Gas Prices", description: "Gas prices vary by location and change frequently. Use apps like GasBuddy to find current prices along your route for accurate estimates." },
+          { title: "Know Your Actual MPG", description: "Your real-world MPG is often lower than EPA estimates, especially in city driving. Track actual fuel consumption over several fill-ups for accurate calculations." },
+          { title: "Factor in Route Conditions", description: "Highway driving typically achieves better MPG than city driving. Mountain terrain, traffic, and weather conditions can significantly affect fuel efficiency and costs." },
+          { title: "Compare Transportation Options", description: "Calculate whether driving is more economical than flying, trains, or buses for long trips by comparing total fuel costs plus wear-and-tear to alternative fares." }
+        ]}
+        faqs={[
+          { question: "How do I find my vehicle's MPG?", answer: "Check your vehicle's dashboard display, owner's manual, or the EPA's fueleconomy.gov website. For accurate results, manually calculate by dividing miles driven by gallons used over several tanks." },
+          { question: "Does driving speed affect fuel costs?", answer: "Yes, significantly. Fuel efficiency typically peaks around 50-60 mph and decreases at higher speeds due to increased air resistance. Driving 75 mph vs 65 mph can reduce fuel efficiency by 15-20%." },
+          { question: "Should I include return trip costs?", answer: "Yes, double the distance if calculating round-trip costs. Don't forget to account for any significant elevation changes - climbing mountains uses more fuel than descending." },
+          { question: "What about electric or hybrid vehicles?", answer: "For electric vehicles, use cost per kilowatt-hour and vehicle efficiency (miles per kWh) instead. Hybrid vehicles require calculating gas and electric portions separately for mixed driving." }
+        ]}
+      />
     </CalculatorLayout>
   );
 };

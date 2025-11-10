@@ -5,6 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import CalculatorLayout from "@/components/CalculatorLayout";
+import CalculatorContentSection from "@/components/CalculatorContentSection";
 
 const DiceRoller = () => {
   const [numDice, setNumDice] = useState("1");
@@ -84,6 +85,28 @@ const DiceRoller = () => {
           )}
         </div>
       </Card>
+
+      <CalculatorContentSection
+        aboutContent="The virtual dice roller simulates rolling physical dice with complete randomness and customization. Whether you need standard six-sided dice for board games, twenty-sided dice for tabletop RPGs, or any custom configuration, this tool provides instant, fair rolls. Perfect for games, decision-making, random selection, or any situation requiring chance-based outcomes. The tool uses secure random number generation to ensure truly unpredictable results every time you roll."
+        useCases={[
+          { title: "Tabletop Gaming", description: "Roll dice for Dungeons & Dragons, Pathfinder, or other RPGs. Supports D4, D6, D8, D10, D12, D20, and D100 dice commonly used in tabletop games." },
+          { title: "Board Games", description: "Replace lost dice, play digital board games, or roll multiple dice simultaneously for games requiring complex dice combinations." },
+          { title: "Decision Making", description: "Make random selections, break ties, choose between options, or add an element of chance to everyday decisions fairly and transparently." },
+          { title: "Educational Tools", description: "Teach probability concepts, demonstrate random distribution, conduct statistics experiments, or practice mental math with dice combinations." }
+        ]}
+        tips={[
+          { title: "Understanding Dice Notation", description: "D4 means 4-sided die, D6 means 6-sided die, D20 means 20-sided die, etc. The number after D indicates how many sides the die has." },
+          { title: "Multiple Dice Probability", description: "Rolling multiple dice creates a probability curve. 2D6 (two six-sided dice) most commonly results in 7, while 2 and 12 are rarest. Single dice have equal probability for all numbers." },
+          { title: "Fair Random Generation", description: "This tool uses cryptographically secure random number generation, ensuring truly unpredictable and fair results suitable for all gaming purposes." },
+          { title: "Recording Results", description: "Take note of important rolls for games or experiments. The tool shows individual dice results and the total sum for easy record-keeping." }
+        ]}
+        faqs={[
+          { question: "How does the virtual dice roller ensure fairness?", answer: "This dice roller uses JavaScript's Math.random() function which provides pseudo-random numbers suitable for gaming. Each roll is independent with equal probability for all possible outcomes, just like physical dice." },
+          { question: "What do the different dice types mean?", answer: "Different games use different dice: D6 (standard cube dice) for most board games, D20 for RPG attacks, D10 for percentages, D4 for small damage rolls. The number indicates sides on the die." },
+          { question: "Can I roll multiple different types of dice at once?", answer: "This tool rolls multiple dice of the same type in one roll. For mixed dice types (like rolling both D6 and D20), you'll need to make separate rolls or use advanced RPG dice rollers." },
+          { question: "Why doesn't my roll match the dice notation in my game?", answer: "Game dice notation often includes modifiers (like 2D6+3). This tool shows base dice rolls. Add any modifiers from your game rules to the total shown for your final result." }
+        ]}
+      />
     </CalculatorLayout>
   );
 };

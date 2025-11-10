@@ -5,6 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import CalculatorLayout from "@/components/CalculatorLayout";
+import CalculatorContentSection from "@/components/CalculatorContentSection";
 
 const HealthyWeightCalculator = () => {
   const [height, setHeight] = useState("");
@@ -78,6 +79,28 @@ const HealthyWeightCalculator = () => {
           )}
         </div>
       </Card>
+
+      <CalculatorContentSection
+        aboutContent="The healthy weight calculator determines your ideal weight range based on your height and Body Mass Index (BMI) standards. Using the medically accepted healthy BMI range of 18.5 to 24.9, this calculator provides a weight range that's associated with optimal health outcomes. While BMI has limitations and doesn't account for muscle mass, bone density, or body composition, it remains a widely used screening tool. Your ideal weight helps you set realistic health goals and understand whether your current weight falls within a healthy range for your height."
+        useCases={[
+          { title: "Weight Loss Goals", description: "Set realistic and healthy weight loss targets based on your height. Avoid extreme diets by understanding your natural healthy weight range." },
+          { title: "Fitness Planning", description: "Establish baseline health metrics for fitness programs, bodybuilding goals, or athletic training while maintaining healthy body composition." },
+          { title: "Medical Assessment", description: "Prepare for medical consultations, understand health risk factors, or discuss weight management strategies with healthcare providers." },
+          { title: "Health Monitoring", description: "Track whether your current weight falls within a healthy range and monitor progress toward health goals over time." }
+        ]}
+        tips={[
+          { title: "BMI Range Context", description: "The healthy BMI range (18.5-24.9) is associated with lowest health risks. Below 18.5 is underweight, 25-29.9 is overweight, and 30+ is obese." },
+          { title: "Individual Variations", description: "Athletes with high muscle mass may have higher BMI but be perfectly healthy. The calculator provides general guidance, not absolute rules." },
+          { title: "Realistic Goal Setting", description: "Aim for the middle of your healthy weight range initially. Gradual weight changes (1-2 lbs per week) are healthier and more sustainable than rapid changes." },
+          { title: "Beyond Weight", description: "Healthy weight is just one factor. Consider body composition, fitness level, nutrition quality, and overall wellness for complete health assessment." }
+        ]}
+        faqs={[
+          { question: "Is BMI an accurate measure of health?", answer: "BMI is a useful screening tool but has limitations. It doesn't distinguish between muscle and fat, doesn't account for age or sex differences in body composition, and may not accurately assess health for athletes, bodybuilders, pregnant women, or elderly individuals. Use it as one of several health indicators." },
+          { question: "Why is there a range instead of a single ideal weight?", answer: "Bodies vary naturally in bone density, muscle mass, and body frame size. A range accounts for these individual differences while staying within healthy BMI parameters. Where you fall in this range depends on your body composition and frame." },
+          { question: "What if I'm outside my healthy weight range?", answer: "Being slightly outside the range doesn't automatically mean poor health, but it may increase certain health risks. Consult with a healthcare provider to assess your individual situation and create a personalized plan for reaching a healthy weight if needed." },
+          { question: "How quickly should I try to reach my healthy weight?", answer: "Aim for gradual weight changes of 1-2 pounds per week through balanced nutrition and regular exercise. Rapid weight loss or gain can be unhealthy and is difficult to sustain. Slow, steady changes lead to lasting results." }
+        ]}
+      />
     </CalculatorLayout>
   );
 };

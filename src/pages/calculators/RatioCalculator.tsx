@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import CalculatorLayout from "@/components/CalculatorLayout";
+import CalculatorContentSection from "@/components/CalculatorContentSection";
 
 const RatioCalculator = () => {
   const [a, setA] = useState("");
@@ -84,6 +85,28 @@ const RatioCalculator = () => {
           )}
         </div>
       </Card>
+
+      <CalculatorContentSection
+        aboutContent="The ratio calculator simplifies ratios to their lowest terms using the Greatest Common Divisor (GCD) method and converts them into percentages and decimals. Ratios express the relationship between two or more quantities, showing how many times one value contains another. This calculator is essential in mathematics, cooking, business, finance, and any field requiring proportional relationships. By simplifying ratios, you can easily compare quantities, scale recipes, understand financial data, or solve proportion problems."
+        useCases={[
+          { title: "Cooking & Recipes", description: "Scale recipes up or down by maintaining ingredient ratios. Convert recipe proportions for different serving sizes while preserving taste and texture." },
+          { title: "Finance & Investment", description: "Analyze financial ratios like debt-to-equity, price-to-earnings, or expense ratios to assess business performance and investment opportunities." },
+          { title: "Academic & Mathematics", description: "Solve ratio and proportion problems, simplify mathematical expressions, or understand relationships between variables in algebra and geometry." },
+          { title: "Construction & Design", description: "Maintain proper mixing ratios for concrete, paint, or other materials. Scale architectural plans while preserving proportions and dimensions." }
+        ]}
+        tips={[
+          { title: "Understanding Simplification", description: "Simplifying means reducing both numbers by their GCD. For example, 8:12 simplifies to 2:3 (dividing both by 4). This makes ratios easier to understand and compare." },
+          { title: "Percentage Interpretation", description: "The percentage shows the first number as a portion of the second. A ratio of 1:4 means 25%, indicating the first value is one-quarter of the second." },
+          { title: "Scaling Applications", description: "To scale quantities while maintaining ratios, multiply both parts by the same factor. If 2:3 requires scaling to 8, multiply both by 4 to get 8:12." },
+          { title: "Comparing Ratios", description: "Convert ratios to decimals or percentages to easily compare different proportions. This helps identify which ratio represents a larger or smaller proportion." }
+        ]}
+        faqs={[
+          { question: "What does a ratio of 1:1 mean?", answer: "A 1:1 ratio means both quantities are equal - there's the same amount of each. In percentage terms, this is 100%, meaning the first quantity equals the second quantity entirely." },
+          { question: "How do I use ratios for scaling recipes?", answer: "If your recipe ratio is 2:3 (flour to sugar) and you need 6 cups of flour, divide 6 by 2 to get 3, then multiply 3 by 3 to get 9 cups of sugar. This maintains the 2:3 ratio at a larger scale." },
+          { question: "What's the difference between a ratio and a fraction?", answer: "A ratio (a:b) compares two quantities, while a fraction (a/b) represents a division. However, they're related: the ratio 3:4 can be expressed as the fraction 3/4 or 0.75 as a decimal." },
+          { question: "Can ratios have more than two numbers?", answer: "Yes, ratios can compare three or more quantities (like 2:3:5). This calculator handles two-number ratios, but the concept extends to multiple values by maintaining proportional relationships." }
+        ]}
+      />
     </CalculatorLayout>
   );
 };

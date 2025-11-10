@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import CalculatorLayout from "@/components/CalculatorLayout";
+import CalculatorContentSection from "@/components/CalculatorContentSection";
 
 const APRCalculator = () => {
   const [loanAmount, setLoanAmount] = useState("");
@@ -99,6 +100,28 @@ const APRCalculator = () => {
           )}
         </div>
       </Card>
+
+      <CalculatorContentSection
+        aboutContent="The APR (Annual Percentage Rate) calculator determines the true cost of borrowing by including both interest rates and all associated fees in a single percentage. Unlike simple interest rates, APR provides a complete picture of loan costs, making it easier to compare different loan offers fairly. By law, lenders must disclose APR for consumer loans, helping borrowers make informed decisions. This calculator accounts for origination fees, closing costs, processing fees, and other charges that affect the total cost of borrowing."
+        useCases={[
+          { title: "Loan Comparison", description: "Compare different loan offers fairly by looking at APR instead of just interest rates. A lower rate with high fees may have a higher APR than a higher rate with no fees." },
+          { title: "Mortgage Shopping", description: "Evaluate mortgage offers from different lenders. Closing costs and points significantly affect APR, revealing the true cost of home financing." },
+          { title: "Credit Card Analysis", description: "Understand the real cost of credit card balances. Credit cards disclose APR including fees, helping you choose the best card for your usage pattern." },
+          { title: "Auto Loan Decisions", description: "Calculate the true cost of car financing including dealer fees, documentation charges, and other costs to negotiate better deals." }
+        ]}
+        tips={[
+          { title: "APR vs Interest Rate", description: "Interest rate is the cost of borrowing the principal. APR includes the interest rate plus all fees, points, and charges, showing the total cost as a percentage." },
+          { title: "Lower APR Isn't Always Better", description: "Consider loan terms and your plans. A 30-year mortgage with slightly higher APR but no prepayment penalty may be better than lower APR with restrictions if you plan to pay early." },
+          { title: "Watch for Variable APRs", description: "Credit cards and some loans have variable APRs that change with market rates. Initial low APRs may increase significantly, affecting long-term costs." },
+          { title: "Calculate Break-Even", description: "For mortgages with points (prepaid interest), calculate how long you need to keep the loan to break even on the upfront cost versus monthly savings." }
+        ]}
+        faqs={[
+          { question: "Why is APR higher than my interest rate?", answer: "APR includes all loan costs (origination fees, closing costs, points, etc.) spread over the loan term, while the interest rate only reflects the cost of borrowing principal. More fees mean a larger difference between rate and APR." },
+          { question: "Is APR the only factor when comparing loans?", answer: "No. Also consider loan terms, prepayment penalties, payment flexibility, customer service, and whether rates are fixed or variable. APR is important but not the only decision factor." },
+          { question: "What are points and how do they affect APR?", answer: "Points are prepaid interest, where 1 point = 1% of loan amount. Paying points lowers your interest rate but increases APR initially. They make sense if you keep the loan long enough to recoup the upfront cost through lower payments." },
+          { question: "Does paying off a loan early affect APR?", answer: "The stated APR assumes you keep the loan for its full term. Paying early means you pay less total interest, effectively lowering your realized APR. However, some loans have prepayment penalties that offset this benefit." }
+        ]}
+      />
     </CalculatorLayout>
   );
 };
