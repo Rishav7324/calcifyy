@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { CurrencySelector, getCurrencySymbol } from "@/components/CurrencySelector";
+import CalculatorContentSection from "@/components/CalculatorContentSection";
 
 const SalaryCalculator = () => {
   const [amount, setAmount] = useState("");
@@ -103,6 +104,33 @@ const SalaryCalculator = () => {
           )}
         </Card>
       </div>
+
+      <CalculatorContentSection
+        aboutContent="The Salary Calculator is an essential tool for anyone evaluating job offers, negotiating pay, budgeting, or comparing compensation packages. It instantly converts your salary between different time periods - annual, monthly, biweekly, weekly, daily, and hourly rates. This helps you understand the true value of a job offer, compare positions with different pay structures, and budget more effectively by seeing your income broken down into various timeframes. Whether you're paid hourly and want to know your annual earnings, or you're salaried and curious about your hourly rate, this calculator provides instant clarity on your compensation."
+        useCases={[
+          { title: "Job Offer Comparison", description: "Compare multiple job offers with different pay structures - one offering hourly pay, another offering annual salary - by converting everything to the same time period for accurate comparison." },
+          { title: "Salary Negotiation", description: "Prepare for salary negotiations by understanding exactly what an hourly rate translates to annually, or vice versa, ensuring you negotiate for appropriate compensation." },
+          { title: "Budgeting & Planning", description: "Create accurate monthly budgets by knowing your exact monthly income, or plan daily expenses by understanding your daily earnings rate." },
+          { title: "Freelance Rate Setting", description: "If transitioning from salaried employment to freelance work, calculate what hourly rate you need to charge to match or exceed your current salary, accounting for benefits and taxes." },
+          { title: "Part-Time Job Evaluation", description: "Calculate how much a part-time job would pay annually to determine if it's worth pursuing, or how many hours you'd need to work to reach your income goals." },
+          { title: "Career Path Planning", description: "Understand the financial implications of career changes by converting different compensation structures to comparable figures for informed decision-making." }
+        ]}
+        tips={[
+          { title: "Standard Work Year Assumptions", description: "This calculator assumes a standard work year of 2,080 hours (40 hours/week × 52 weeks), 52 weeks, 260 work days (5 days/week), and 12 months. Adjust mentally if your situation differs (e.g., 37.5 hour work weeks)." },
+          { title: "Account for Benefits", description: "When comparing jobs, remember that salary is just part of compensation. Factor in health insurance, retirement contributions, paid time off, bonuses, and other benefits which can add 20-30% to total compensation value." },
+          { title: "Consider After-Tax Income", description: "The calculated amounts are gross (before taxes). Your take-home pay will be lower after federal, state, and local taxes, plus Social Security and Medicare. Typically expect 25-30% reduction for middle-income earners." },
+          { title: "Freelance Rate Premium", description: "If setting freelance rates, charge 50-100% more than your employed hourly rate to cover benefits, taxes, unpaid time off, and business expenses that employers normally cover." },
+          { title: "Geographic Cost of Living", description: "A $60,000 salary in one city may provide vastly different purchasing power than the same salary elsewhere. Use cost-of-living calculators alongside salary comparisons for realistic comparisons." }
+        ]}
+        faqs={[
+          { question: "How do I convert annual salary to hourly rate?", answer: "Divide your annual salary by 2,080 (the number of working hours in a year based on 40 hours/week). For example, $52,000 annual salary ÷ 2,080 hours = $25/hour. This calculator does this automatically for you." },
+          { question: "Why does my actual paycheck differ from calculated amounts?", answer: "The calculator shows gross income before deductions. Your paycheck is reduced by federal and state income taxes, Social Security, Medicare, health insurance premiums, retirement contributions, and other withholdings. Typically, take-home pay is 70-75% of gross income." },
+          { question: "How accurate is the hourly calculation for salaried employees?", answer: "The calculation is based on standard 2,080 work hours annually (40 hours/week × 52 weeks). If you regularly work more or fewer hours, your true hourly rate differs. Many salaried employees work more than 40 hours weekly without overtime, lowering their effective hourly rate." },
+          { question: "What about overtime pay - is that included?", answer: "No, these calculations assume standard pay rates without overtime. Overtime (typically 1.5× or 2× your hourly rate) is additional. If you regularly work overtime, your actual annual income will be higher than the calculated standard amount." },
+          { question: "How do bonuses and commissions factor in?", answer: "This calculator doesn't include variable compensation like bonuses, commissions, tips, or profit-sharing. To get your true total compensation, calculate your base salary here, then add your average annual bonus/commission amounts separately." },
+          { question: "Should I use gross or net salary for budgeting?", answer: "Always budget based on net (take-home) pay, not gross salary. A good rule of thumb: expect take-home pay to be about 70-75% of gross salary after all taxes and deductions. Calculate gross here, then multiply by 0.70-0.75 for realistic budget planning." }
+        ]}
+      />
     </CalculatorLayout>
   );
 };

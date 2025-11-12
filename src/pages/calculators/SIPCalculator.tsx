@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
+import CalculatorContentSection from "@/components/CalculatorContentSection";
 
 const SIPCalculator = () => {
   const [monthly, setMonthly] = useState("");
@@ -81,6 +82,30 @@ const SIPCalculator = () => {
           )}
         </Card>
       </div>
+
+      <CalculatorContentSection
+        aboutContent="The SIP (Systematic Investment Plan) Calculator helps you project returns from regular, fixed investments in mutual funds or other market-linked instruments. SIP is a disciplined investment approach where you invest a fixed amount at regular intervals (typically monthly), regardless of market conditions. This strategy leverages rupee-cost averaging and the power of compounding to build wealth over time. By investing consistently through market ups and downs, you buy more units when prices are low and fewer when high, potentially reducing average cost per unit and maximizing long-term returns."
+        useCases={[
+          { title: "Mutual Fund Planning", description: "Calculate potential returns from monthly mutual fund SIP investments to plan for long-term wealth creation and retirement." },
+          { title: "Goal-Based Investing", description: "Determine the SIP amount needed to reach specific financial goals like buying a house, funding education, or building retirement corpus." },
+          { title: "Investment Comparison", description: "Compare SIP returns with lump sum investments or other investment vehicles to make informed allocation decisions." },
+          { title: "Market Entry Strategy", description: "Plan systematic market entry with SIPs to average out market volatility and reduce timing risk compared to lump sum investments." }
+        ]}
+        tips={[
+          { title: "Power of Consistency", description: "SIP's biggest advantage is discipline. Investing monthly regardless of market conditions removes emotional decision-making and ensures you participate in market growth over time." },
+          { title: "Start Early, Stay Long", description: "SIP benefits compound exponentially over time. A 20-year SIP significantly outperforms a 10-year SIP due to compounding. Start as early as possible, even with small amounts." },
+          { title: "Rupee Cost Averaging", description: "SIP automatically implements rupee-cost averaging - buying more units when markets are down and fewer when up. This can lower your average purchase cost over time." },
+          { title: "Step-Up Your SIP", description: "Increase SIP amounts annually by 5-10% to keep pace with salary increases and inflation. Small annual increases dramatically boost final corpus without lifestyle impact." },
+          { title: "Stay Invested Through Volatility", description: "Don't stop SIP during market downturns. These periods offer the best buying opportunities. Stopping SIP during corrections defeats the purpose of rupee-cost averaging." }
+        ]}
+        faqs={[
+          { question: "What return rate should I expect from SIP?", answer: "Equity mutual funds have historically returned 12-15% annually over 10+ year periods in India, though past performance doesn't guarantee future results. Debt funds typically return 7-9%. Use conservative estimates (10-12% for equity) for planning. Actual returns vary based on market conditions and fund selection." },
+          { question: "Is SIP better than lump sum investment?", answer: "SIP is generally better for regular income earners as it enables disciplined investing without timing the market. Lump sum can outperform if invested at market lows, but timing the market consistently is difficult. SIP reduces timing risk through averaging, making it ideal for most investors." },
+          { question: "Can I skip SIP installments?", answer: "While you can technically skip, doing so defeats SIP's purpose. Consistent investing is key to rupee-cost averaging and compounding benefits. If cash flow is tight, reduce SIP amount rather than skipping entirely. Missing installations during market dips costs you valuable low-priced units." },
+          { question: "When should I stop or withdraw my SIP?", answer: "Continue SIP until you reach your goal or need the money. For long-term goals like retirement, consider Systematic Withdrawal Plans (SWP) upon retirement. Avoid stopping during market downturns. If goals change, redirect to different funds rather than stopping altogether." },
+          { question: "How do I choose SIP amount?", answer: "Start with what you can comfortably afford - even ₹500-1,000 monthly makes a difference. A common approach is 15-20% of monthly income for long-term goals. Use the calculator to determine SIP amount needed for specific goals, then adjust to fit your budget. Commit to annual increases." }
+        ]}
+      />
     </CalculatorLayout>
   );
 };

@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import CalculatorLayout from "@/components/CalculatorLayout";
+import CalculatorContentSection from "@/components/CalculatorContentSection";
 
 const SavingsCalculator = () => {
   const [initialDeposit, setInitialDeposit] = useState("");
@@ -96,6 +97,31 @@ const SavingsCalculator = () => {
           )}
         </div>
       </Card>
+
+      <CalculatorContentSection
+        aboutContent="The Savings Calculator projects how your money grows over time through regular deposits and compound interest. By entering your starting balance, monthly contributions, time horizon, and expected interest rate, you can visualize your wealth accumulation journey. This tool demonstrates the power of consistent saving combined with compound interest - where you earn interest on your interest. Whether you're saving for an emergency fund, vacation, down payment, or any financial goal, this calculator helps you set realistic targets and track your progress toward financial security."
+        useCases={[
+          { title: "Emergency Fund Building", description: "Calculate how long it takes to build a 3-6 month emergency fund by making regular monthly deposits to a high-yield savings account." },
+          { title: "Short-Term Goal Saving", description: "Plan savings for vacations, weddings, new appliances, or other purchases within 1-5 years by determining required monthly contributions." },
+          { title: "Down Payment Planning", description: "Determine monthly savings needed to accumulate a house or car down payment within your target timeframe." },
+          { title: "Education Savings", description: "Project college savings growth in 529 plans or education savings accounts to meet future tuition costs." },
+          { title: "Sinking Fund Strategy", description: "Plan for predictable future expenses like property taxes, insurance premiums, or annual subscriptions by building dedicated savings funds." }
+        ]}
+        tips={[
+          { title: "Start with What You Can", description: "Even small amounts compound significantly over time. Starting with $50/month is better than waiting until you can save $500/month - time in the market matters most." },
+          { title: "Automate Your Savings", description: "Set up automatic transfers to savings on payday. Treating savings as a non-negotiable 'bill' ensures consistency and removes temptation to skip months." },
+          { title: "High-Yield Savings Accounts", description: "Shop for savings accounts offering competitive interest rates. Online banks often provide 4-5% APY compared to 0.01% at traditional banks, significantly boosting growth." },
+          { title: "Emergency Fund Priority", description: "Before aggressive investing, build a 3-6 month emergency fund in accessible savings. This safety net prevents going into debt during unexpected expenses or job loss." },
+          { title: "Increase Contributions Gradually", description: "Commit to increasing monthly savings by a small amount each year or whenever you get a raise. These incremental increases accelerate goal achievement without lifestyle impact." }
+        ]}
+        faqs={[
+          { question: "What's a good interest rate for a savings account?", answer: "As of 2024, competitive high-yield savings accounts offer 4-5% APY. Traditional bank savings accounts often pay only 0.01-0.10%. Shop around online banks and credit unions for the best rates, which significantly impact long-term growth." },
+          { question: "Should I save or invest my money?", answer: "For short-term goals (under 3-5 years) or emergency funds, use savings accounts for safety and accessibility. For long-term goals (5+ years), investing typically offers better growth despite volatility. Many people do both - emergency fund in savings, retirement in investments." },
+          { question: "How much should I save each month?", answer: "The 50/30/20 budget rule suggests 20% of income toward savings and debt repayment. At minimum, aim to save $1,000 for a starter emergency fund, then build to 3-6 months of expenses. After that, save 15%+ of income for long-term goals." },
+          { question: "Is compound interest really that powerful?", answer: "Yes! Thanks to compounding, saving $300/month at 5% interest for 20 years results in $123,000 - but you only deposited $72,000. The remaining $51,000 is interest earned on your interest. Starting early maximizes this effect." },
+          { question: "What if I can't save consistently every month?", answer: "Life happens. If you miss months, don't give up. Save what you can, when you can. Even irregular contributions grow over time. The key is not perfection but persistence. Some months might be $10, others $100 - every bit counts." }
+        ]}
+      />
     </CalculatorLayout>
   );
 };
