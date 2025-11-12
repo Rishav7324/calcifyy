@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import CalculatorContentSection from "@/components/CalculatorContentSection";
 
 const BMRCalculator = () => {
   const [gender, setGender] = useState("male");
@@ -82,6 +83,28 @@ const BMRCalculator = () => {
           )}
         </Card>
       </div>
+
+      <CalculatorContentSection
+        aboutContent="Basal Metabolic Rate (BMR) is the number of calories your body burns at rest to maintain vital functions like breathing, circulation, and cell production. This calculator uses the Mifflin-St Jeor equation, which is considered one of the most accurate BMR formulas."
+        useCases={[
+          { title: "Weight Management", description: "Understanding your BMR helps create effective calorie deficits or surpluses for weight loss or gain." },
+          { title: "Nutrition Planning", description: "Calculate your daily caloric needs by multiplying BMR by your activity level factor." },
+          { title: "Fitness Goals", description: "Use BMR as a baseline to design personalized meal and workout plans." },
+          { title: "Metabolic Health", description: "Track changes in BMR over time to monitor metabolic health and fitness progress." }
+        ]}
+        tips={[
+          { title: "Multiply by Activity Factor", description: "To get Total Daily Energy Expenditure (TDEE), multiply your BMR by an activity factor: sedentary (1.2), lightly active (1.375), moderately active (1.55), very active (1.725), or extra active (1.9)." },
+          { title: "BMR Changes with Age", description: "BMR typically decreases with age due to loss of muscle mass. Strength training can help maintain higher BMR." },
+          { title: "Muscle Burns More", description: "Muscle tissue burns more calories at rest than fat tissue, so building muscle can increase your BMR." },
+          { title: "Don't Eat Below BMR", description: "Consistently eating below your BMR can slow metabolism and is generally not recommended without medical supervision." }
+        ]}
+        faqs={[
+          { question: "What's the difference between BMR and TDEE?", answer: "BMR is calories burned at complete rest. TDEE (Total Daily Energy Expenditure) includes BMR plus calories burned through daily activities and exercise." },
+          { question: "How can I increase my BMR?", answer: "Build muscle through strength training, stay active, eat enough protein, get adequate sleep, and avoid crash diets that can slow metabolism." },
+          { question: "Why is my BMR lower than expected?", answer: "Factors like genetics, body composition, hormonal conditions, and dieting history can affect BMR. Consult a healthcare provider if concerned." },
+          { question: "Is BMR the same as metabolism?", answer: "BMR is a measurement of your basal metabolism - the minimum energy required for basic bodily functions at rest." }
+        ]}
+      />
     </CalculatorLayout>
   );
 };

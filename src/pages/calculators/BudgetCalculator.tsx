@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import CalculatorLayout from "@/components/CalculatorLayout";
+import CalculatorContentSection from "@/components/CalculatorContentSection";
 
 const BudgetCalculator = () => {
   const [income, setIncome] = useState("");
@@ -122,6 +123,28 @@ const BudgetCalculator = () => {
           )}
         </div>
       </Card>
+
+      <CalculatorContentSection
+        aboutContent="A Budget Calculator helps you track monthly income and expenses to understand your financial health. By categorizing your spending and comparing it to your income, you can identify opportunities to save more and reach your financial goals faster."
+        useCases={[
+          { title: "Monthly Planning", description: "Create a realistic monthly budget by tracking all income sources and expense categories." },
+          { title: "Savings Goals", description: "Calculate how much money you can save each month after covering all necessary expenses." },
+          { title: "Spending Analysis", description: "Identify which expense categories consume the most of your income and find areas to cut back." },
+          { title: "Financial Health Check", description: "Monitor your savings rate to ensure you're building wealth over time." }
+        ]}
+        tips={[
+          { title: "Follow the 50/30/20 Rule", description: "Allocate 50% to needs (housing, utilities), 30% to wants (entertainment), and 20% to savings and debt repayment." },
+          { title: "Track All Expenses", description: "Include small recurring expenses like subscriptions - they add up quickly over time." },
+          { title: "Build an Emergency Fund", description: "Aim to save 3-6 months of expenses in an easily accessible emergency fund before investing." },
+          { title: "Review Regularly", description: "Review your budget monthly and adjust categories based on actual spending patterns." }
+        ]}
+        faqs={[
+          { question: "What's a good savings rate?", answer: "Financial experts typically recommend saving at least 20% of your income. However, any amount saved is better than none, and the ideal rate depends on your goals and situation." },
+          { question: "How do I budget with irregular income?", answer: "Base your budget on your lowest expected monthly income. When you earn more, put the extra toward savings or debt repayment." },
+          { question: "Should I pay off debt or save first?", answer: "Generally, build a small emergency fund ($1000-2000) first, then focus on high-interest debt, then build larger savings." },
+          { question: "What if my expenses exceed my income?", answer: "Look for ways to reduce expenses or increase income. Start with discretionary spending like entertainment, then consider larger changes if needed." }
+        ]}
+      />
     </CalculatorLayout>
   );
 };

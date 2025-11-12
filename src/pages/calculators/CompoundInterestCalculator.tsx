@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import CalculatorContentSection from "@/components/CalculatorContentSection";
 
 const CompoundInterestCalculator = () => {
   const [principal, setPrincipal] = useState("");
@@ -97,6 +98,28 @@ const CompoundInterestCalculator = () => {
           )}
         </Card>
       </div>
+
+      <CalculatorContentSection
+        aboutContent="The Compound Interest Calculator demonstrates how investments grow exponentially over time when interest is reinvested. Unlike simple interest, compound interest earns returns on both your original principal and accumulated interest, making it one of the most powerful wealth-building tools available."
+        useCases={[
+          { title: "Investment Planning", description: "Project the future value of savings accounts, retirement accounts, or investment portfolios." },
+          { title: "Retirement Savings", description: "Calculate how much you need to save monthly to reach retirement goals, accounting for compound growth." },
+          { title: "College Savings", description: "Estimate future education fund values when starting early with compound interest." },
+          { title: "Comparing Accounts", description: "Compare different compound frequencies to see which savings or investment accounts offer better returns." }
+        ]}
+        tips={[
+          { title: "Start Early", description: "The earlier you start investing, the more time compound interest has to work. Even small amounts can grow substantially over decades." },
+          { title: "Reinvest Returns", description: "Always reinvest dividends and interest to maximize compound growth. Automatic reinvestment makes this effortless." },
+          { title: "Consistent Contributions", description: "Regular contributions amplify compound interest effects. Consider dollar-cost averaging into investments." },
+          { title: "Higher Frequency Helps", description: "More frequent compounding (daily vs. annually) results in slightly higher returns, though the difference is modest." }
+        ]}
+        faqs={[
+          { question: "What's the Rule of 72?", answer: "Divide 72 by your interest rate to estimate how many years it takes for money to double. For example, at 8% interest, money doubles in roughly 9 years (72 ÷ 8 = 9)." },
+          { question: "Is compound interest better than simple interest?", answer: "Yes, compound interest always produces greater returns than simple interest over time because you earn returns on your accumulated interest." },
+          { question: "How often should interest compound?", answer: "More frequent compounding is better. Daily compounding produces slightly more than monthly, which beats annual. However, the interest rate itself matters much more than the compounding frequency." },
+          { question: "Can compound interest work against me?", answer: "Yes, compound interest on debt (like credit cards) can make debt grow rapidly. This is why it's crucial to pay off high-interest debt before focusing on investments." }
+        ]}
+      />
     </CalculatorLayout>
   );
 };

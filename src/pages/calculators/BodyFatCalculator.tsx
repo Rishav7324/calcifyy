@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import CalculatorContentSection from "@/components/CalculatorContentSection";
 
 const BodyFatCalculator = () => {
   const [gender, setGender] = useState("male");
@@ -112,6 +113,28 @@ const BodyFatCalculator = () => {
           )}
         </Card>
       </div>
+
+      <CalculatorContentSection
+        aboutContent="The Body Fat Calculator uses the U.S. Navy method to estimate body fat percentage based on circumference measurements. Unlike BMI, which only considers height and weight, this method accounts for body composition by measuring specific body parts. It's a practical way to assess fitness and health without expensive equipment."
+        useCases={[
+          { title: "Fitness Progress Tracking", description: "Monitor body composition changes during weight loss or muscle building programs more accurately than scale weight alone." },
+          { title: "Health Assessment", description: "Evaluate health risks associated with body fat levels, as high body fat is linked to various health conditions." },
+          { title: "Athletic Performance", description: "Athletes can optimize performance by maintaining body fat within their sport's ideal range." },
+          { title: "Goal Setting", description: "Set realistic body composition goals and track progress toward them over time." }
+        ]}
+        tips={[
+          { title: "Measure Consistently", description: "Take measurements at the same time of day, ideally in the morning before eating, for consistent tracking." },
+          { title: "Measure Accurately", description: "Use a flexible measuring tape, keep it snug but not tight, and measure at the correct body locations (narrowest waist, fullest hip)." },
+          { title: "Track Trends", description: "Single measurements can vary. Track weekly or monthly trends rather than day-to-day fluctuations." },
+          { title: "Combine with Other Metrics", description: "Use alongside photos, measurements, and how clothes fit for a complete picture of progress." }
+        ]}
+        faqs={[
+          { question: "How accurate is the Navy body fat method?", answer: "The Navy method is reasonably accurate (within 3-4%) for most people and much better than BMI alone. However, it's less accurate than DEXA scans or hydrostatic weighing." },
+          { question: "What's a healthy body fat percentage?", answer: "For men: 10-20% is athletic/fit, 21-25% is average. For women: 18-25% is athletic/fit, 26-31% is average. Essential fat is ~3% for men and ~12% for women." },
+          { question: "Can I spot reduce body fat?", answer: "No, you can't target fat loss from specific areas. Fat loss occurs throughout the body based on genetics. Focus on overall fat loss through diet and exercise." },
+          { question: "How long does it take to lose body fat?", answer: "Safe fat loss is 0.5-1% of body weight per week. For someone at 25% body fat wanting to reach 20%, this might take 2-4 months depending on starting weight." }
+        ]}
+      />
     </CalculatorLayout>
   );
 };

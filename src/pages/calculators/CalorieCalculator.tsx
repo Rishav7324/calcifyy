@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import CalculatorContentSection from "@/components/CalculatorContentSection";
 
 const CalorieCalculator = () => {
   const [gender, setGender] = useState("male");
@@ -111,6 +112,28 @@ const CalorieCalculator = () => {
           )}
         </Card>
       </div>
+
+      <CalculatorContentSection
+        aboutContent="The Calorie Calculator determines your daily caloric needs based on your personal metrics and activity level. It calculates your Total Daily Energy Expenditure (TDEE) and adjusts for your goals - whether you want to lose weight, maintain, or gain weight."
+        useCases={[
+          { title: "Weight Loss Planning", description: "Calculate a calorie deficit (typically 500 calories below maintenance) for sustainable weight loss of about 1 pound per week." },
+          { title: "Muscle Building", description: "Determine calorie surplus needed for muscle gain while minimizing fat gain." },
+          { title: "Weight Maintenance", description: "Find your maintenance calories to keep your current weight stable." },
+          { title: "Athletic Performance", description: "Ensure adequate calorie intake to support training and recovery." }
+        ]}
+        tips={[
+          { title: "Start with Maintenance", description: "Track calories at maintenance level for 2-3 weeks before making adjustments to see how your body responds." },
+          { title: "Adjust Based on Results", description: "If you're not seeing expected changes after 2-3 weeks, adjust calories by 100-200 in the appropriate direction." },
+          { title: "Don't Cut Too Low", description: "Avoid eating below your BMR or cutting more than 500-750 calories from maintenance for sustainable results." },
+          { title: "Quality Matters Too", description: "Focus on nutrient-dense whole foods, not just calorie numbers. Protein, fiber, and micronutrients are crucial." }
+        ]}
+        faqs={[
+          { question: "How accurate are calorie calculators?", answer: "Calculators provide estimates based on averages. Individual metabolism varies, so use the result as a starting point and adjust based on your actual results over time." },
+          { question: "Should I eat less on rest days?", answer: "You can slightly reduce calories on rest days, but your body still burns calories for recovery. Many people maintain consistent daily calories for simplicity." },
+          { question: "How quickly should I lose weight?", answer: "A safe, sustainable rate is 0.5-1% of body weight per week. Faster weight loss often leads to muscle loss and metabolic slowdown." },
+          { question: "Do I need to count calories forever?", answer: "Calorie tracking is a tool to learn portion sizes and food content. Many people develop intuitive eating skills after tracking consistently." }
+        ]}
+      />
     </CalculatorLayout>
   );
 };
