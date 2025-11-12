@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { useState, useRef } from "react";
 import { Upload, Download, RotateCw } from "lucide-react";
 import { toast } from "sonner";
+import CalculatorContentSection from "@/components/CalculatorContentSection";
 
 const CropImage = () => {
   const [image, setImage] = useState<string | null>(null);
@@ -146,6 +147,28 @@ const CropImage = () => {
           )}
         </Card>
       </div>
+
+      <CalculatorContentSection
+        aboutContent="The Image Crop Tool allows you to precisely crop images by specifying exact pixel coordinates and dimensions. This tool gives you numerical control over the crop area, perfect for achieving pixel-perfect crops for specific design requirements. Simply upload an image, enter your desired crop coordinates (X, Y starting position) and dimensions (width, height), preview the result, and download the cropped image."
+        useCases={[
+          { title: "Social Media Image Sizing", description: "Crop images to exact dimensions required by different platforms - Instagram posts (1080×1080), Facebook covers (820×312), Twitter headers (1500×500)." },
+          { title: "Product Photo Editing", description: "Create consistent product images for e-commerce by cropping all photos to identical dimensions for uniform appearance." },
+          { title: "Avatar & Profile Pictures", description: "Crop profile pictures to perfect squares ensuring important features are centered and properly framed." },
+          { title: "Web Design Assets", description: "Prepare images for specific website sections by cropping to exact pixel dimensions matching your design specifications." }
+        ]}
+        tips={[
+          { title: "Understanding Coordinates", description: "X coordinate is horizontal pixels from the left edge, Y coordinate is vertical pixels from the top. (0,0) is the top-left corner." },
+          { title: "Maintain Aspect Ratios", description: "For common aspect ratios like 16:9, 4:3, or 1:1 (square), calculate width and height accordingly." },
+          { title: "Start with High Resolution", description: "Crop from high-resolution source images when possible to ensure the final crop maintains good quality." },
+          { title: "Preview Before Download", description: "Always preview your crop to ensure you've captured the desired area before downloading." }
+        ]}
+        faqs={[
+          { question: "What do the X and Y coordinates represent?", answer: "X is the horizontal distance in pixels from the left edge to where your crop starts. Y is the vertical distance in pixels from the top edge. For example, X=100, Y=50 means the crop starts 100 pixels from left and 50 from top." },
+          { question: "How do I crop to a specific aspect ratio?", answer: "Calculate width and height to match your desired ratio. For 16:9, try 1600×900. For 1:1 (square), use equal width and height like 1000×1000. For 4:3, try 1600×1200." },
+          { question: "Does cropping reduce image quality?", answer: "Cropping itself doesn't reduce quality - it simply removes pixels outside the crop area. However, if you later enlarge a cropped image, quality may suffer. Always crop from the highest quality source available." },
+          { question: "What image formats are supported?", answer: "The tool supports common web formats including JPG, PNG, GIF, and WebP. The downloaded image will typically be in PNG format." }
+        ]}
+      />
     </CalculatorLayout>
   );
 };

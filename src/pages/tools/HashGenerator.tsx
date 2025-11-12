@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
 import { Hash, Copy } from "lucide-react";
 import { toast } from "sonner";
+import CalculatorContentSection from "@/components/CalculatorContentSection";
 
 const HashGenerator = () => {
   const [input, setInput] = useState("");
@@ -123,6 +124,33 @@ const HashGenerator = () => {
             </div>
           )}
         </div>
+
+        <CalculatorContentSection
+          aboutContent="The Hash Generator creates cryptographic hash values from any input text using MD5, SHA-1, and SHA-256 algorithms. Hashing is a one-way cryptographic function that converts data of any size into a fixed-length string of characters, called a hash or digest. These hashes are deterministic (same input always produces the same hash) but practically irreversible (you cannot retrieve the original text from the hash). Hash functions are fundamental to data security, password storage, digital signatures, file integrity verification, and blockchain technology. This tool helps developers, security professionals, and IT administrators generate and verify hashes for various security and verification purposes."
+          useCases={[
+            { title: "Password Hashing", description: "Generate hashes for password storage. Never store plain-text passwords - store only the hash. When users log in, hash their input and compare hashes for authentication." },
+            { title: "File Integrity Verification", description: "Create checksums for files to verify they haven't been corrupted or tampered with during transfer. Compare hash before and after download to ensure file integrity." },
+            { title: "Digital Signatures", description: "Generate unique identifiers for documents or data. Hashes serve as digital fingerprints proving authenticity and detecting any modifications to original content." },
+            { title: "Data Deduplication", description: "Identify duplicate data by comparing hashes instead of entire files. Identical hashes indicate identical content, making deduplication efficient." },
+            { title: "Version Control", description: "Git and other version control systems use SHA hashes to uniquely identify commits, track changes, and ensure code repository integrity." },
+            { title: "API Security", description: "Create secure tokens, verify webhook signatures, and implement HMAC authentication for API requests using cryptographic hashes." }
+          ]}
+          tips={[
+            { title: "Choose the Right Algorithm", description: "SHA-256 is currently the most secure standard for general use. MD5 and SHA-1 are considered cryptographically broken for security purposes but remain useful for non-cryptographic checksums. Use SHA-256 for security-critical applications." },
+            { title: "Add Salt for Passwords", description: "Never hash passwords without adding salt (random data). Rainbow tables can crack unsalted password hashes. Use bcrypt, scrypt, or Argon2 for password hashing in production, not these simple hashes." },
+            { title: "Hashing Is One-Way", description: "You cannot reverse a hash to get the original text. Hashing is intentionally irreversible. If you need encryption you can decrypt later, use encryption algorithms like AES, not hashing." },
+            { title: "Case Sensitivity Matters", description: "Hashing is case-sensitive. 'Password' and 'password' produce completely different hashes. Even a single character difference creates an entirely different hash value." },
+            { title: "Use for Verification, Not Encryption", description: "Hashes verify data integrity and authenticity but don't encrypt data. For confidentiality, use encryption. For verification, use hashing. They serve different security purposes." }
+          ]}
+          faqs={[
+            { question: "What's the difference between MD5, SHA-1, and SHA-256?", answer: "MD5 produces 128-bit hashes, SHA-1 produces 160-bit hashes, and SHA-256 produces 256-bit hashes. Longer hashes are more secure. MD5 and SHA-1 are deprecated for security use due to collision vulnerabilities. SHA-256 is currently the recommended standard for secure applications." },
+            { question: "Can hashes be reversed or decrypted?", answer: "No, cryptographic hash functions are one-way by design. You cannot reverse a hash to get the original input. However, weak passwords can be cracked using rainbow tables (precomputed hash databases) or brute force, which is why salting is crucial for password storage." },
+            { question: "What is a hash collision?", answer: "A collision occurs when two different inputs produce the same hash output. While mathematically possible, good hash functions make collisions extremely rare. MD5 and SHA-1 have known collision vulnerabilities, which is why they're deprecated. SHA-256 is collision-resistant for practical purposes." },
+            { question: "Why are MD5 and SHA-1 considered insecure?", answer: "Researchers have demonstrated practical collision attacks against MD5 and SHA-1, meaning attackers can create two different files with identical hashes. This breaks their security guarantee. While still useful for checksums, don't use them for passwords, digital signatures, or security-critical applications. Use SHA-256 or higher." },
+            { question: "How do I verify a file's integrity with hashes?", answer: "Download the file and generate its hash. Compare it with the hash provided by the source (usually displayed on download pages). If hashes match exactly, the file is authentic and uncorrupted. Even one bit difference creates a completely different hash, detecting any tampering or corruption." },
+            { question: "Should I use this tool for storing passwords in my application?", answer: "No. This tool uses simple hashing suitable for demonstrations and checksums. For production password storage, use dedicated password hashing functions like bcrypt, scrypt, or Argon2 that include built-in salting, stretching, and are designed specifically to resist brute-force attacks." }
+          ]}
+        />
       </CalculatorLayout>
   );
 };

@@ -7,6 +7,7 @@ import { Slider } from "@/components/ui/slider";
 import { useState, useRef } from "react";
 import { Upload, Download, Minimize2 } from "lucide-react";
 import { toast } from "sonner";
+import CalculatorContentSection from "@/components/CalculatorContentSection";
 
 const CompressImage = () => {
   const [image, setImage] = useState<string | null>(null);
@@ -169,6 +170,28 @@ const CompressImage = () => {
           )}
         </Card>
       </div>
+
+      <CalculatorContentSection
+        aboutContent="The Image Compression Tool reduces image file sizes while maintaining visual quality by adjusting compression levels. Large image files slow down websites, consume storage space, and increase bandwidth costs. This tool lets you control the quality-to-size ratio by selecting compression levels from 1-100%, allowing you to find the perfect balance between file size reduction and image quality. Compressed images load faster, improve SEO, enhance user experience, and reduce hosting costs without visible quality loss when optimized properly."
+        useCases={[
+          { title: "Website Performance", description: "Compress images before uploading to websites to dramatically improve page load speeds, boost SEO rankings, and enhance user experience." },
+          { title: "Email Attachments", description: "Reduce image file sizes to meet email attachment limits while maintaining sufficient quality for recipients to view clearly." },
+          { title: "Social Media Uploads", description: "Compress images before posting to social platforms to speed up uploads and ensure faster loading for followers viewing your content." },
+          { title: "Mobile App Optimization", description: "Reduce app bundle sizes by compressing image assets, resulting in faster downloads and better performance on mobile devices." }
+        ]}
+        tips={[
+          { title: "Quality Sweet Spot", description: "For most photographs, 70-85% quality provides excellent visual results with significant file size reduction. Very high quality (90-100%) offers minimal visual improvement but much larger files." },
+          { title: "Test Before Deploying", description: "Always preview compressed images at actual viewing size before using them in production. What looks acceptable zoomed out may show artifacts when viewed normally." },
+          { title: "Compress Before Resizing", description: "For best results, resize images to their final display dimensions first, then compress. Compressing large images then resizing wastes processing and may reduce quality unnecessarily." },
+          { title: "Keep Originals", description: "Always maintain original, uncompressed versions of important images. Repeated compression degrades quality, so compress from originals each time rather than recompressing already compressed images." }
+        ]}
+        faqs={[
+          { question: "How much can I compress without visible quality loss?", answer: "For photographs, 70-85% quality typically provides excellent results with 50-70% file size reduction. For graphics and images with text, use 85-90% quality to maintain sharpness. The optimal setting depends on image content and viewing context." },
+          { question: "What's the difference between compression and resizing?", answer: "Compression reduces file size by removing image data while keeping pixel dimensions the same. Resizing changes the actual width and height by removing pixels. Both reduce file size, but serve different purposes - use resizing for dimensions, compression for file size." },
+          { question: "Can I compress images multiple times?", answer: "While possible, it's not recommended. Each compression pass degrades quality further, especially with lossy formats like JPEG. Always compress from original, high-quality sources rather than recompressing already compressed images to avoid cumulative quality loss." },
+          { question: "Does compression work on all image formats?", answer: "This tool works best with JPEG images where quality adjustments are most effective. PNG compression is lossless and typically doesn't offer adjustable quality levels. For PNGs, consider converting to JPEG if transparency isn't needed, or use PNG optimization tools instead." }
+        ]}
+      />
     </CalculatorLayout>
   );
 };

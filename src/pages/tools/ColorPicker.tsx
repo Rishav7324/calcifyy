@@ -5,6 +5,7 @@ import { Label } from "@/components/ui/label";
 import { useState, useRef, useEffect } from "react";
 import { Upload, Copy, Pipette, Trash2 } from "lucide-react";
 import { toast } from "sonner";
+import CalculatorContentSection from "@/components/CalculatorContentSection";
 
 const ColorPicker = () => {
   const [image, setImage] = useState<string | null>(null);
@@ -292,6 +293,28 @@ const ColorPicker = () => {
           )}
         </Card>
       </div>
+
+      <CalculatorContentSection
+        aboutContent="The Color Picker tool allows you to extract exact color values from any uploaded image by clicking on any pixel. It displays the color in three common formats: HEX (hexadecimal), RGB (red-green-blue), and HSL (hue-saturation-lightness). This tool is invaluable for designers, developers, and digital artists who need to match colors precisely, create color palettes from photographs, or identify exact color codes for branding and design projects. Simply upload an image, click anywhere on it, and instantly get the color values ready to copy and use in your projects."
+        useCases={[
+          { title: "Brand Color Extraction", description: "Extract exact brand colors from logos, marketing materials, or competitor websites to ensure brand consistency across all design projects." },
+          { title: "Web Design & Development", description: "Pick colors from design mockups or reference images to use in CSS, ensuring pixel-perfect color matching in your web projects." },
+          { title: "Photo Color Palettes", description: "Create color schemes inspired by photographs - extract complementary colors from nature photos, artwork, or inspiring images for design projects." },
+          { title: "UI Design Matching", description: "Match interface colors from screenshots or reference apps to ensure design consistency or recreate specific color schemes in your own projects." }
+        ]}
+        tips={[
+          { title: "Understanding Color Formats", description: "HEX is most common for web design (#FF5733), RGB is intuitive for digital work (rgb(255, 87, 51)), and HSL is best for color adjustments (hsl(9, 100%, 60%)). Choose the format that fits your workflow." },
+          { title: "Zoom for Precision", description: "For precise color selection from small details, consider enlarging the image before uploading or clicking carefully on the exact pixel you want to sample." },
+          { title: "Multiple Color Extraction", description: "Need several colors from one image? Take notes of each color you pick or keep the tool open to extract multiple colors systematically for complete palettes." },
+          { title: "Color Variations", description: "Colors on screen vary based on monitor calibration and display settings. For print projects, verify colors look correct across multiple displays before finalizing." }
+        ]}
+        faqs={[
+          { question: "What's the difference between HEX, RGB, and HSL?", answer: "HEX is a 6-character code (#RRGGBB) commonly used in web design. RGB specifies Red, Green, Blue values from 0-255. HSL represents Hue (0-360°), Saturation (0-100%), and Lightness (0-100%), which is more intuitive for color adjustments. All three represent the same color, just in different formats." },
+          { question: "Why do colors look different on different screens?", answer: "Monitor calibration, display technology (IPS, OLED, LCD), brightness settings, and color profiles all affect how colors appear. For professional work requiring exact color matching, use a calibrated monitor and consider testing on multiple displays." },
+          { question: "Can I use this tool for print design?", answer: "While you can extract colors, note that screens use RGB color space while printing uses CMYK. RGB colors may not translate exactly to print. For print projects, convert extracted RGB values to CMYK using design software." },
+          { question: "How accurate are the extracted colors?", answer: "The tool extracts pixel-perfect color values from your uploaded image. However, if your image has been compressed or processed, colors may differ from the original source. Use high-quality, uncompressed images for most accurate results." }
+        ]}
+      />
     </CalculatorLayout>
   );
 };

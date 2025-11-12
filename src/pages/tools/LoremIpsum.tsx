@@ -8,6 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { useState } from "react";
 import { FileText, Copy } from "lucide-react";
 import { toast } from "sonner";
+import CalculatorContentSection from "@/components/CalculatorContentSection";
 
 const LoremIpsum = () => {
   const [count, setCount] = useState("5");
@@ -112,6 +113,33 @@ const LoremIpsum = () => {
             </Card>
           )}
         </div>
+
+        <CalculatorContentSection
+          aboutContent="The Lorem Ipsum Generator creates placeholder text for design mockups, website templates, and content layouts. Lorem Ipsum is scrambled Latin text that has been the industry-standard dummy text since the 1500s. It provides realistic-looking text that doesn't distract from design elements with readable content. This tool generates paragraphs, sentences, or words of Lorem Ipsum text instantly, helping designers, developers, and content creators visualize how layouts will look with actual content before final copy is available. The generated text maintains a natural-looking distribution of letters and word lengths, making it ideal for testing typography, spacing, and overall design aesthetics."
+          useCases={[
+            { title: "Website Mockups", description: "Fill website templates with placeholder text to demonstrate layout, typography, and spacing before actual content is written or approved." },
+            { title: "Graphic Design", description: "Use in brochures, posters, magazines, and print materials to show clients how final designs will look with text content." },
+            { title: "App Development", description: "Populate user interfaces with sample text during development to test responsive layouts and user experiences across different screen sizes." },
+            { title: "Client Presentations", description: "Create realistic mockups for client presentations showing how their content will appear without waiting for final copy approval." },
+            { title: "Typography Testing", description: "Test font choices, sizes, line spacing, and text hierarchy by filling designs with Lorem Ipsum to evaluate readability and aesthetics." },
+            { title: "Template Development", description: "Build email templates, document templates, or CMS themes with placeholder content to demonstrate functionality and design flexibility." }
+          ]}
+          tips={[
+            { title: "Why Lorem Ipsum?", description: "Real text in mockups can distract stakeholders who focus on content rather than design. Lorem Ipsum looks like text but is meaningless, keeping attention on visual elements, layout, and design decisions." },
+            { title: "Paragraph vs Sentence Generation", description: "Use paragraphs for body text, sentences for shorter sections like captions, and words for testing buttons or navigation labels. Choose the unit that best matches your design needs." },
+            { title: "Replace Before Launch", description: "Never leave Lorem Ipsum in production sites or final deliverables. It's unprofessional and harms SEO. Always replace with real content before going live." },
+            { title: "Consider Content Length", description: "Generate slightly more text than you think you need to test how designs handle overflow, text wrapping, and various content lengths. Real content rarely fits perfectly." },
+            { title: "Alternative Placeholder Text", description: "While Lorem Ipsum is standard, consider industry-specific placeholder text or themed generators for presentations where context matters, but always clarify it's sample content." }
+          ]}
+          faqs={[
+            { question: "What does Lorem Ipsum mean?", answer: "Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of Cicero's 'de Finibus Bonorum et Malorum' (The Extremes of Good and Evil) written in 45 BC. The text has been scrambled and is now nonsensical Latin, but it maintains a natural distribution of letters making it look like readable text." },
+            { question: "Why not use real English text as placeholder?", answer: "Real English text can distract reviewers who read the content instead of evaluating design, layout, and visual hierarchy. Lorem Ipsum is clearly placeholder text that signals it's temporary, allowing stakeholders to focus on design elements rather than copy." },
+            { question: "Is Lorem Ipsum the only placeholder text option?", answer: "No. Alternatives include 'Ipsum Lorem' variations, themed generators (bacon ipsum, hipster ipsum), repeated phrases, or industry-specific sample text. However, Lorem Ipsum remains the professional standard recognized worldwide in design and development." },
+            { question: "Should I leave Lorem Ipsum in my live website?", answer: "Absolutely not. Lorem Ipsum should only appear in mockups and development. Live sites with Lorem Ipsum look unprofessional, harm SEO (search engines may penalize placeholder content), and confuse users. Always replace with real content before launch." },
+            { question: "How much Lorem Ipsum should I generate?", answer: "Generate enough to test your design with realistic content volumes. For body text, 3-5 paragraphs is typical. For headlines, 1-2 sentences works well. Generate extra to test how your design handles both minimal and excessive content amounts." },
+            { question: "Can Lorem Ipsum affect my website's SEO?", answer: "Yes, negatively. Search engines recognize Lorem Ipsum as placeholder text and may flag or penalize sites using it. It provides zero keyword value and signals incomplete content. Never publish Lorem Ipsum on live sites - replace with real, SEO-optimized content." }
+          ]}
+        />
       </CalculatorLayout>
   );
 };

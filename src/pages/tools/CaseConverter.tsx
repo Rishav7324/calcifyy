@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
 import { Type, Copy } from "lucide-react";
 import { toast } from "sonner";
+import CalculatorContentSection from "@/components/CalculatorContentSection";
 
 const CaseConverter = () => {
   const [text, setText] = useState("");
@@ -112,6 +113,33 @@ const CaseConverter = () => {
             </Button>
           </div>
         </div>
+
+        <CalculatorContentSection
+          aboutContent="The Case Converter is a powerful text formatting tool that instantly transforms text between different letter case styles. It supports six common case formats: UPPERCASE (all capitals), lowercase (all small letters), Title Case (first letter of each word capitalized), Sentence case (first letter of each sentence capitalized), camelCase (used in programming), and snake_case (words separated by underscores). This tool is essential for writers, developers, content creators, and anyone who needs to quickly reformat text for different purposes without manual editing. Simply paste your text and click the desired format for instant conversion."
+          useCases={[
+            { title: "Content Editing", description: "Quickly fix text that was typed with caps lock accidentally, or convert shouting uppercase text to proper sentence case for more professional communication." },
+            { title: "Programming & Development", description: "Convert variable names between camelCase, snake_case, or other conventions to match coding standards and style guides for different programming languages." },
+            { title: "SEO & Metadata", description: "Format titles and meta descriptions in title case for better presentation in search results and social media shares." },
+            { title: "Data Cleaning", description: "Standardize inconsistent text data in spreadsheets or databases by converting all entries to the same case format for consistency." },
+            { title: "Social Media Posting", description: "Format headlines and captions appropriately for different platforms - title case for professional posts, sentence case for casual content." },
+            { title: "Document Formatting", description: "Convert headlines, chapter titles, or section headers to proper title case for books, reports, and professional documents." }
+          ]}
+          tips={[
+            { title: "Title Case Nuances", description: "Proper title case capitalizes major words but not articles (a, an, the), short prepositions (in, on, at), or coordinating conjunctions (and, but, or) unless they're the first word. This tool follows standard title case rules automatically." },
+            { title: "Sentence Case vs Title Case", description: "Use sentence case for body text and most casual content. Use title case for headlines, book titles, and formal headers. Understanding which to use improves readability and professionalism." },
+            { title: "Programming Case Conventions", description: "camelCase is standard in JavaScript and Java. snake_case is common in Python and Ruby. PascalCase (like title case but no spaces) is used for class names. Choose the right convention for your language." },
+            { title: "Preserve Special Characters", description: "The converter maintains numbers, punctuation, and special characters while changing letter cases. This ensures your text structure remains intact during conversion." },
+            { title: "Copy and Reuse", description: "Use the copy button to quickly grab converted text for use in documents, code editors, or other applications without manually selecting and copying." }
+          ]}
+          faqs={[
+            { question: "What's the difference between title case and sentence case?", answer: "Sentence case capitalizes only the first letter of each sentence and proper nouns, like in normal writing. Title case capitalizes the first letter of most words, used for headlines and titles. Title case makes text stand out more and is more formal." },
+            { question: "When should I use camelCase vs snake_case?", answer: "CamelCase (like myVariableName) is standard in JavaScript, Java, and C-based languages for variable names. Snake_case (like my_variable_name) is preferred in Python, Ruby, and SQL. Follow your project's or language's style guide for consistency." },
+            { question: "Does the tool handle special characters and numbers?", answer: "Yes, the case converter preserves all numbers, punctuation marks, spaces, and special characters. Only alphabetic characters (letters) are affected by the case conversion, maintaining your text's structure and formatting." },
+            { question: "Why use UPPERCASE text?", answer: "UPPERCASE is used for acronyms (NASA, FBI), emphasizing important warnings or alerts, headings in some design styles, and constants in programming. However, avoid using it for large blocks of text as it's harder to read and can seem like shouting in digital communication." },
+            { question: "What are title case capitalization rules?", answer: "Standard title case capitalizes: the first and last words, nouns, pronouns, verbs, adjectives, adverbs, and subordinate conjunctions. It keeps lowercase: articles (a, an, the), short prepositions (in, on, at), and coordinating conjunctions (and, but, or) unless they're the first or last word." },
+            { question: "Can I convert text with multiple paragraphs?", answer: "Yes, the tool handles text of any length including multiple paragraphs. Each conversion type applies its rules consistently across all paragraphs and sentences in your input text." }
+          ]}
+        />
       </CalculatorLayout>
   );
 };

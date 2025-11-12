@@ -7,6 +7,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { useState, useRef } from "react";
 import { Upload, Download, Maximize2 } from "lucide-react";
 import { toast } from "sonner";
+import CalculatorContentSection from "@/components/CalculatorContentSection";
 
 const ResizeImage = () => {
   const [image, setImage] = useState<string | null>(null);
@@ -156,6 +157,28 @@ const ResizeImage = () => {
           )}
         </Card>
       </div>
+
+      <CalculatorContentSection
+        aboutContent="The Image Resize Tool adjusts image dimensions to specific widths and heights or uses preset sizes optimized for popular social media platforms and web applications. Resizing images is crucial for web optimization, ensuring images display correctly across devices, and meeting platform-specific dimension requirements. The tool offers preset dimensions for Instagram, Facebook, Twitter, LinkedIn profiles, and more, plus custom sizing for any specific needs. Properly sized images load faster, look professional, and ensure your content displays optimally everywhere."
+        useCases={[
+          { title: "Social Media Content", description: "Resize images to exact dimensions required by Instagram posts (1080x1080), Facebook covers (820x312), Twitter headers (1500x500), and other platforms for perfect display." },
+          { title: "Website Optimization", description: "Resize large images to appropriate display dimensions for faster page loading, reduced bandwidth usage, and improved user experience across all devices." },
+          { title: "Email Marketing", description: "Resize images to optimal email dimensions ensuring fast loading in email clients and proper display on mobile devices without slow load times." },
+          { title: "Thumbnail Creation", description: "Create thumbnail versions of images for galleries, product listings, or blog posts by resizing to smaller dimensions while maintaining aspect ratio." }
+        ]}
+        tips={[
+          { title: "Maintain Aspect Ratio", description: "When resizing, maintain the original aspect ratio to prevent distortion. If you need different proportions, crop first, then resize to your target dimensions." },
+          { title: "Downsize, Don't Upsize", description: "Resizing images larger than their original size (upscaling) degrades quality significantly. Always work from high-resolution sources when creating multiple sizes." },
+          { title: "Use Presets for Consistency", description: "Leverage preset dimensions for social media to ensure your images always meet platform requirements and display correctly without cropping or distortion." },
+          { title: "Consider Retina Displays", description: "For web graphics, consider creating images at 2x dimensions for crisp display on retina/high-DPI screens, then let CSS scale them down appropriately." }
+        ]}
+        faqs={[
+          { question: "What happens if I resize an image larger than the original?", answer: "Enlarging images (upscaling) degrades quality because the software must create new pixels through interpolation. The result will be blurry or pixelated. Always resize smaller from high-resolution originals rather than enlarging small images." },
+          { question: "Should I resize before or after compressing?", answer: "Resize first, then compress. Resizing reduces the number of pixels, so there's no point compressing pixels that will be removed. Resize to final dimensions, then apply compression for optimal file size and quality." },
+          { question: "What are the best dimensions for social media?", answer: "Instagram posts: 1080×1080 (square), Instagram stories: 1080×1920, Facebook posts: 1200×630, Twitter posts: 1200×675, LinkedIn posts: 1200×627. Use the preset dimensions in this tool for optimal platform compatibility." },
+          { question: "How do custom dimensions work?", answer: "Custom dimensions let you specify exact width and height in pixels. The tool will resize your image to those dimensions, but be aware this may distort the image if the aspect ratio doesn't match your original. For best results, calculate dimensions that maintain your original aspect ratio." }
+        ]}
+      />
     </CalculatorLayout>
   );
 };

@@ -7,6 +7,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { useState, useRef } from "react";
 import { Upload, Download, RefreshCw } from "lucide-react";
 import { toast } from "sonner";
+import CalculatorContentSection from "@/components/CalculatorContentSection";
 
 const ConvertImage = () => {
   const [image, setImage] = useState<string | null>(null);
@@ -145,6 +146,28 @@ const ConvertImage = () => {
           )}
         </Card>
       </div>
+
+      <CalculatorContentSection
+        aboutContent="The Image Format Converter transforms images between popular formats including PNG, JPEG, and WebP. Converting image formats is essential for optimizing web performance, ensuring compatibility, or meeting specific platform requirements. PNG is best for graphics with transparency, JPEG excels for photographs with smaller file sizes, and WebP offers superior compression for modern web applications. This tool makes format conversion simple and fast without quality loss during the conversion process."
+        useCases={[
+          { title: "Web Optimization", description: "Convert images to WebP format for faster website loading times and reduced bandwidth usage while maintaining visual quality." },
+          { title: "Transparency Preservation", description: "Convert images to PNG when you need to preserve transparent backgrounds for logos, icons, or graphics." },
+          { title: "File Size Reduction", description: "Convert PNG photos to JPEG format to significantly reduce file sizes for faster uploads and storage savings." },
+          { title: "Platform Compatibility", description: "Convert images to formats required by different platforms or content management systems that have specific format requirements." }
+        ]}
+        tips={[
+          { title: "Choose the Right Format", description: "Use PNG for images needing transparency, JPEG for photographs, and WebP for modern web applications where browser support allows." },
+          { title: "Consider Quality vs Size", description: "JPEG offers smaller files but lossy compression. PNG is lossless but larger. WebP provides the best of both worlds with superior compression." },
+          { title: "Check Browser Support", description: "While WebP offers excellent compression, ensure your target browsers support it. Most modern browsers do, but older versions may need fallbacks." },
+          { title: "Preserve Originals", description: "Always keep original high-quality images before converting to lossy formats like JPEG, as you cannot recover quality after conversion." }
+        ]}
+        faqs={[
+          { question: "What's the difference between PNG and JPEG?", answer: "PNG uses lossless compression and supports transparency, making it ideal for graphics, logos, and images needing crisp edges. JPEG uses lossy compression for much smaller file sizes, perfect for photographs where minor quality loss is acceptable." },
+          { question: "What is WebP and should I use it?", answer: "WebP is a modern image format developed by Google that provides superior compression (25-35% smaller files) compared to PNG and JPEG while maintaining quality. Use it for web applications where modern browser support is available." },
+          { question: "Will I lose quality when converting formats?", answer: "Converting from PNG to JPEG or WebP may involve some quality loss due to compression. However, converting from JPEG to PNG won't improve quality - it will just increase file size. The conversion process itself is high-quality." },
+          { question: "Which format is best for web use?", answer: "For modern websites, WebP offers the best compression and quality balance. For wider compatibility, use JPEG for photos and PNG for graphics with transparency. Consider providing multiple formats with fallbacks for optimal performance." }
+        ]}
+      />
     </CalculatorLayout>
   );
 };
