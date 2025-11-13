@@ -140,6 +140,11 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://calcifyy.lovable.app/tool/invoice-generator</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Financial Calculators -->
   <url>
@@ -273,7 +278,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Health Calculators -->
+  <!-- Health & Fitness Calculators -->
   <url>
     <loc>https://calcifyy.lovable.app/calculator/bmi</loc>
     <changefreq>monthly</changefreq>
@@ -290,12 +295,12 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://calcifyy.lovable.app/calculator/calorie</loc>
+    <loc>https://calcifyy.lovable.app/calculator/tdee</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://calcifyy.lovable.app/calculator/tdee</loc>
+    <loc>https://calcifyy.lovable.app/calculator/calorie</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -315,6 +320,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://calcifyy.lovable.app/calculator/healthy-weight</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://calcifyy.lovable.app/calculator/pregnancy</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -329,11 +339,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://calcifyy.lovable.app/calculator/healthy-weight</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
 
   <!-- Math Calculators -->
   <url>
@@ -342,47 +347,17 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://calcifyy.lovable.app/calculator/scientific</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://calcifyy.lovable.app/calculator/area</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://calcifyy.lovable.app/calculator/volume</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://calcifyy.lovable.app/calculator/slope</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://calcifyy.lovable.app/calculator/fraction</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://calcifyy.lovable.app/calculator/basic</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://calcifyy.lovable.app/calculator/average</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://calcifyy.lovable.app/calculator/random-number</loc>
+    <loc>https://calcifyy.lovable.app/calculator/percent-error</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://calcifyy.lovable.app/calculator/ratio</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://calcifyy.lovable.app/calculator/fraction</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -417,7 +392,37 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://calcifyy.lovable.app/calculator/percent-error</loc>
+    <loc>https://calcifyy.lovable.app/calculator/speed</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://calcifyy.lovable.app/calculator/slope</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://calcifyy.lovable.app/calculator/area</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://calcifyy.lovable.app/calculator/volume</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://calcifyy.lovable.app/calculator/scientific</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://calcifyy.lovable.app/calculator/average</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://calcifyy.lovable.app/calculator/basic</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -439,6 +444,16 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://calcifyy.lovable.app/calculator/date</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://calcifyy.lovable.app/calculator/timezone</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://calcifyy.lovable.app/calculator/gpa</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -454,17 +469,17 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://calcifyy.lovable.app/calculator/date</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://calcifyy.lovable.app/calculator/password</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://calcifyy.lovable.app/calculator/time-zone</loc>
+    <loc>https://calcifyy.lovable.app/calculator/random-number</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://calcifyy.lovable.app/calculator/dice-roller</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -475,16 +490,6 @@
   </url>
   <url>
     <loc>https://calcifyy.lovable.app/calculator/conversion</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://calcifyy.lovable.app/calculator/speed</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://calcifyy.lovable.app/calculator/dice</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

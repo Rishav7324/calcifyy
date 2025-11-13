@@ -103,6 +103,7 @@ import Base64Tool from "./pages/tools/Base64Tool";
 import JSONFormatter from "./pages/tools/JSONFormatter";
 import QRCodeGenerator from "./pages/tools/QRCodeGenerator";
 import HashGenerator from "./pages/tools/HashGenerator";
+import InvoiceGenerator from "./pages/tools/InvoiceGenerator";
 
 const queryClient = new QueryClient();
 
@@ -212,6 +213,7 @@ const App = () => (
           <Route path="/tool/json-formatter" element={<JSONFormatter />} />
           <Route path="/tool/qr-code" element={<QRCodeGenerator />} />
           <Route path="/tool/hash-generator" element={<HashGenerator />} />
+          <Route path="/tool/invoice-generator" element={<InvoiceGenerator />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

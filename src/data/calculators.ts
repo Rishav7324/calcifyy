@@ -99,6 +99,7 @@ export const textTools: Calculator[] = [
   { id: "json-formatter", name: "JSON Formatter", description: "Format and validate JSON", category: "tools", path: "/tool/json-formatter", implemented: true },
   { id: "qr-code", name: "QR Code Generator", description: "Generate QR codes", category: "tools", path: "/tool/qr-code", implemented: true },
   { id: "hash-generator", name: "Hash Generator", description: "Generate MD5, SHA-1, SHA-256 hashes", category: "tools", path: "/tool/hash-generator", implemented: true },
+  { id: "invoice-generator", name: "Invoice Generator", description: "Create professional business invoices", category: "tools", path: "/tool/invoice-generator", implemented: true },
 ];
 
 export const allCalculators = [
