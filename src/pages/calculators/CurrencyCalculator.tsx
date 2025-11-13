@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import CalculatorContentSection from "@/components/CalculatorContentSection";
 
 const CurrencyCalculator = () => {
   const [amount, setAmount] = useState("");
@@ -97,6 +98,28 @@ const CurrencyCalculator = () => {
           )}
         </Card>
       </div>
+
+      <CalculatorContentSection
+        aboutContent="The Currency Converter helps you convert amounts between major world currencies using current exchange rates. Whether you're planning international travel, shopping online from foreign stores, or conducting business across borders, this tool provides quick and easy currency conversions."
+        useCases={[
+          { title: "International Travel", description: "Calculate how much your money is worth in your destination country, budget for trips, and compare prices across different currencies." },
+          { title: "Online Shopping", description: "Convert prices from international websites to your local currency to understand actual costs and compare deals across regions." },
+          { title: "Business Transactions", description: "Calculate international invoice amounts, compare quotes from foreign suppliers, or price products for different markets." },
+          { title: "Investment Tracking", description: "Monitor foreign investments, convert dividend payments, or track portfolio values across different currency zones." }
+        ]}
+        tips={[
+          { title: "Exchange Rate Awareness", description: "This calculator uses static rates for demonstration. For financial decisions, always check current rates from your bank or exchange service." },
+          { title: "Hidden Costs", description: "Actual exchanges often include fees, commissions, or less favorable rates than mid-market rates shown here. Budget accordingly." },
+          { title: "Timing Matters", description: "Exchange rates fluctuate constantly. For large transactions, consider timing and potentially using limit orders with currency services." },
+          { title: "Multiple Currencies", description: "For multi-currency trips or transactions, convert each currency pair separately for accuracy rather than daisy-chaining conversions." }
+        ]}
+        faqs={[
+          { question: "How often do exchange rates change?", answer: "Real exchange rates change constantly throughout the trading day. This calculator uses static rates for demonstration. Check a live currency service for current rates." },
+          { question: "Why is my actual exchange different?", answer: "Banks and exchange services add markup (spread) to mid-market rates, plus fees. The difference can be 2-5% or more. Shop around for better rates on large amounts." },
+          { question: "What's the best way to exchange currency?", answer: "For travel: ATMs often offer competitive rates. For large amounts: compare banks, online services (Wise, Revolut), and currency brokers. Avoid airport exchanges." },
+          { question: "Should I exchange before traveling?", answer: "Having some local currency on arrival is convenient, but you'll typically get better rates using ATMs at your destination or prepaid travel cards." }
+        ]}
+      />
     </CalculatorLayout>
   );
 };

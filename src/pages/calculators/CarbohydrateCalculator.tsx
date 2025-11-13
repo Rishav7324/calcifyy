@@ -5,6 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import CalculatorLayout from "@/components/CalculatorLayout";
+import CalculatorContentSection from "@/components/CalculatorContentSection";
 
 const CarbohydrateCalculator = () => {
   const [weight, setWeight] = useState("");
@@ -103,6 +104,28 @@ const CarbohydrateCalculator = () => {
           )}
         </div>
       </Card>
+
+      <CalculatorContentSection
+        aboutContent="The Carbohydrate Calculator determines your daily carbohydrate intake needs based on your body weight, activity level, and fitness goals. Carbohydrates are your body's primary energy source, and calculating the right amount helps optimize performance, support weight goals, and maintain energy levels throughout the day."
+        useCases={[
+          { title: "Weight Management", description: "Adjust carb intake based on whether you want to lose, maintain, or gain weight. Lower carbs for fat loss, higher for muscle gain." },
+          { title: "Athletic Performance", description: "Ensure adequate carb intake for training and competition. Endurance athletes need higher carbs to fuel long workouts and races." },
+          { title: "Meal Planning", description: "Use per-meal carb targets to plan balanced meals throughout the day and maintain steady energy levels." },
+          { title: "Diabetes Management", description: "Monitor and control carbohydrate intake to help manage blood sugar levels when working with healthcare providers." }
+        ]}
+        tips={[
+          { title: "Activity Level Accuracy", description: "Be honest about your activity level. Overestimating can lead to excess calories. Consider your weekly average, not just your most active days." },
+          { title: "Adjust Over Time", description: "Your carb needs change with weight, activity, and goals. Recalculate every 4-6 weeks or when making significant training changes." },
+          { title: "Quality Matters", description: "Focus on complex carbohydrates from whole grains, fruits, and vegetables rather than simple sugars for sustained energy and better nutrition." },
+          { title: "Timing Considerations", description: "Distribute carbs strategically: more before/after workouts for energy and recovery, moderate amounts at other meals." }
+        ]}
+        faqs={[
+          { question: "What counts as a carbohydrate?", answer: "Carbohydrates include starches (bread, rice, pasta), sugars (fruit, sweets), and fiber (vegetables, whole grains). Focus on complex carbs and fiber-rich foods for better nutrition." },
+          { question: "Should I count fiber in my carb total?", answer: "Net carbs (total carbs minus fiber) are what affect blood sugar. However, for general nutrition, counting total carbs is standard unless following a specific low-carb diet." },
+          { question: "How do carbs affect weight loss?", answer: "Reducing carbs can help with weight loss by lowering overall calories and reducing water retention. However, total calorie balance is most important for weight management." },
+          { question: "Is low-carb better than high-carb?", answer: "Neither is universally better. Optimal carb intake depends on your activity level, goals, and personal preferences. Active people typically need more carbs for performance." }
+        ]}
+      />
     </CalculatorLayout>
   );
 };

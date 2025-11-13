@@ -8,6 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { useState, useRef, useEffect } from "react";
 import { QrCode, Download } from "lucide-react";
 import { toast } from "sonner";
+import CalculatorContentSection from "@/components/CalculatorContentSection";
 
 const QRCodeGenerator = () => {
   const [text, setText] = useState("");
@@ -91,6 +92,28 @@ const QRCodeGenerator = () => {
             </Card>
           )}
         </div>
+
+        <CalculatorContentSection
+          aboutContent="The QR Code Generator creates scannable QR codes from any text, URL, or data you provide. QR (Quick Response) codes are two-dimensional barcodes that can store information and be quickly scanned by smartphones and cameras. They're widely used for sharing links, contact information, Wi-Fi credentials, and more."
+          useCases={[
+            { title: "Website Links", description: "Create QR codes for websites, social media profiles, or online stores. Print them on business cards, flyers, or product packaging for easy mobile access." },
+            { title: "Event Management", description: "Generate QR codes for event tickets, registration confirmations, or venue check-ins. Attendees can simply scan for quick entry." },
+            { title: "Marketing Campaigns", description: "Add QR codes to print advertisements, posters, or product labels to bridge offline and online marketing, tracking campaign effectiveness." },
+            { title: "Contact Sharing", description: "Create vCard QR codes containing your contact information. Others can scan to instantly save your details to their phone." }
+          ]}
+          tips={[
+            { title: "URL Shortening", description: "Long URLs create dense QR codes that are harder to scan. Use URL shorteners (bit.ly, tinyurl) before generating QR codes for better scannability." },
+            { title: "Size Matters", description: "Larger QR codes are easier to scan from a distance. For posters or billboards, use the Extra Large (1024x1024) size option." },
+            { title: "Contrast is Key", description: "QR codes work best with high contrast (black on white). Avoid light colors or low contrast backgrounds when printing." },
+            { title: "Test Before Printing", description: "Always test your QR code with multiple devices and apps before mass printing to ensure it scans correctly and leads to the right destination." }
+          ]}
+          faqs={[
+            { question: "How much data can a QR code store?", answer: "QR codes can store up to ~4,000 alphanumeric characters. However, more data creates denser, harder-to-scan codes. Keep content concise for best results." },
+            { question: "Do QR codes expire?", answer: "The QR code image itself never expires. However, if it contains a URL, that website might change or go offline, making the QR code effectively useless." },
+            { question: "Can I customize QR code colors?", answer: "While this tool generates standard black-and-white QR codes, you can edit the downloaded image. Maintain high contrast for reliable scanning." },
+            { question: "What can I encode in a QR code?", answer: "Anything text-based: URLs, plain text, phone numbers, email addresses, SMS messages, Wi-Fi credentials, vCard contact info, and more." }
+          ]}
+        />
       </CalculatorLayout>
   );
 };
