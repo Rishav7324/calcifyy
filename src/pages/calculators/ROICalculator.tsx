@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
+import CalculatorContentSection from "@/components/CalculatorContentSection";
 
 const ROICalculator = () => {
   const [investment, setInvestment] = useState("");
@@ -65,6 +66,28 @@ const ROICalculator = () => {
           )}
         </Card>
       </div>
+
+      <CalculatorContentSection
+        aboutContent="The ROI (Return on Investment) Calculator measures the efficiency and profitability of an investment by comparing the gain or loss relative to the initial cost. ROI is expressed as a percentage, making it easy to compare different investments regardless of their size. A positive ROI indicates profit, while negative ROI shows a loss. It's one of the most important metrics in business and investment decision-making."
+        useCases={[
+          { title: "Investment Comparison", description: "Compare returns across different investments (stocks, bonds, real estate) to identify which opportunities offer the best value for your money." },
+          { title: "Business Projects", description: "Evaluate whether projects, marketing campaigns, or business initiatives are worth the investment by calculating expected or actual ROI." },
+          { title: "Real Estate Analysis", description: "Calculate returns on rental properties, house flips, or commercial real estate by comparing property value changes and rental income to initial costs." },
+          { title: "Marketing ROI", description: "Measure effectiveness of advertising campaigns, social media spending, or marketing initiatives by comparing revenue generated to marketing costs." }
+        ]}
+        tips={[
+          { title: "Include All Costs", description: "For accurate ROI, include all costs: purchase price, fees, taxes, maintenance, and operating expenses. Missing costs inflates your ROI calculation." },
+          { title: "Time Consideration", description: "ROI doesn't account for time. A 20% return in 1 year is better than 20% over 5 years. Consider annualized ROI for time-based comparisons." },
+          { title: "Positive vs Negative", description: "Positive ROI (gain > cost) shows profit. Negative ROI (loss) appears in red. Zero ROI means you broke even—no gain, no loss." },
+          { title: "Multiple Returns", description: "For investments with ongoing returns (dividends, rent), calculate ROI at different points or use total accumulated returns for final value." }
+        ]}
+        faqs={[
+          { question: "What's a good ROI percentage?", answer: "It varies by investment type. Stock market averages ~10% annually. Real estate ~8-12%. Marketing ROI should be positive, ideally 5:1 (500%) or better. Compare to similar investments in your industry." },
+          { question: "How is ROI different from profit?", answer: "Profit is absolute dollar amount (gain - cost). ROI is relative percentage (gain/cost × 100%). ROI lets you compare investments of different sizes fairly." },
+          { question: "Should I use ROI or annualized ROI?", answer: "Use simple ROI for short-term or single-period returns. Use annualized ROI to compare investments held for different time periods, as it accounts for the time value of money." },
+          { question: "Does ROI account for risk?", answer: "No. ROI only measures return, not risk. A high-ROI investment might be very risky. Consider risk-adjusted metrics (Sharpe Ratio) or diversification for complete analysis." }
+        ]}
+      />
     </CalculatorLayout>
   );
 };

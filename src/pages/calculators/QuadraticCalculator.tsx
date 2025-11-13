@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import CalculatorLayout from "@/components/CalculatorLayout";
+import CalculatorContentSection from "@/components/CalculatorContentSection";
 
 const QuadraticCalculator = () => {
   const [a, setA] = useState("");
@@ -109,6 +110,28 @@ const QuadraticCalculator = () => {
           )}
         </div>
       </Card>
+
+      <CalculatorContentSection
+        aboutContent="The Quadratic Formula Calculator solves quadratic equations of the form ax² + bx + c = 0 using the quadratic formula: x = [-b ± √(b² - 4ac)] / 2a. It handles all cases: two distinct real solutions, one repeated solution, and complex (imaginary) solutions. The discriminant (b² - 4ac) determines the nature and number of solutions."
+        useCases={[
+          { title: "Algebra & Mathematics", description: "Solve quadratic equations in homework, verify algebraic solutions, and understand the relationship between coefficients and solution types." },
+          { title: "Physics Problems", description: "Calculate projectile motion paths, determine time to reach maximum height or ground impact, and solve acceleration/velocity problems involving squared terms." },
+          { title: "Engineering Applications", description: "Analyze parabolic structures, optimize designs with quadratic constraints, and solve electrical circuit problems involving resonance." },
+          { title: "Business & Economics", description: "Find break-even points, maximize profit functions, determine optimal pricing strategies when relationships are quadratic." }
+        ]}
+        tips={[
+          { title: "Discriminant Interpretation", description: "If b² - 4ac > 0: two real solutions. If = 0: one solution (repeated root). If < 0: two complex conjugate solutions. Check discriminant before solving." },
+          { title: "Sign Attention", description: "Pay careful attention to negative signs. The 'b' term in the formula is negative: -b. Don't lose track of signs when substituting values." },
+          { title: "Coefficient 'a' Cannot Be Zero", description: "If a = 0, the equation becomes linear (bx + c = 0), not quadratic. The calculator requires a ≠ 0 for valid quadratic equations." },
+          { title: "Complex Solutions", description: "Complex solutions (with 'i') appear when the parabola doesn't cross the x-axis. These are still valid mathematical solutions, commonly used in engineering." }
+        ]}
+        faqs={[
+          { question: "What do complex solutions mean?", answer: "Complex solutions contain 'i' (√-1). They appear when the discriminant is negative, meaning the parabola doesn't intersect the x-axis. They're essential in engineering and advanced mathematics." },
+          { question: "When do I get only one solution?", answer: "One solution occurs when the discriminant equals zero (b² - 4ac = 0). This means the parabola touches the x-axis at exactly one point (the vertex)." },
+          { question: "Can quadratics have more than 2 solutions?", answer: "No. The fundamental theorem of algebra guarantees a quadratic equation (degree 2) has exactly 2 solutions (counting multiplicity). They may be real, repeated, or complex." },
+          { question: "How do I check my answer?", answer: "Substitute solutions back into the original equation. If ax² + bx + c = 0 (or very close to 0 allowing for rounding), your solution is correct." }
+        ]}
+      />
     </CalculatorLayout>
   );
 };

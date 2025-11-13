@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import CalculatorContentSection from "@/components/CalculatorContentSection";
 
 const ProteinCalculator = () => {
   const [weight, setWeight] = useState("");
@@ -79,6 +80,28 @@ const ProteinCalculator = () => {
           )}
         </Card>
       </div>
+
+      <CalculatorContentSection
+        aboutContent="The Protein Calculator determines your optimal daily protein intake based on your body weight, activity level, and fitness goals. Protein is essential for building and repairing tissues, maintaining muscle mass, supporting immune function, and producing enzymes and hormones. Getting the right amount of protein helps optimize body composition, athletic performance, and overall health."
+        useCases={[
+          { title: "Muscle Building", description: "Calculate higher protein needs when building muscle mass. Strength athletes and bodybuilders require 1.6-2.2g per kg of body weight to support muscle protein synthesis." },
+          { title: "Weight Loss", description: "Maintain muscle mass while losing fat by consuming adequate protein. Higher protein intake (1.8-2.0g/kg) helps preserve lean mass during calorie restriction." },
+          { title: "Athletic Performance", description: "Support training recovery and adaptation with appropriate protein intake. Endurance and power athletes need more protein than sedentary individuals." },
+          { title: "General Health", description: "Meet baseline protein requirements for tissue maintenance, immune function, and metabolic health at sedentary to moderate activity levels." }
+        ]}
+        tips={[
+          { title: "Distribution Throughout Day", description: "Spread protein across meals (20-40g per meal) rather than consuming it all at once for better muscle protein synthesis and satiety." },
+          { title: "Quality Matters", description: "Choose complete proteins (meat, fish, eggs, dairy) or combine plant proteins (rice + beans) to get all essential amino acids your body needs." },
+          { title: "Timing for Athletes", description: "Consume protein within 2 hours post-workout for optimal recovery. A protein-rich breakfast also helps preserve muscle mass." },
+          { title: "Adjust for Goals", description: "Increase protein when cutting calories, building muscle, or aging (older adults need more). Decrease if kidney issues are present (consult doctor)." }
+        ]}
+        faqs={[
+          { question: "How much protein do I really need?", answer: "Sedentary adults: 1.2g/kg. Active individuals: 1.4-1.8g/kg. Strength athletes: 1.6-2.2g/kg. Endurance athletes: 1.2-1.6g/kg. Higher amounts for muscle gain or fat loss." },
+          { question: "Can I eat too much protein?", answer: "Very high intakes (>2.5g/kg) offer no additional benefit and may displace other nutrients. Healthy kidneys can handle high protein, but those with kidney disease should limit intake." },
+          { question: "Is plant protein as good as animal protein?", answer: "Animal proteins are complete (all essential amino acids) and more digestible. Plant proteins work well when combined (legumes + grains) or supplemented with variety throughout the day." },
+          { question: "Do I need protein supplements?", answer: "Not necessarily. Whole foods provide protein plus other nutrients. Supplements (whey, casein, plant-based powders) are convenient for athletes, busy schedules, or high protein needs." }
+        ]}
+      />
     </CalculatorLayout>
   );
 };

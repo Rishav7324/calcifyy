@@ -5,6 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import CalculatorLayout from "@/components/CalculatorLayout";
+import CalculatorContentSection from "@/components/CalculatorContentSection";
 
 const ConversionCalculator = () => {
   const [category, setCategory] = useState("length");
@@ -107,6 +108,28 @@ const ConversionCalculator = () => {
           )}
         </div>
       </Card>
+
+      <CalculatorContentSection
+        aboutContent="The Unit Conversion Calculator converts values between different units of measurement across four categories: length, weight, temperature, and volume. It provides accurate conversions using standard conversion factors, making it easy to switch between metric and imperial units for various applications."
+        useCases={[
+          { title: "Cooking & Recipes", description: "Convert between cups, liters, and milliliters when following international recipes or scaling recipes up or down." },
+          { title: "Travel Planning", description: "Convert temperatures between Celsius and Fahrenheit, distances between miles and kilometers, or weights when traveling internationally." },
+          { title: "Science & Engineering", description: "Perform precise unit conversions for experiments, calculations, or technical specifications across different measurement systems." },
+          { title: "Fitness Tracking", description: "Convert weights between pounds and kilograms for gym equipment, body weight, or nutritional information." }
+        ]}
+        tips={[
+          { title: "Temperature Special Cases", description: "Temperature conversions are not proportional (e.g., 0°C ≠ 0°F). Always use the calculator for accuracy rather than mental math." },
+          { title: "Precision Considerations", description: "Results display up to 4 decimal places for precision. Round as needed for your specific application." },
+          { title: "Category Switching", description: "When changing categories, the calculator automatically updates available units. Make sure to re-select appropriate from/to units." },
+          { title: "Common Conversions", description: "Save time: 1 mile ≈ 1.6 km, 1 pound ≈ 0.45 kg, 1 gallon ≈ 3.8 liters. Use the calculator for precise values." }
+        ]}
+        faqs={[
+          { question: "Why do temperature conversions seem different?", answer: "Temperature scales have different zero points and intervals. 0°C = 32°F, not 0°F. The calculator uses proper formulas to account for these differences." },
+          { question: "What's the difference between metric and imperial?", answer: "Metric (meters, kilograms, liters) is based on powers of 10 and used globally. Imperial (feet, pounds, gallons) is primarily used in the US and has irregular conversion factors." },
+          { question: "How accurate are the conversions?", answer: "Conversions use standard, precise conversion factors (e.g., 1 inch = 2.54 cm exactly). Results are accurate to 4 decimal places." },
+          { question: "Can I convert multiple values at once?", answer: "Currently, you convert one value at a time. For multiple conversions, update the input value and click Convert again." }
+        ]}
+      />
     </CalculatorLayout>
   );
 };

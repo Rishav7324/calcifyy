@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import CalculatorLayout from "@/components/CalculatorLayout";
+import CalculatorContentSection from "@/components/CalculatorContentSection";
 
 const AverageCalculator = () => {
   const [numbers, setNumbers] = useState("");
@@ -83,6 +84,28 @@ const AverageCalculator = () => {
           )}
         </div>
       </Card>
+
+      <CalculatorContentSection
+        aboutContent="The Average Calculator computes various statistical measures from a set of numbers. It calculates mean (arithmetic average), median (middle value), mode (most frequent value), and range (difference between maximum and minimum values). These statistics help you understand data distribution and central tendencies."
+        useCases={[
+          { title: "Academic Performance", description: "Calculate average grades across multiple subjects or assignments to track student progress and identify areas needing improvement." },
+          { title: "Financial Analysis", description: "Analyze average expenses, income, or sales figures over time to make informed budgeting and business decisions." },
+          { title: "Data Analysis", description: "Find central tendencies in research data, survey responses, or experiment results for statistical reporting." },
+          { title: "Sports Statistics", description: "Calculate average scores, times, or performance metrics for athletes and teams to track improvement." }
+        ]}
+        tips={[
+          { title: "Input Format", description: "Enter numbers separated by commas. Spaces are automatically handled, so \"1, 2, 3\" and \"1,2,3\" both work." },
+          { title: "Understanding Mode", description: "Mode shows the most frequently occurring values. If all numbers appear once, all numbers are modes. Multiple modes indicate multimodal distribution." },
+          { title: "Median vs Mean", description: "Median is less affected by outliers than mean. Use median for skewed distributions with extreme values." },
+          { title: "Range Interpretation", description: "A larger range indicates more spread in your data, while a smaller range suggests values are closer together." }
+        ]}
+        faqs={[
+          { question: "What's the difference between mean and median?", answer: "Mean is the arithmetic average (sum divided by count), while median is the middle value when numbers are sorted. Median is better for data with outliers." },
+          { question: "Can there be multiple modes?", answer: "Yes! If two or more numbers appear with the same highest frequency, they're all modes. Data with one mode is unimodal, two modes is bimodal, and more is multimodal." },
+          { question: "What does range tell me?", answer: "Range shows the spread of your data by measuring the difference between the largest and smallest values. It gives a quick sense of variability." },
+          { question: "How do I handle decimal numbers?", answer: "Decimal numbers work perfectly. Just enter them with periods (e.g., 1.5, 2.3, 4.8) separated by commas." }
+        ]}
+      />
     </CalculatorLayout>
   );
 };
