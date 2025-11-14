@@ -102,8 +102,8 @@ const Contact = () => {
                   <p className="text-muted-foreground">
                     For general inquiries and support:
                   </p>
-                  <a href="mailto:info@primemetric.online" className="text-primary hover:underline">
-                    info@primemetric.online
+                  <a href="mailto:help@primemetric.online" className="text-primary hover:underline">
+                    help@primemetric.online
                   </a>
                 </div>
               </div>
