@@ -14,7 +14,7 @@ const NotFound = () => {
         canonicalUrl="https://primemetric.online/404"
       />
       <Helmet>
-        <meta name="robots" content="noindex, nofollow" />
+        <meta name="robots" content="index, follow" />
         <meta name="prerender-status-code" content="404" />
       </Helmet>
       <div className="min-h-screen bg-gradient-to-br from-background via-secondary/20 to-background flex items-center justify-center p-4">
