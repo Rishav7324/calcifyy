@@ -8,9 +8,9 @@ const About = () => {
   return (
     <>
       <SEO 
-        title="About Us - CalcHub"
-        description="Learn about CalcHub, your trusted source for free online calculators. We provide accurate calculation tools for finance, health, math, and everyday needs."
-        keywords="about calchub, calculator website, free online tools, calculation platform"
+        title="About Us - Prime Metric"
+        description="Learn about Prime Metric, your trusted source for free online calculators. We provide accurate calculation tools for finance, health, math, and everyday needs."
+        keywords="about Prime Metric, calculator website, free online tools, calculation platform"
         canonicalUrl="https://primemetric.online/about"
       />
       
@@ -39,7 +39,7 @@ const About = () => {
             including financial planning, health and fitness, mathematics, and everyday utilities.
           </p>
           <p className="text-muted-foreground">
-            Founded with the vision of making complex calculations accessible to everyone, CalcHub has grown 
+            Founded with the vision of making complex calculations accessible to everyone, Prime Metric has grown 
             into a trusted resource serving thousands of users daily. We believe that everyone deserves access 
             to reliable calculation tools without barriers, which is why all our services remain completely free 
             and require no registration or downloads.

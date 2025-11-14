@@ -21,7 +21,7 @@ const FinancialCalculators = () => {
             <Link to="/" className="flex items-center gap-2 group">
               <Calculator className="w-8 h-8 text-primary group-hover:rotate-12 transition-transform" />
               <span className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                CalcHub
+                Prime Metric
               </span>
             </Link>
             <Link to="/">

@@ -15,8 +15,8 @@ export const SEO = ({
   canonicalUrl,
   ogType = "website"
 }: SEOProps) => {
-  const siteName = "CalcHub - Free Online Calculators";
-  const fullTitle = title.includes("CalcHub") ? title : `${title} | CalcHub`;
+  const siteName = "Prime Metric - Free Online Calculators";
+  const fullTitle = title.includes("Prime Metric") ? title : `${title} | Prime Metric`;
   const baseUrl = "https://primemetric.online";
   const canonical = canonicalUrl || baseUrl;
 

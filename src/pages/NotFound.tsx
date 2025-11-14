@@ -10,7 +10,7 @@ const NotFound = () => {
     <>
       <SEO 
         title="404 - Page Not Found"
-        description="The page you're looking for doesn't exist. Return to CalcHub to access our free online calculators and tools."
+        description="The page you're looking for doesn't exist. Return to Prime Metric to access our free online calculators and tools."
         canonicalUrl="https://primemetric.online/404"
       />
       <Helmet>

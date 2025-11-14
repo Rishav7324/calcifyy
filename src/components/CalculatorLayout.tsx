@@ -34,7 +34,7 @@ const CalculatorLayout = ({ title, description, children, formula, explanation, 
     },
     "creator": {
       "@type": "Organization",
-      "name": "CalcHub"
+      "name": "Prime Metric"
     }
   };
 
@@ -56,10 +56,10 @@ const CalculatorLayout = ({ title, description, children, formula, explanation, 
       <nav className="sticky top-0 z-50 glass-card border-b border-primary/20" role="navigation" aria-label="Calculator navigation">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <Link to="/" className="flex items-center gap-2 group" aria-label="CalcHub home">
+            <Link to="/" className="flex items-center gap-2 group" aria-label="Prime Metric home">
               <Calculator className="w-8 h-8 text-primary group-hover:rotate-12 transition-transform" aria-hidden="true" />
               <span className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                CalcHub
+                Prime Metric
               </span>
             </Link>
             <Link to="/">
@@ -119,7 +119,7 @@ const CalculatorLayout = ({ title, description, children, formula, explanation, 
       {/* Footer */}
       <footer className="border-t border-primary/20 py-8 mt-20" role="contentinfo">
         <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
-          <p>© 2025 CalcHub. All rights reserved.</p>
+          <p>© 2025 Prime Metric. All rights reserved.</p>
         </div>
       </footer>
     </div>
