@@ -11,7 +11,7 @@ const About = () => {
         title="About Us - CalcHub"
         description="Learn about CalcHub, your trusted source for free online calculators. We provide accurate calculation tools for finance, health, math, and everyday needs."
         keywords="about calchub, calculator website, free online tools, calculation platform"
-        canonicalUrl="https://calcifyy.lovable.app/about"
+        canonicalUrl="https://primemetric.online/about"
       />
       
       <div className="min-h-screen bg-gradient-to-br from-background via-secondary/20 to-background">

@@ -49,7 +49,7 @@ const JSONFormatter = () => {
         title="JSON Formatter & Validator"
         description="Format, validate, and minify JSON data"
         keywords="json formatter, json validator, format json, minify json, json beautifier, json parser"
-        canonicalUrl="https://calcifyy.lovable.app/tool/json-formatter"
+        canonicalUrl="https://primemetric.online/tool/json-formatter"
       >
         <div className="max-w-4xl mx-auto space-y-6">
           <Card className="p-6 space-y-4">

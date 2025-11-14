@@ -42,7 +42,7 @@ const Base64Tool = () => {
         title="Base64 Encoder/Decoder"
         description="Encode text to Base64 or decode Base64 strings"
         keywords="base64 encoder, base64 decoder, encode base64, decode base64, base64 converter, base64 tool"
-        canonicalUrl="https://calcifyy.lovable.app/tool/base64"
+        canonicalUrl="https://primemetric.online/tool/base64"
       >
         <div className="max-w-4xl mx-auto space-y-6">
           <Card className="p-6 space-y-4">

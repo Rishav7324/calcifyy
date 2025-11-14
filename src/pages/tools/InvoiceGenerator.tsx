@@ -172,7 +172,7 @@ const InvoiceGenerator = () => {
       title="Invoice Generator"
       description="Create professional invoices for your business - free invoice maker"
       keywords="invoice generator, create invoice, invoice maker, business invoice, free invoice, invoice template"
-      canonicalUrl="https://calcifyy.lovable.app/tool/invoice-generator"
+      canonicalUrl="https://primemetric.online/tool/invoice-generator"
     >
       <div className="max-w-5xl mx-auto space-y-6">
         {/* Business Information */}

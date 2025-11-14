@@ -78,7 +78,7 @@ const Index = () => {
         title="PrimeMetric - Free Online Calculators & Tools"
         description="Access 100+ free online calculators for financial planning, health & fitness, math problems, and everyday calculations. Fast, accurate, and easy to use."
         keywords="calculator, online calculator, free calculator, BMI calculator, loan calculator, mortgage calculator, math calculator, percentage calculator"
-        canonicalUrl="https://primemetric.lovable.app"
+        canonicalUrl="https://primemetric.online"
       />
       
       <div className="min-h-screen">

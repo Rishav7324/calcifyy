@@ -67,7 +67,7 @@ const CropImage = () => {
       title="Crop Image"
       description="Upload and crop your images to the perfect size"
       keywords="crop image, image cropper, crop photo, cut image, trim image, image crop tool"
-      canonicalUrl="https://calcifyy.lovable.app/tool/crop-image"
+      canonicalUrl="https://primemetric.online/tool/crop-image"
     >
       <div className="max-w-4xl mx-auto">
 

@@ -32,7 +32,7 @@ const AllCalculators = () => {
         title="All Calculators - Complete Collection"
         description="Browse our complete collection of 100+ free online calculators. Find financial, health, math, and conversion calculators all in one place."
         keywords="all calculators, online calculator list, calculator collection, free tools"
-        canonicalUrl="https://calcifyy.lovable.app/all-calculators"
+        canonicalUrl="https://primemetric.online/all-calculators"
       />
       
       <div className="min-h-screen">

@@ -26,7 +26,7 @@ const PercentageCalculator = () => {
         formula="Result = (Value × Percentage) ÷ 100"
         explanation="This calculator helps you find a percentage of a number. For example, to find 20% of 100, multiply 100 by 20 and divide by 100, which equals 20."
         keywords="percentage calculator, calculate percentage, percentage increase, percentage decrease, percent calculator"
-        canonicalUrl="https://calcifyy.lovable.app/calculator/percentage"
+        canonicalUrl="https://primemetric.online/calculator/percentage"
       >
       <Card className="p-6 bg-card/50 backdrop-blur border-primary/20">
         <div className="space-y-4">

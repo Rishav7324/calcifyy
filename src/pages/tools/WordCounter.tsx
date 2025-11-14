@@ -40,7 +40,7 @@ const WordCounter = () => {
       title="Word Counter"
       description="Count words, characters, sentences, and estimate reading time"
       keywords="word counter, character counter, text counter, word count, sentence counter, reading time calculator"
-      canonicalUrl="https://calcifyy.lovable.app/tool/word-counter"
+      canonicalUrl="https://primemetric.online/tool/word-counter"
     >
         <div className="max-w-4xl mx-auto space-y-6">
           <Card className="p-6">

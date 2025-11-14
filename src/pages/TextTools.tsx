@@ -10,7 +10,7 @@ const TextTools = () => {
       title="Text & Developer Tools"
       description="Professional text and developer utilities - formatting, encoding, and generation tools"
       keywords="text tools, word counter, case converter, lorem ipsum, url encoder, base64, json formatter, qr code, hash generator"
-      canonicalUrl="https://calcifyy.lovable.app/text-tools"
+      canonicalUrl="https://primemetric.online/text-tools"
     >
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {textTools.map((tool) => (

@@ -60,7 +60,7 @@ const LoremIpsum = () => {
         title="Lorem Ipsum Generator"
         description="Generate placeholder text for your design and development projects"
         keywords="lorem ipsum, placeholder text, dummy text, lorem ipsum generator, filler text, sample text"
-        canonicalUrl="https://calcifyy.lovable.app/tool/lorem-ipsum"
+        canonicalUrl="https://primemetric.online/tool/lorem-ipsum"
       >
         <div className="max-w-4xl mx-auto space-y-6">
           <Card className="p-6 space-y-4">

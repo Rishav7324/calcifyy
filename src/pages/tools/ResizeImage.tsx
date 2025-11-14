@@ -77,7 +77,7 @@ const ResizeImage = () => {
       title="Resize Image"
       description="Resize images to custom dimensions or popular social media sizes"
       keywords="resize image, image resizer, scale image, resize photo, social media image sizes, instagram image size"
-      canonicalUrl="https://calcifyy.lovable.app/tool/resize-image"
+      canonicalUrl="https://primemetric.online/tool/resize-image"
     >
       <div className="max-w-4xl mx-auto">
 

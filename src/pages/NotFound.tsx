@@ -11,7 +11,7 @@ const NotFound = () => {
       <SEO 
         title="404 - Page Not Found"
         description="The page you're looking for doesn't exist. Return to CalcHub to access our free online calculators and tools."
-        canonicalUrl="https://calcifyy.lovable.app/404"
+        canonicalUrl="https://primemetric.online/404"
       />
       <Helmet>
         <meta name="robots" content="noindex, nofollow" />

@@ -43,7 +43,7 @@ const QRCodeGenerator = () => {
         title="QR Code Generator"
         description="Generate QR codes for URLs, text, and more"
         keywords="qr code generator, create qr code, qr code maker, generate qr code, free qr code, qr code creator"
-        canonicalUrl="https://calcifyy.lovable.app/tool/qr-code"
+        canonicalUrl="https://primemetric.online/tool/qr-code"
       >
         <div className="max-w-4xl mx-auto space-y-6">
           <Card className="p-6 space-y-4">

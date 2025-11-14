@@ -166,7 +166,7 @@ const ColorPicker = () => {
       title="Color Picker"
       description="Pick colors from images and get HEX, RGB, and HSL values"
       keywords="color picker, image color picker, hex color picker, rgb color picker, color code generator"
-      canonicalUrl="https://calcifyy.lovable.app/tool/color-picker"
+      canonicalUrl="https://primemetric.online/tool/color-picker"
     >
         <div className="max-w-4xl mx-auto">
           <Card className="p-6 space-y-6">

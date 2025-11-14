@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://calcifyy.lovable.app/sitemap.xml
+Sitemap: https://primemetric.online/sitemap.xml

@@ -49,7 +49,7 @@ const CaseConverter = () => {
         title="Case Converter"
         description="Convert text between different cases - upper, lower, title, sentence, camel, and snake case"
         keywords="case converter, text converter, uppercase, lowercase, title case, sentence case, camel case, snake case"
-        canonicalUrl="https://calcifyy.lovable.app/tool/case-converter"
+        canonicalUrl="https://primemetric.online/tool/case-converter"
       >
         <div className="max-w-4xl mx-auto space-y-6">
           <Card className="p-6">

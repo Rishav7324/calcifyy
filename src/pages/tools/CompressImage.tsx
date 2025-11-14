@@ -91,7 +91,7 @@ const CompressImage = () => {
       title="Compress Image"
       description="Reduce image file size while maintaining quality"
       keywords="compress image, reduce image size, image compression, optimize images, compress jpg, compress png"
-      canonicalUrl="https://calcifyy.lovable.app/tool/compress-image"
+      canonicalUrl="https://primemetric.online/tool/compress-image"
     >
       <div className="max-w-4xl mx-auto">
 

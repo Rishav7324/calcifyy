@@ -32,7 +32,7 @@ const Contact = () => {
         title="Contact Us - PrimeMetric"
         description="Get in touch with PrimeMetric. Have questions or feedback? We'd love to hear from you. Contact us for support, suggestions, or inquiries."
         keywords="contact primemetric, calculator support, feedback, customer service"
-        canonicalUrl="https://primemetric.lovable.app/contact"
+        canonicalUrl="https://primemetric.online/contact"
       />
       
       <div className="min-h-screen bg-gradient-to-br from-background via-secondary/20 to-background">

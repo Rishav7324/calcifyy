@@ -62,7 +62,7 @@ const HashGenerator = () => {
         title="Hash Generator"
         description="Generate MD5, SHA-1, and SHA-256 hashes"
         keywords="hash generator, md5 generator, sha1 generator, sha256 generator, checksum generator, hash calculator"
-        canonicalUrl="https://calcifyy.lovable.app/tool/hash-generator"
+        canonicalUrl="https://primemetric.online/tool/hash-generator"
       >
         <div className="max-w-4xl mx-auto space-y-6">
           <Card className="p-6 space-y-4">

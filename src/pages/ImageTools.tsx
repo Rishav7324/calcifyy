@@ -10,7 +10,7 @@ const ImageTools = () => {
       title="Image Tools"
       description="Professional image editing tools - crop, resize, compress, and convert images online"
       keywords="image tools, edit images online, resize image, compress image, convert image, crop image, image editor"
-      canonicalUrl="https://calcifyy.lovable.app/image-tools"
+      canonicalUrl="https://primemetric.online/image-tools"
     >
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {imageTools.map((tool) => (

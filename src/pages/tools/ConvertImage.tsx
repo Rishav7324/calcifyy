@@ -79,7 +79,7 @@ const ConvertImage = () => {
       title="Convert Image"
       description="Convert images between different formats (PNG, JPEG, WebP)"
       keywords="convert image, image converter, png to jpg, jpg to png, webp converter, image format converter"
-      canonicalUrl="https://calcifyy.lovable.app/tool/convert-image"
+      canonicalUrl="https://primemetric.online/tool/convert-image"
     >
       <div className="max-w-4xl mx-auto">
         <Card className="p-6 space-y-6">

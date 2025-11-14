@@ -42,7 +42,7 @@ const URLEncoder = () => {
         title="URL Encoder/Decoder"
         description="Encode and decode URLs and URI components"
         keywords="url encoder, url decoder, encode url, decode url, uri encoder, percent encoding"
-        canonicalUrl="https://calcifyy.lovable.app/tool/url-encoder"
+        canonicalUrl="https://primemetric.online/tool/url-encoder"
       >
         <div className="max-w-4xl mx-auto space-y-6">
           <Card className="p-6 space-y-4">
